@@ -1,0 +1,13 @@
+.wide-screen-header {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+@media (max-width: 700px) {
+    .wide-screen-header {
+        display: none;
+    }
+}
