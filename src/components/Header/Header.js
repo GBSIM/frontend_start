@@ -6,8 +6,11 @@ import MobileHeader from './MobileHeader';
 export default function Header(props) {
     return (
         <div className="header">
-            <WideScreenHeader height={props.wideScreenHeaderHeight} leftPadding={30}></WideScreenHeader>
-            <MobileHeader height={props.mobileHeaderHeight}></MobileHeader>
+            <WideScreenHeader 
+                height={props.wideScreenHeaderHeight} 
+                paddingLeft={30}
+                paddingRight={30} />
+            <MobileHeader height={props.mobileHeaderHeight} />
         </div>
     )
 }

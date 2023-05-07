@@ -1,0 +1,12 @@
+.quadrangle-button {
+    background: rgba(235,92,46,1);
+}
+
+.quadrangle-button:hover {
+    background: rgba(235,92,46,0.8);
+}
+
+.quadrangle-button-text {
+    font-weight: 500;
+    color: #fff
+}
