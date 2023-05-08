@@ -17,13 +17,16 @@ export default function Modal(props) {
             id={props.id} 
             onClose={() => enableScroll()}
             onFocus={() => disableScroll()}>
-            {props.children}
-            <form method="dialog">
-                <BorderBoxButton
-                    text={props.closeText}
-                    width='100%'
-                    minWidth={300} />
-            </form>
+            <div className='modal-contents'>
+                {props.children}
+                <div style={{'flex':'1'}}></div>
+                <form method="dialog">
+                    <BorderBoxButton
+                        text={props.closeText}
+                        width='100%'
+                        minWidth={300} />
+                </form>
+            </div>
         </dialog>
     )
 }
