@@ -1,0 +1,10 @@
+.border-box-button {
+    border-color: #EA5B30;
+    border-style: solid;
+    background: #fff;
+}
+
+.border-box-button-text {
+    font-weight: 500;
+    color: #EA5B30;
+}
