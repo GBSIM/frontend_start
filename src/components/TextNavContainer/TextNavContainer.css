@@ -3,6 +3,6 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 20px;
     height: 100%;
 }
