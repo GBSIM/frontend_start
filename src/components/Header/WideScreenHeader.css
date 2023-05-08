@@ -3,7 +3,17 @@
     box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.wide-screen-header-contents {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
+    width: 100%;
+    max-width: 1440px;
     align-items: center;
 }
 
