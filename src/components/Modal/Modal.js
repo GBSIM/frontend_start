@@ -15,8 +15,8 @@ export default function Modal(props) {
         <dialog 
             className='modal' 
             id={props.id} 
-            onClose={(e) => enableScroll()}
-            onFocus={(e) => disableScroll()}>
+            onClose={() => enableScroll()}
+            onFocus={() => disableScroll()}>
             {props.children}
             <form method="dialog">
                 <BorderBoxButton
