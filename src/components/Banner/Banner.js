@@ -6,6 +6,7 @@ export default function Banner(props) {
     const [bannerIndex, setBannerIndex] = useState(1);
     let viewportWidth = window.innerWidth;
     const initialLeftPosition = -viewportWidth;
+    let nextBannerIndex;
 
     window.onresize = function () {
         let leftInitializationPosition = -window.innerWidth * (bannerIndex - 1);
@@ -48,10 +49,46 @@ export default function Banner(props) {
     BannerImageContainers.push(FirstBanner);
     BannerImageContainers.unshift(LastBanner);
 
+    const moveLeft = () => {
+        nextBannerIndex = bannerIndex - 1;
+        if (nextBannerIndex === 0) {
+            document.getElementById('banner-contents').style.left = -((nextBannerIndex) * window.innerWidth) + 'px';
+            document.getElementById('banner-contents').style.transition = `${0.3}s ease-out`;
+            const resetToLast = () => {
+                document.getElementById('banner-contents').style.left = -bannerNumber*window.innerWidth + 'px';
+                document.getElementById('banner-contents').style.transition = `${0}s ease-out`;
+            }
+            setTimeout(() => resetToLast(),300);
+            nextBannerIndex = bannerNumber;
+        } else {
+            document.getElementById('banner-contents').style.left = -((nextBannerIndex) * window.innerWidth) + 'px';
+            document.getElementById('banner-contents').style.transition = `${0.3}s ease-out`;
+        }
+        setBannerIndex(nextBannerIndex);
+    }
+
+    const moveRight = () => {
+        nextBannerIndex = bannerIndex + 1;
+        if (nextBannerIndex > bannerNumber) {
+            document.getElementById('banner-contents').style.left = -((nextBannerIndex) * window.innerWidth) + 'px';
+            document.getElementById('banner-contents').style.transition = `${0.3}s ease-out`;
+            const resetToFirst = () => {
+                document.getElementById('banner-contents').style.left = -window.innerWidth + 'px';
+                document.getElementById('banner-contents').style.transition = `${0}s ease-out`;
+            }
+            setTimeout(() => resetToFirst(),300);
+            nextBannerIndex = 1;
+        } else {
+            document.getElementById('banner-contents').style.left = -((nextBannerIndex) * window.innerWidth) + 'px';
+            document.getElementById('banner-contents').style.transition = `${0.3}s ease-out`;
+        }
+        setBannerIndex(nextBannerIndex);        
+    }
+
     return (
         <div className='banner'>
-            <button className='banner-button left'></button>
-            <button className='banner-button right'></button>
+            <button className='banner-button left' onClick={() => moveLeft()}></button>
+            <button className='banner-button right' onClick={() => moveRight()}></button>
             <div className='banner-counter'>
                 <span className='banner-counter-number'>
                     {bannerIndex} / {bannerNumber}

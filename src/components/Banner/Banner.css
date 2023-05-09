@@ -47,6 +47,7 @@
     border-radius: 25px;
     top: calc(50% - 25px);
     display: none;
+    z-index: 2;
 }
 
 .banner-button.left {
