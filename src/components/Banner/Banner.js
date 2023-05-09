@@ -7,6 +7,11 @@ export default function Banner(props) {
     let viewportWidth = window.innerWidth;
     const initialLeftPosition = -viewportWidth;
 
+    window.onresize = function () {
+        let leftInitializationPosition = -window.innerWidth * (bannerIndex - 1);
+        document.getElementById('banner-contents').style.left = String(leftInitializationPosition) + 'px';
+    }
+
     let bannerNumber = 0;
     if (props.bannerList && Array.isArray(props.bannerList)) bannerNumber = props.bannerList.length;
 
@@ -52,7 +57,7 @@ export default function Banner(props) {
                     {bannerIndex} / {bannerNumber}
                 </span>
             </div>
-            <div className='banner-contents' style={{'left':-initialLeftPosition}}>
+            <div className='banner-contents' id='banner-contents' style={{'left':initialLeftPosition}}>
                 {BannerImageContainers}
             </div>
         </div>
