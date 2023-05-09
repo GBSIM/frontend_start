@@ -1,17 +1,44 @@
 import './Banner.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRef } from 'react';
 
 export default function Banner(props) {
     const [bannerIndex, setBannerIndex] = useState(1);
     let viewportWidth = window.innerWidth;
     const initialLeftPosition = -viewportWidth;
     let nextBannerIndex;
+    const [intervalId, setIntervalId] = useState(0);
 
     window.onresize = function () {
         let leftInitializationPosition = -window.innerWidth * (bannerIndex - 1);
         document.getElementById('banner-contents').style.left = String(leftInitializationPosition) + 'px';
     }
+
+    function useInterval(callback, delay) {
+        const savedCallback = useRef(null);
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+    
+        useEffect(() => {
+            function tick() {
+                savedCallback.current();
+            }
+            if (delay !== null) {
+                let id = setInterval(tick, delay);
+                setIntervalId(id);
+                return () => clearInterval(id);
+            }
+        }, [delay]);
+    }
+    
+    function BannerTimer(){
+        useInterval(()=>{
+            moveRight();
+        }, 5000);
+    }
+    BannerTimer();    
 
     let bannerNumber = 0;
     if (props.bannerList && Array.isArray(props.bannerList)) bannerNumber = props.bannerList.length;
@@ -82,7 +109,7 @@ export default function Banner(props) {
             document.getElementById('banner-contents').style.left = -((nextBannerIndex) * window.innerWidth) + 'px';
             document.getElementById('banner-contents').style.transition = `${0.3}s ease-out`;
         }
-        setBannerIndex(nextBannerIndex);        
+        setBannerIndex(nextBannerIndex);
     }
 
     return (
