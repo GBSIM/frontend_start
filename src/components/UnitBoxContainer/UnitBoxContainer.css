@@ -1,0 +1,7 @@
+.unit-box-container {
+    width: 100%;
+    max-width: 600px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
