@@ -1,0 +1,63 @@
+.shipping-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.shipping-box-tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #EB5C2E;
+    padding: 4px 12px 4px 12px;
+    border-radius: 20px;
+}
+
+.shipping-box-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 3px;
+}
+
+.shipping-box-tag-text {
+    color: #fff;
+    font-size: 14px;
+}
+
+.shipping-box-text {
+    color: #696969;
+}
+
+.shipping-box-button-container {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.shipping-box-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.shipping-box-button-text {
+    color: #C6C6C6;
+    font-size: 12px;
+}
+
+.shipping-box-check-button-container {
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 15px);
+}
