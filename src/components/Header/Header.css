@@ -2,6 +2,6 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
 }
