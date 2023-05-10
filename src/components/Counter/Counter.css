@@ -1,0 +1,29 @@
+.counter {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    padding: 5px;
+    border: 1px solid #c6c6c6;
+    border-radius: 7px;
+}
+
+.counter-button {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-button-image {
+    width: 100%;
+    height: 100%;
+}
+
+.counter-count {
+    color: #141414;
+}
