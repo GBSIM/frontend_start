@@ -3,10 +3,6 @@ import './IconNavButton.css';
 import IconButton from '../IconButton/IconButton';
 
 export default function IconNavButton(props) {
-    const movePage = () => {
-        window.location.href = '/' + props.pageName
-    }
-
     return (
         <IconButton 
             width={40}
@@ -15,7 +11,8 @@ export default function IconNavButton(props) {
             iconWidth='100%'
             iconHeight='100%'
             image=''
-            clickEvent={movePage}
+            altText={props.altText}
+            clickEvent={props.clickEvent}
         />
     )
 }
