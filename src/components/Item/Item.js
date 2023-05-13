@@ -1,13 +1,15 @@
 import './Item.css';
 
+import CartButton from '../CartButton/CartButton';
+
 export default function Item(props) {
     return (
         <div className='item'>
             <button className='item-image-button'>
                 <img className='item-image' src={props.image} alt='thumbnail'></img>
-                <button className='item-cart-button'>
-                    <img className='item-cart-button-image' src={''} alt='cart'></img>
-                </button>
+                <dv className='item-cart-button-container'>
+                    <CartButton></CartButton>
+                </dv>
             </button>
             <span className='item-text name'>{props.name}</span>
             <span className='item-text price'>{props.price.toLocaleString()}원</span>

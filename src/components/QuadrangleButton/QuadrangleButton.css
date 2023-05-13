@@ -1,5 +1,9 @@
 .quadrangle-button {
     background: rgba(235,92,46,1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .quadrangle-button:hover {

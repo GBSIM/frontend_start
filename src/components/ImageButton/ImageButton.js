@@ -10,3 +10,16 @@ export default function ImageButton(props) {
         </button>
     )
 }
+
+
+const defaultClickEvent = () => {
+    
+}
+
+ImageButton.defaultProps = {
+    clickEvent: defaultClickEvent,
+    height: 100,
+    width: 100,
+    imageUrl: '',
+    altText: 'image-button'
+}
