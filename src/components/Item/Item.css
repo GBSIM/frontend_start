@@ -4,12 +4,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    position: relative;
 }
 
-.item-image-button {
+.item-image-link {
     width: 200px;
     height: 200px;
-    position: relative;
 }
 
 .item-image {
@@ -22,11 +22,11 @@
     transition: .5s;
 }
 
-
 .item-cart-button-container {
     position: absolute;
-    bottom: 10px;
+    top: 156px;
     right: 10px;
+    z-index: 2;
 }
 
 .item-text {

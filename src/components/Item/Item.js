@@ -5,12 +5,12 @@ import CartButton from '../CartButton/CartButton';
 export default function Item(props) {
     return (
         <div className='item'>
-            <button className='item-image-button'>
+            <a className='item-image-link' href='/'>
                 <img className='item-image' src={props.image} alt='thumbnail'></img>
-                <dv className='item-cart-button-container'>
-                    <CartButton></CartButton>
-                </dv>
-            </button>
+            </a>
+            <div className='item-cart-button-container'>
+                <CartButton></CartButton>
+            </div>
             <span className='item-text name'>{props.name}</span>
             <span className='item-text price'>{props.price.toLocaleString()}원</span>
         </div>
