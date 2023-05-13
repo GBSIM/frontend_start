@@ -1,9 +1,11 @@
 import './MobileFooter.css';
 
-export default function MobileFooter(props) {
+import IconNavContainer from '../IconNavContainer/IconNavContainer';
+
+export default function MobileFooter() {
     return (
         <div className='mobile-footer'>
-            
+            <IconNavContainer />
         </div>
     )
 }
