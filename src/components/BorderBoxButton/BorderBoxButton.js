@@ -45,8 +45,7 @@ export default function BorderBoxButton(props) {
                 'paddingLeft':props.paddingLeft,
                 'paddingRight':props.paddingRight,
                 'paddingTop':props.paddingTop,
-                'paddingBottom':props.paddingBottom,
-                'minWidth': props.minWidth}}
+                'paddingBottom':props.paddingBottom}}
             onClick={() => props.clickEvent()}>
             {Text}
         </button>

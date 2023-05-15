@@ -8,12 +8,13 @@ export default function MobileModal(props) {
             <div className='mobile-modal on'>
                 <div className='mobile-modal-contents'>
                     {props.children}
+                    <div className='mobile-modal-spacer'></div>
                     <div className='mobile-modal-close-button-container'>
                         <BorderBoxButton
                             paddingTop={7}
                             paddingBottom={7}
                             text={props.closeText}
-                            width='calc(100vw - 30px)'
+                            width='100%'
                             minWidth={300} 
                             clickEvent={props.closeEvent} />
                     </div>
@@ -25,12 +26,13 @@ export default function MobileModal(props) {
             <div className='mobile-modal off'>
                 <div className='mobile-modal-contents'>
                     {props.children}
+                    <div className='mobile-modal-spacer'></div>
                     <div className='mobile-modal-close-button-container'>
                         <BorderBoxButton
                             paddingTop={7}
                             paddingBottom={7}
                             text={props.closeText}
-                            width='calc(100vw - 30px)'
+                            width='100%'
                             minWidth={300}
                             clickEvent={props.closeEvent} />
                     </div>

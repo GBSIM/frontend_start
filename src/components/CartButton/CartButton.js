@@ -1,6 +1,6 @@
 import './CartButton.css';
 
-import CartModal from '../CartModel/CartModal';
+import CartModal from '../CartModal/CartModal';
 
 import IconButton from '../IconButton/IconButton';
 

@@ -19,8 +19,8 @@ export default function Modal(props) {
             onFocus={() => disableScroll()}>
             <div className='modal-contents'>
                 {props.children}
-                <div style={{'flex':'1'}}></div>
-                <form method="dialog">
+                <div className='modal-spacer'></div>
+                <form method="dialog" className='modal-close-button-container'>
                     <BorderBoxButton
                         text={props.closeText}
                         width='100%'

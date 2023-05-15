@@ -1,0 +1,30 @@
+.mobile-cart-modal-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;    
+}
+
+.mobile-cart-modal-row.top {
+    justify-content: space-between;
+}
+
+.mobile-cart-modal-row.middle {
+    justify-content: flex-end;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.mobile-cart-modal-row.bottom {
+    justify-content: flex-end;
+    padding-bottom: 40px;
+}
+
+.mobile-cart-modal-item-name {
+    color: #111;
+}
+
+.mobile-cart-modal-item-price {
+    color: #aaa;
+}

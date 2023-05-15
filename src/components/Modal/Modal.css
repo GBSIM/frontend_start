@@ -26,8 +26,17 @@
     justify-content: center;
 }
 
+.modal-spacer {
+    flex: 1;
+    min-height: 10px;
+}
+
+.modal-close-button-container {
+    width: 100%;
+}
+
 @media (max-width: 700px) {
-    .modal {
-        display: none;
+    .modal-spacer {
+        min-height: 7px;
     }
 }

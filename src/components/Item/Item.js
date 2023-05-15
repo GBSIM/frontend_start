@@ -1,6 +1,7 @@
 import './Item.css';
 
 import CartButton from '../CartButton/CartButton';
+import MobileCartButton from '../MobileCartButton/MobileCartButton';
 
 export default function Item(props) {
     return (
@@ -8,8 +9,11 @@ export default function Item(props) {
             <a className='item-image-link' href='/'>
                 <img className='item-image' src={props.image} alt='thumbnail'></img>
             </a>
-            <div className='item-cart-button-container'>
+            <div className='item-cart-button-container widescreen'>
                 <CartButton></CartButton>
+            </div>
+            <div className='item-cart-button-container mobile'>
+                <MobileCartButton></MobileCartButton>
             </div>
             <span className='item-text name'>{props.name}</span>
             <span className='item-text price'>{props.price.toLocaleString()}원</span>
