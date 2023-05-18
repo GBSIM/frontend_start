@@ -16,8 +16,8 @@
 }
 
 .mobile-modal-container.off {
+    transition: 10s;
     z-index: -99;
-    transition: 1s;
 }
 
 .mobile-modal {
@@ -63,11 +63,4 @@
 
 .mobile-modal-close-button-container {
     width: 100%;
-}
-
-
-@media (min-width: 700px) {
-    .mobile-modal-background {
-        display: none;
-    }
 }

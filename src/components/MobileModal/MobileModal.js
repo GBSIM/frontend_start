@@ -15,7 +15,7 @@ export default function MobileModal(props) {
         disableScroll();
         return (
             <div className='mobile-modal-container on'>
-                <div className='mobile-modal on'>
+                <div className='mobile-modal on' style={{'height': props.height}}>
                     <div className='mobile-modal-contents'>
                         {props.children}
                         <div className='mobile-modal-spacer'></div>
@@ -36,7 +36,7 @@ export default function MobileModal(props) {
         enableScroll();
         return (
             <div className='mobile-modal-container off'>
-                <div className='mobile-modal off'>
+                <div className='mobile-modal off' style={{'height': props.height}}>
                     <div className='mobile-modal-contents'>
                         {props.children}
                         <div className='mobile-modal-spacer'></div>

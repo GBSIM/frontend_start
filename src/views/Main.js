@@ -5,6 +5,7 @@ import Banner from '../components/Banner/Banner';
 import Footer from '../components/Footer/Footer';
 import Item from '../components/Item/Item';
 import CartItem from '../components/CartItem/CartItem';
+import ShippingBox from '../components/ShippingBox/ShippingBox';
 
 export default function Main() {
     return (
@@ -15,6 +16,7 @@ export default function Main() {
                 <div className='contents'>
                     <Item></Item>
                     <CartItem></CartItem>
+                    <ShippingBox></ShippingBox>
                 </div>    
             </div>
             <Footer/>
