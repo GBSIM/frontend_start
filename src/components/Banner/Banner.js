@@ -5,8 +5,6 @@ import { useRef } from 'react';
 
 export default function Banner(props) {
     const [bannerIndex, setBannerIndex] = useState(1);
-    const [touchStart, setTouchStart] = useState(0);
-    const [startPosition,setStartPosition] = useState(0);
 
     const disableScroll = () => {
         document.querySelector('body').style.overflow = 'hidden';
@@ -128,35 +126,34 @@ export default function Banner(props) {
         document.getElementById('banner-contents').style.transition = `${0.3}s ease-out`;
     }
 
+    let touchStartPoint;
+    let startPosition = 0;
+
     const touchBanner = (e) => {
-        // console.log(e);
-        // document.getElementById('banner-contents').style.left = (startPosition + (e.targetTouches[0].screenX - touchStart)) + 'px';
+        console.log(e);
+        document.getElementById('banner-contents').style.left = (startPosition + (e.targetTouches[0].screenX - touchStartPoint)) + 'px';
     }
 
-    let touchStartPoint;
+    
     const startBannerTouch = (e) => {
         console.log(e);
         disableScroll();
-        
-        setTouchStart(touchStartPoint);
-
-        // console.log(e.targetTouches[0].screenX);
-        // setTouchStart(e.targetTouches[0].screenX);
-        
-        // setStartPosition(Number(document.getElementById('banner-contents').style.left.replace('px','')));
+        touchStartPoint = e.targetTouches[0].screenX;
+        startPosition = Number(document.getElementById('banner-contents').style.left.replace('px',''));
+        console.log(touchStartPoint);
     }
 
     const endBannerTouch = (e) => {
-        // console.log(e);
-        // let touchDistance = e.changedTouches[0].screenX - touchStart;
-        // if (touchDistance > window.innerWidth*0.1) {
-        //     moveLeft();
-        // } 
-        // else if (touchDistance < -window.innerWidth*0.1) {
-        //     moveRight();
-        // } else {
-        //     moveReset();
-        // }
+        console.log(e);
+        let touchDistance = e.changedTouches[0].screenX - touchStartPoint;
+        if (touchDistance > window.innerWidth*0.1) {
+            moveLeft();
+        } 
+        else if (touchDistance < -window.innerWidth*0.1) {
+            moveRight();
+        } else {
+            moveReset();
+        }
         enableScroll();
     }
 
