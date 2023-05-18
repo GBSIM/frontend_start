@@ -6,14 +6,9 @@ import IconNavButton from '../IconNavButton/IconNavButton';
 import SocialLoginMobileModal from '../SocialLoginMobileModal/SocialLoginMobileModal';
 
 export default function IconNavContainer() {
-    const [isSocialLoginMobileModalOn,setSocialLoginMobileModalOn] = useState(false);
-
-    const openSocialLoginMobileModal = () => {
-        setSocialLoginMobileModalOn(true);
-    }
-
-    const closeSocialLoginMobileModal = () => {
-        setSocialLoginMobileModalOn(false);
+    const showSocialLoginMobileModal = () => {
+        const SocialLoginModal = document.getElementById("social-login-mobile-modal");
+        SocialLoginModal.showModal();
     }
 
     return (
@@ -21,10 +16,8 @@ export default function IconNavContainer() {
             <IconNavButton/>
             <IconNavButton />
             <IconNavButton />
-            <IconNavButton altText='user' clickEvent={openSocialLoginMobileModal}/>
-            <SocialLoginMobileModal
-                isOn={isSocialLoginMobileModalOn}
-                closeEvent={closeSocialLoginMobileModal}></SocialLoginMobileModal>
+            <IconNavButton altText='user' clickEvent={showSocialLoginMobileModal}/>
+            <SocialLoginMobileModal></SocialLoginMobileModal>
         </div>
     )
 }

@@ -30,8 +30,8 @@ export default function CartMobileModal(props) {
     return (
         <MobileModal id='mobile-cart-modal' isOn={props.isOn} closeEvent={props.closeEvent}>
             <div className='mobile-cart-modal-row top'>
-                <h3 className='mobile-cart-modal-item-name'>{props.name}</h3>
-                <h3 className='mobile-cart-modal-item-price'>{props.price.toLocaleString()}</h3>
+                <h2 className='mobile-cart-modal-item-name'>{props.name}</h2>
+                <h2 className='mobile-cart-modal-item-price'>{props.price.toLocaleString()}원</h2>
             </div>
             <div className='mobile-cart-modal-row middle'>
                 <Counter 
@@ -41,10 +41,10 @@ export default function CartMobileModal(props) {
                     decreaseEvent={decreaseCount}/>
             </div>
             <div className='mobile-cart-modal-row bottom'>
-                <h2 className='mobile-cart-modal-total-price'>{totalPrice.toLocaleString()}원</h2>
+                <h1 className='mobile-cart-modal-total-price'>{totalPrice.toLocaleString()}원</h1>
             </div>
             <CartAddButton
-                paddingTop={8} paddingBottom={8}/>
+                paddingTop={9} paddingBottom={9}/>
             <div className='mobile-cart-modal-row-spacer'></div>
         </MobileModal>
     )

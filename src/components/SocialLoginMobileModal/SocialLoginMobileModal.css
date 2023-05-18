@@ -1,0 +1,8 @@
+.social-login-mobile-modal-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    row-gap: 10px;
+}

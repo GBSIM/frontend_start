@@ -1,18 +1,16 @@
-import MobileModal from "../MobileModal/MobileModal";
+import './SocialLoginMobileModal.css';
 
-export default function SocialLoginMobileModal(props) {
+import Modal from "../Modal/Modal"
+
+import SocialLoginButton from "../SocialLoginButton/SocialLoginButton"
+
+export default function SocialLoginMobileModal() {
     return (
-        <MobileModal 
-            isOn={props.isOn} 
-            closeEvent={props.closeEvent}/>
+        <Modal id='social-login-mobile-modal' minWidth='75vw'>
+            <div className="social-login-mobile-modal-buttons">
+                <SocialLoginButton></SocialLoginButton>
+                <SocialLoginButton></SocialLoginButton>
+            </div>
+        </Modal>
     )
-}
-
-const defaultCloseEvent = () => {
-    
-}
-
-SocialLoginMobileModal.defaultProps = {
-    isOn: false,
-    closeEvent: defaultCloseEvent,
 }

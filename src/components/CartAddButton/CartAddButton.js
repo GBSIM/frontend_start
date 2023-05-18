@@ -18,8 +18,8 @@ export default function CartAddButton(props) {
 
 CartAddButton.defaultProps = {
     width: '100%',
-    paddingTop: 6,
-    paddingBottom: 6,
+    paddingTop: 7,
+    paddingBottom: 7,
     paddingLeft: 20,
     paddingRight: 20
 }

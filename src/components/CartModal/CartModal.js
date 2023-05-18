@@ -41,7 +41,7 @@ export default function CartModal(props) {
                     decreaseEvent={decreaseCount}/>
             </div>
             <div className='cart-modal-row bottom'>
-                <h3 className='cart-modal-total-price'>{totalPrice.toLocaleString()}원</h3>
+                <h2 className='cart-modal-total-price'>{totalPrice.toLocaleString()}원</h2>
             </div>
             <CartAddButton/>
             <div className='cart-modal-row-spacer'></div>
