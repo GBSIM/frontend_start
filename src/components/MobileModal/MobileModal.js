@@ -3,7 +3,16 @@ import './MobileModal.css';
 import BorderBoxButton from '../BorderBoxButton/BorderBoxButton';
 
 export default function MobileModal(props) {
+    const disableScroll = () => {
+        document.querySelector('body').style.overflow = 'hidden';
+    }
+
+    const enableScroll = () => {
+        document.querySelector('body').style.overflow = 'auto';
+    }
+
     if (props.isOn) {
+        disableScroll();
         return (
             <div className='mobile-modal-container on'>
                 <div className='mobile-modal on'>
@@ -24,6 +33,7 @@ export default function MobileModal(props) {
             </div>   
         )
     } else {
+        enableScroll();
         return (
             <div className='mobile-modal-container off'>
                 <div className='mobile-modal off'>
