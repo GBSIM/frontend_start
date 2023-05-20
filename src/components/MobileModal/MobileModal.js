@@ -17,6 +17,7 @@ export default function MobileModal(props) {
         CompleteButton =
             <div className='mobile-modal-complete-button-container'>
                 <QuadrangleButton
+                    textType='h3'
                     paddingTop={8}
                     paddingBottom={8}
                     text={props.completeText}
@@ -24,6 +25,18 @@ export default function MobileModal(props) {
                     clickEvent={props.completeEvent}/>
             </div>
     }
+
+    const CloseButton =
+        <div className='mobile-modal-close-button-container'>
+            <BorderBoxButton
+                textType='h3'
+                paddingTop={9}
+                paddingBottom={9}
+                text={props.closeText}
+                width='100%'
+                minWidth={300} 
+                clickEvent={props.closeEvent} />
+        </div>
 
     if (props.isOn) {
         disableScroll();
@@ -34,15 +47,7 @@ export default function MobileModal(props) {
                         {props.children}
                         <div className='mobile-modal-spacer'></div>
                         {CompleteButton}
-                        <div className='mobile-modal-close-button-container'>
-                            <BorderBoxButton
-                                paddingTop={8}
-                                paddingBottom={8}
-                                text={props.closeText}
-                                width='100%'
-                                minWidth={300} 
-                                clickEvent={props.closeEvent} />
-                        </div>
+                        {CloseButton}
                     </div>
                 </div>
             </div>   
@@ -56,15 +61,7 @@ export default function MobileModal(props) {
                         {props.children}
                         <div className='mobile-modal-spacer'></div>
                         {CompleteButton}
-                        <div className='mobile-modal-close-button-container'>
-                            <BorderBoxButton
-                                paddingTop={8}
-                                paddingBottom={8}
-                                text={props.closeText}
-                                width='100%'
-                                minWidth={300}
-                                clickEvent={props.closeEvent} />
-                        </div>
+                        {CloseButton}
                     </div>
                 </div>
             </div>

@@ -11,7 +11,8 @@ export default function ShippingEditMobileModal(props) {
                      closeEvent={props.closeEvent} 
                      height='95vh'
                      isCompleteButtonNeeded={true}
-                     completeEvent={updateShipping}>
+                     completeEvent={updateShipping}
+                     completeText='수정하기'>
             <div className='shipping-edit-mobile-modal'>
                 <span className='shipping-edit-mobile-modal-title'>받는 사람</span>
                 <input className='shipping-edit-mobile-modal-input' value={props.receiver}></input>

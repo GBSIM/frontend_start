@@ -25,8 +25,8 @@ export default function Modal(props) {
                         text={props.closeText}
                         width='100%'
                         minWidth={300}
-                        paddingTop={6}
-                        paddingBottom={6}/>
+                        paddingTop={7}
+                        paddingBottom={7}/>
                 </form>
             </div>
         </dialog>

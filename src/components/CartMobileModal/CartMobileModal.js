@@ -44,7 +44,7 @@ export default function CartMobileModal(props) {
                 <h1 className='mobile-cart-modal-total-price'>{totalPrice.toLocaleString()}원</h1>
             </div>
             <CartAddButton
-                paddingTop={9} paddingBottom={9}/>
+                paddingTop={9} paddingBottom={9} textType='h3'/>
             <div className='mobile-cart-modal-row-spacer'></div>
         </MobileModal>
     )
