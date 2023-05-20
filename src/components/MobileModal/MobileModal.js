@@ -1,6 +1,7 @@
 import './MobileModal.css';
 
 import BorderBoxButton from '../BorderBoxButton/BorderBoxButton';
+import QuadrangleButton from '../QuadrangleButton/QuadrangleButton';
 
 export default function MobileModal(props) {
     const disableScroll = () => {
@@ -11,6 +12,19 @@ export default function MobileModal(props) {
         document.querySelector('body').style.overflow = 'auto';
     }
 
+    let CompleteButton;
+    if (props.isCompleteButtonNeeded) {
+        CompleteButton =
+            <div className='mobile-modal-complete-button-container'>
+                <QuadrangleButton
+                    paddingTop={8}
+                    paddingBottom={8}
+                    text={props.completeText}
+                    width='100%'
+                    clickEvent={props.completeEvent}/>
+            </div>
+    }
+
     if (props.isOn) {
         disableScroll();
         return (
@@ -19,10 +33,11 @@ export default function MobileModal(props) {
                     <div className='mobile-modal-contents'>
                         {props.children}
                         <div className='mobile-modal-spacer'></div>
+                        {CompleteButton}
                         <div className='mobile-modal-close-button-container'>
                             <BorderBoxButton
-                                paddingTop={7}
-                                paddingBottom={7}
+                                paddingTop={8}
+                                paddingBottom={8}
                                 text={props.closeText}
                                 width='100%'
                                 minWidth={300} 
@@ -40,10 +55,11 @@ export default function MobileModal(props) {
                     <div className='mobile-modal-contents'>
                         {props.children}
                         <div className='mobile-modal-spacer'></div>
+                        {CompleteButton}
                         <div className='mobile-modal-close-button-container'>
                             <BorderBoxButton
-                                paddingTop={9}
-                                paddingBottom={9}
+                                paddingTop={8}
+                                paddingBottom={8}
                                 text={props.closeText}
                                 width='100%'
                                 minWidth={300}
@@ -64,4 +80,6 @@ MobileModal.defaultProps = {
     isOn: false,
     closeText: "닫기",
     closeEvent: defaultClickEvent,
+    isCompleteButtonNeeded: false,
+    completeText: '텍스트를 입력해주세요.'
 }

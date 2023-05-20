@@ -63,5 +63,7 @@ QuadrangleButton.defaultProps = {
     paddingBottom: 4,
     paddingRight: 8,
     paddingLeft: 8,
-    borderRadius: 6
+    borderRadius: 6,
+    text: "텍스트를 입력해주세요.",
+    width: '100%',
 }

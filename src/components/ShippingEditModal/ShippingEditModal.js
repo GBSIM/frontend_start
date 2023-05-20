@@ -1,6 +1,7 @@
 import './ShippingEditModal.css';
 
 import Modal from "../Modal/Modal";
+import QuadrangleButton from '../QuadrangleButton/QuadrangleButton';
 
 export default function ShippingEditModal(props) {
     const componentsId = 'shipping-edit-modal-' + props.id
@@ -23,6 +24,14 @@ export default function ShippingEditModal(props) {
 
                 <span className='shipping-edit-modal-title'>요청 사항</span>
                 <input className='shipping-edit-modal-input' value={props.request}></input>
+
+                <form method="dialog" className='shipping-edit-modal-close-button-container'>
+                    <QuadrangleButton
+                        paddingTop={6}
+                        paddingBottom={6}
+                        text='수정하기'
+                        ></QuadrangleButton>
+                </form>
             </div>
         </Modal>
     )

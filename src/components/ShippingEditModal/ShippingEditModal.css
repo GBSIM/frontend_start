@@ -35,3 +35,7 @@
 .shipping-edit-modal-input.address {
     margin-bottom: 0px;
 }
+
+.shipping-edit-modal-close-button-container {
+    width: 100%;
+}

@@ -64,3 +64,8 @@
 .mobile-modal-close-button-container {
     width: 100%;
 }
+
+.mobile-modal-complete-button-container {
+    width: 100%;
+    margin-bottom: 10px;
+}

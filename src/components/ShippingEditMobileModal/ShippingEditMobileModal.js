@@ -3,8 +3,15 @@ import './ShippingEditMobileModal.css';
 import MobileModal from '../MobileModal/MobileModal';
 
 export default function ShippingEditMobileModal(props) {
+    const updateShipping = () => {
+        props.closeEvent();
+    }
     return (
-        <MobileModal isOn = {props.isOn} closeEvent = {props.closeEvent} height='95vh'>
+        <MobileModal isOn={props.isOn} 
+                     closeEvent={props.closeEvent} 
+                     height='95vh'
+                     isCompleteButtonNeeded={true}
+                     completeEvent={updateShipping}>
             <div className='shipping-edit-mobile-modal'>
                 <span className='shipping-edit-mobile-modal-title'>받는 사람</span>
                 <input className='shipping-edit-mobile-modal-input' value={props.receiver}></input>
