@@ -4,9 +4,8 @@ import { useState } from 'react';
 
 import CartMobileModal from '../CartMobileModal/CartMobileModal';
 import IconButton from '../IconButton/IconButton';
-import SocialLoginMobileModal from '../SocialLoginMobileModal/SocialLoginMobileModal';
 
-export default function MobileCartButton() {
+export default function MobileCartButton(props) {
     const [isMobileCartModalOn,setMobileCartModalOn] = useState(false);
 
     const showMobileCartModal = () => {
@@ -20,13 +19,17 @@ export default function MobileCartButton() {
     return (
         <div>
             <IconButton
-                width={34}
-                heigth={34}
+                width={props.width}
+                height={props.height}
                 clickEvent={showMobileCartModal} />
             <CartMobileModal 
                 isOn={isMobileCartModalOn}
                 closeEvent={hideMobileCartModal}/>
         </div>
-        
     )
+}
+
+MobileCartButton.defaultProps = {
+    width: 34,
+    height: 34,
 }
