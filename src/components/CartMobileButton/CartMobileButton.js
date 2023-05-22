@@ -1,11 +1,11 @@
-import './MobileCartButton.css';
+import './CartMobileButton.css';
 
 import { useState } from 'react';
 
 import CartMobileModal from '../CartMobileModal/CartMobileModal';
 import IconButton from '../IconButton/IconButton';
 
-export default function MobileCartButton(props) {
+export default function CartMobileButton(props) {
     const [isMobileCartModalOn,setMobileCartModalOn] = useState(false);
 
     const showMobileCartModal = () => {
@@ -29,7 +29,7 @@ export default function MobileCartButton(props) {
     )
 }
 
-MobileCartButton.defaultProps = {
+CartMobileButton.defaultProps = {
     width: 34,
     height: 34,
 }

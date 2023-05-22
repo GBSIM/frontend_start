@@ -2,14 +2,14 @@ import './LikeMenu.css';
 
 import UnitBoxContainer from '../UnitBoxContainer/UnitBoxContainer';
 import CartButton from '../CartButton/CartButton';
-import MobileCartButton from '../MobileCartButton/MobileCartButton';
+import CartMobileButton from '../CartMobileButton/CartMobileButton';
 
 export default function LikeMenu(props) {
     let LikeMenuCartButton;
     if (window.innerWidth > 700) {
         LikeMenuCartButton = <CartButton width={50} height={50}/>
     } else {
-        LikeMenuCartButton = <MobileCartButton width={50} height={50}/>
+        LikeMenuCartButton = <CartMobileButton width={50} height={50}/>
     }
 
     return (
