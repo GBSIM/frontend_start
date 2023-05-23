@@ -18,8 +18,8 @@ export default function MobileModal(props) {
             <div className='mobile-modal-complete-button-container'>
                 <QuadrangleButton
                     textType='h3'
-                    paddingTop={8}
-                    paddingBottom={8}
+                    paddingTop={7}
+                    paddingBottom={7}
                     text={props.completeText}
                     width='100%'
                     clickEvent={props.completeEvent}/>
@@ -30,8 +30,8 @@ export default function MobileModal(props) {
         <div className='mobile-modal-close-button-container'>
             <BorderBoxButton
                 textType='h3'
-                paddingTop={9}
-                paddingBottom={9}
+                paddingTop={7}
+                paddingBottom={7}
                 text={props.closeText}
                 width='100%'
                 minWidth={300} 

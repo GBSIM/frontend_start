@@ -26,14 +26,20 @@ export default function Modal(props) {
                         width='100%'
                         minWidth={300}
                         paddingTop={7}
-                        paddingBottom={7}/>
+                        paddingBottom={7}
+                        clickEvent={props.closeEvent}/>
                 </form>
             </div>
         </dialog>
     )
 }
 
+const defaultClickEvent = () => {
+    
+}
+
 Modal.defaultProps = {
     id: 'modal',
     closeText: '닫기',
+    closeEvent: defaultClickEvent,
 }
