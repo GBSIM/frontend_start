@@ -102,7 +102,7 @@ export default function ShippingAddMobileModal(props) {
 
     let ReceiverEnterUi;
     let ReceiverEnterButton;
-    if (detailAddress) {
+    if (receiver && phone) {
         ReceiverEnterButton = 
             <QuadrangleButton
                 paddingTop={7} paddingBottom={7}

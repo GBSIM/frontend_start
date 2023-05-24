@@ -16,7 +16,7 @@
 }
 
 .mobile-modal-container.off {
-    transition: 10s;
+    /* transition: 10s; */
     z-index: -99;
 }
 
@@ -43,7 +43,7 @@
 
 .mobile-modal.off {
     bottom: -100vh;
-    transition: 1s;
+    /* transition: 1s; */
 }
 
 .mobile-modal-contents {
