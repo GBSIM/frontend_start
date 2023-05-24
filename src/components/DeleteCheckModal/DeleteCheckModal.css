@@ -1,0 +1,61 @@
+.delete-check-modal {
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #ECECEC;
+    box-shadow: 0px 4px 4px #E2E2E2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.delete-check-modal::backdrop {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.delete-check-modal-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-check-modal-guide {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #141414;
+}
+
+.delete-check-modal-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    border-top: 1px solid #eee;
+    min-width: 300px;
+}
+
+.delete-check-modal-button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.delete-check-modal-button.cancel {
+    border-right: 1px solid #eee;
+}
+
+.delete-check-modal-button-text.cancel {
+    color: blue;
+}
+
+.delete-check-modal-button-text.delete {
+    color: red;
+}

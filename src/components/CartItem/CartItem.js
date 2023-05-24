@@ -3,8 +3,14 @@ import './CartItem.css';
 import UnitBoxContainer from "../UnitBoxContainer/UnitBoxContainer";
 import Counter from '../Counter/Counter';
 import CheckButton from '../CheckButton/CheckButton';
+import DeleteCheckModal from '../DeleteCheckModal/DeleteCheckModal';
 
 export default function CartItem(props) {
+    const openDeleteCheckModal = () => {
+        const CartDeleteCheckModal = document.getElementById('cart-item-delete-modal-' + props.id);
+        CartDeleteCheckModal.showModal();
+    }
+
     return (
         <UnitBoxContainer>
             <div className="cart-item">
@@ -16,9 +22,10 @@ export default function CartItem(props) {
                     <Counter count={props.count} increaseEvent={props.addQuantity} decreaseEvent={props.subtractQuantity}/>
                     <h2 className='cart-item-price'>{props.price.toLocaleString()}원</h2>
                 </div>
-                <button className='cart-item-delete-button' onClick={() => props.deleteEvent()}>
+                <button className='cart-item-delete-button' onClick={() => openDeleteCheckModal()}>
                     <span className='cart-item-delete-button-text'>삭제하기</span>
                 </button>
+                <DeleteCheckModal id={'cart-item-delete-modal-' + props.id}/>
             </div>
         </UnitBoxContainer>
     )
@@ -29,6 +36,7 @@ const defaultClickEvent = () => {
 }
 
 CartItem.defaultProps = {
+    id: '000',
     isChecked: false,
     name: "상품명",
     checkedImage: '',

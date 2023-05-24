@@ -6,9 +6,15 @@ import UnitBoxContainer from '../UnitBoxContainer/UnitBoxContainer';
 import CheckButton from '../CheckButton/CheckButton';
 import ShippingEditModal from '../ShippingEditModal/ShippingEditModal';
 import ShippingEditMobileModal from '../ShippingEditMobileModal/ShippingEditMobileModal';
+import DeleteCheckModal from '../DeleteCheckModal/DeleteCheckModal';
 
 export default function ShippingBox(props) {
     const [isMobileModalOn, setMobileModalOn] = useState(false);
+
+    const openDeleteCheckModal = () => {
+        const ShippingDeleteCheckModal = document.getElementById('shipping-box-delete-modal-' + props.id);
+        ShippingDeleteCheckModal.showModal();
+    }
 
     const openMobileModal = () => {
         setMobileModalOn(true);
@@ -51,12 +57,13 @@ export default function ShippingBox(props) {
                 <button className='shipping-box-button' onClick={() => showShippingEditModal()}>
                     <span className='shipping-box-button-text'>편집하기</span>
                 </button>
-                <button className='shipping-box-button'>
+                <button className='shipping-box-button' onClick={() => openDeleteCheckModal()}>
                     <span className='shipping-box-button-text'>삭제하기</span>
                 </button>
             </div>
             <ShippingEditModal/>
             <ShippingEditMobileModal isOn={isMobileModalOn} closeEvent={closeMobileModal}/>
+            <DeleteCheckModal id={'shipping-box-delete-modal-' + props.id}/>
         </UnitBoxContainer>
     )
 }

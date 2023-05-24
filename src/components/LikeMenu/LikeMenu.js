@@ -3,6 +3,7 @@ import './LikeMenu.css';
 import UnitBoxContainer from '../UnitBoxContainer/UnitBoxContainer';
 import CartButton from '../CartButton/CartButton';
 import CartMobileButton from '../CartMobileButton/CartMobileButton';
+import DeleteCheckModal from '../DeleteCheckModal/DeleteCheckModal';
 
 export default function LikeMenu(props) {
     let LikeMenuCartButton;
@@ -10,6 +11,11 @@ export default function LikeMenu(props) {
         LikeMenuCartButton = <CartButton width={50} height={50}/>
     } else {
         LikeMenuCartButton = <CartMobileButton width={50} height={50}/>
+    }
+
+    const openDeleteCheckModal = () => {
+        const LikeMenuDeleteCheckModal = document.getElementById('like-menu-delete-modal-' + props.id);
+        LikeMenuDeleteCheckModal.showModal();
     }
 
     return (
@@ -20,9 +26,10 @@ export default function LikeMenu(props) {
                 <div className='like-menu-spacer'></div>
                 {LikeMenuCartButton}
             </div>
-            <button className='like-menu-delete-button'>
+            <button className='like-menu-delete-button' onClick={() => openDeleteCheckModal()}>
                 <span className='like-menu-delete-button-text'>삭제하기</span>
             </button>
+            <DeleteCheckModal id={'like-menu-delete-modal-' + props.id}/>
         </UnitBoxContainer>   
     )
 }
@@ -30,4 +37,5 @@ export default function LikeMenu(props) {
 LikeMenu.defaultProps = {
     image: '',
     name: '상품명',
+    id: '000',
 }
