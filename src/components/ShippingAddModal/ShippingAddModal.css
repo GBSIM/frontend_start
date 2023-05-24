@@ -1,0 +1,62 @@
+.shipping-add-modal {
+    width: 100%;
+}
+
+.shipping-add-modal-detail-address-enter-ui {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.shipping-add-modal-detail-address-enter-ui-spacer {
+    min-height: 100px;
+}
+
+.shipping-add-modal-title {
+    color: #aaa;
+}
+
+.shipping-add-modal-input {
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 16px;
+    text-indent: 10px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    color: #444;
+    outline: none;
+}
+
+.shipping-add-modal-input:focus {
+    outline: 2px solid #EB5C2E;
+}
+
+.shipping-add-modal-input.disabled {
+    color: #777;
+}
+
+.shipping-add-modal-receiver-enter-ui {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.shipping-add-modal-receiver-enter-ui-spacer {
+    min-height: 100px;
+}
+
+.shipping-add-modal-close-button-container {
+    display: block;
+    width: 100%;
+}
+
+.shipping-add-modal-close-button-container.off {
+    display: none;
+}

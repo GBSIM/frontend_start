@@ -44,7 +44,9 @@ export default function MobileModal(props) {
             <div className='mobile-modal-container on'>
                 <div className='mobile-modal on' style={{'height': props.height}}>
                     <div className='mobile-modal-contents'>
-                        {props.children}
+                        <div className='mobile-modal-children'>
+                            {props.children}
+                        </div>
                         <div className='mobile-modal-spacer'></div>
                         {CompleteButton}
                         {CloseButton}
@@ -58,7 +60,9 @@ export default function MobileModal(props) {
             <div className='mobile-modal-container off'>
                 <div className='mobile-modal off' style={{'height': props.height}}>
                     <div className='mobile-modal-contents'>
-                        {props.children}
+                        <div className='mobile-modal-children'>
+                            {props.children}
+                        </div>
                         <div className='mobile-modal-spacer'></div>
                         {CompleteButton}
                         {CloseButton}

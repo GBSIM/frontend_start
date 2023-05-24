@@ -46,7 +46,7 @@ export default function IconTextButton(props) {
     }
 
     return (
-        <button className='icon-text-button'>
+        <button className='icon-text-button' onClick={() => props.clickEvent()}>
             <img src={props.image}
                  className='icon-text-button-image'
                  style={{'height':props.iconSize,'width':props.iconSize}}

@@ -1,12 +1,10 @@
 import './ShippingEditMobileModal.css';
 
 import { useState } from 'react';
-import { useDispatch } from 'react-redux'
 
 import MobileModal from '../MobileModal/MobileModal';
 
 export default function ShippingEditMobileModal(props) {
-    const dispatch = useDispatch();
     const [receiver,setReceiver] = useState(props.receiver);
     const [phone,setPhone] = useState(props.phone);
     const [tag,setTag] = useState(props.tag);
@@ -76,7 +74,6 @@ export default function ShippingEditMobileModal(props) {
 
 ShippingEditMobileModal.defaultProps = {
     isOn: false,
-    id: '000',
     basicAddress: '경기도 화성시 시청로 102번길 11',
     detailAddress: '101동 1001호',
     receiver: "크리스",
