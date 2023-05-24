@@ -12,8 +12,13 @@ export default function CartAddButton(props) {
             paddingBottom={props.paddingBottom}
             paddingLeft={props.paddingLeft}
             paddingRight={props.paddingRight}
+            clickEvent={props.cartAddAction}
             />
     )
+}
+
+const defaultClickEvent = () => {
+    
 }
 
 CartAddButton.defaultProps = {
@@ -23,4 +28,5 @@ CartAddButton.defaultProps = {
     paddingLeft: 20,
     paddingRight: 20,
     textType: 'span',
+    cartAddAction: defaultClickEvent,
 }

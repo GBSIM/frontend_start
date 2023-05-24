@@ -13,6 +13,10 @@ export default function CartMobileModal(props) {
         setCount(props.minimumQuantity);
     }
 
+    const addItemToCart = () => {
+        props.closeEvent();
+    }
+
     const increaseCount = () => {
         console.log("+")
         setCount(count + 1);
@@ -44,7 +48,7 @@ export default function CartMobileModal(props) {
                 <h1 className='mobile-cart-modal-total-price'>{totalPrice.toLocaleString()}원</h1>
             </div>
             <CartAddButton
-                paddingTop={7} paddingBottom={7} textType='h3'/>
+                paddingTop={7} paddingBottom={7} textType='h3' cartAddAction={addItemToCart}/>
             <div className='mobile-cart-modal-row-spacer'></div>
         </MobileModal>
     )
