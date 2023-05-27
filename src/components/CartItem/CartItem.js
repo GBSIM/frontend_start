@@ -15,7 +15,7 @@ export default function CartItem(props) {
         <UnitBoxContainer>
             <div className="cart-item">
                 <CheckButton size={24} isOn={props.isChecked}/>
-                <img src={props.itemImage} className='cart-item-image'></img>
+                <img src={props.itemImage} className='cart-item-image' alt='item'></img>
                 <h3 className='cart-item-name'>{props.name}</h3>
                 <div className='cart-item-spacer'></div>
                 <div className='cart-item-right-contents'>
@@ -25,7 +25,9 @@ export default function CartItem(props) {
                 <button className='cart-item-delete-button' onClick={() => openDeleteCheckModal()}>
                     <span className='cart-item-delete-button-text'>삭제하기</span>
                 </button>
-                <DeleteCheckModal id={'cart-item-delete-modal-' + props.id}/>
+                <DeleteCheckModal 
+                    id={'cart-item-delete-modal-' + props.id}
+                    deleteEvent={props.deleteEvent}/>
             </div>
         </UnitBoxContainer>
     )
