@@ -15,7 +15,7 @@ export default function CartModal(props) {
     }
 
     const decreaseCount = () => {
-        if (count !== props.minimumQuantity) {
+        if (count > props.minimumQuantity) {
             console.log("-")
             setCount(count - 1);
         }

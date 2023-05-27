@@ -19,7 +19,7 @@ export default function CartMobileModal(props) {
     }
 
     const decreaseCount = () => {
-        if (count !== props.minimumQuantity) {
+        if (count > props.minimumQuantity) {
             console.log("-")
             setCount(count - 1);
         }
