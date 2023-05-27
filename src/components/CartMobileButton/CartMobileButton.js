@@ -24,7 +24,11 @@ export default function CartMobileButton(props) {
                 clickEvent={showMobileCartModal} />
             <CartMobileModal 
                 isOn={isMobileCartModalOn}
-                closeEvent={hideMobileCartModal}/>
+                closeEvent={hideMobileCartModal}
+                name={props.name}
+                price={props.price}
+                minimumQuantity={props.minimumQuantity}
+                id={props.id}/>
         </div>
     )
 }
@@ -32,4 +36,8 @@ export default function CartMobileButton(props) {
 CartMobileButton.defaultProps = {
     width: 34,
     height: 34,
+    name: "상품명",
+    price: 2500,
+    minimumQuantity: 1,
+    id: '000',
 }

@@ -8,9 +8,21 @@ import DeleteCheckModal from '../DeleteCheckModal/DeleteCheckModal';
 export default function LikeMenu(props) {
     let LikeMenuCartButton;
     if (window.innerWidth > 700) {
-        LikeMenuCartButton = <CartButton width={50} height={50}/>
+        LikeMenuCartButton = <CartButton 
+                                width={50} 
+                                height={50}
+                                name={props.name}
+                                price={props.price}
+                                minimumQuantity={props.minimumQuantity}
+                                id={props.id}/>
     } else {
-        LikeMenuCartButton = <CartMobileButton width={50} height={50}/>
+        LikeMenuCartButton = <CartMobileButton 
+                                width={50}
+                                height={50}
+                                name={props.name}
+                                price={props.price}
+                                minimumQuantity={props.minimumQuantity}
+                                id={props.id}/>
     }
 
     const openDeleteCheckModal = () => {
@@ -37,5 +49,6 @@ export default function LikeMenu(props) {
 LikeMenu.defaultProps = {
     image: '',
     name: '상품명',
+    price: 2500,
     id: '000',
 }

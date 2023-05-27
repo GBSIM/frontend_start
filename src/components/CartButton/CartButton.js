@@ -6,7 +6,7 @@ import IconButton from '../IconButton/IconButton';
 
 export default function CartButton(props) {
     const showCartModal = () => {
-        const CartModal = document.getElementById("cart-modal");
+        const CartModal = document.getElementById("cart-modal"+props.id);
         CartModal.showModal();
     }
 
@@ -16,7 +16,11 @@ export default function CartButton(props) {
                 width={props.width}
                 height={props.height}
                 clickEvent={showCartModal} />
-            <CartModal />
+            <CartModal
+                name={props.name}
+                price={props.price}
+                minimumQuantity={props.minimumQuantity}
+                id={props.id}/>
         </div>        
     )
 }
@@ -24,5 +28,9 @@ export default function CartButton(props) {
 CartButton.defaultProps = {
     width: 34,
     height: 34,
+    name: "상품명",
+    price: 2500,
+    minimumQuantity: 1,
+    id: '000'
 }
 

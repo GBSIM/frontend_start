@@ -7,11 +7,7 @@ import Counter from '../Counter/Counter';
 import CartAddButton from '../CartAddButton/CartAddButton';
 
 export default function CartMobileModal(props) {
-    const [count, setCount] = useState(1);
-
-    if (props.minimumQuantity > 1) {
-        setCount(props.minimumQuantity);
-    }
+    const [count, setCount] = useState(props.minimumQuantity);
 
     const addItemToCart = () => {
         props.closeEvent();
@@ -32,7 +28,7 @@ export default function CartMobileModal(props) {
     const totalPrice = count * props.price;
     
     return (
-        <MobileModal id='mobile-cart-modal' isOn={props.isOn} closeEvent={props.closeEvent}>
+        <MobileModal id={'mobile-cart-modal-'+props.id} isOn={props.isOn} closeEvent={props.closeEvent}>
             <div className='mobile-cart-modal-row top'>
                 <h2 className='mobile-cart-modal-item-name'>{props.name}</h2>
                 <h2 className='mobile-cart-modal-item-price'>{props.price.toLocaleString()}원</h2>
@@ -58,5 +54,6 @@ CartMobileModal.defaultProps = {
     name: "상품명",
     price: 2500,
     minimumQuantity: 1,
+    id: '000',
     isOn: false,
 }
