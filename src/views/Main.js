@@ -4,9 +4,7 @@ import Header from "../components/Header/Header"
 import Banner from '../components/Banner/Banner';
 import Footer from '../components/Footer/Footer';
 
-import ItemList from '../components/ItemList/ItemList';
-import LikeMenuList from '../components/LikeMenuList/LikeMenuList';
-import ShippingList from '../components/ShippingList/ShippingList';
+import ShippingContentsContainer from '../components/ShippingContentsContainer/ShippingContentsContainer';
 
 export default function Main() {
     return (
@@ -15,9 +13,7 @@ export default function Main() {
             <Banner/>
             <div className='contents-container'>
                 <div className='contents'>
-                    <ItemList/>
-                    <LikeMenuList/>
-                    <ShippingList/>
+                    <ShippingContentsContainer/>
                 </div>
             </div>
             <Footer/>
