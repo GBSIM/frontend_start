@@ -58,11 +58,11 @@ export default function Banner(props) {
                 <img
                     src={props.wideScreenImage}
                     className='banner-image wide'
-                    alt='banner-wide-screen'></img>
+                    alt={'banner-wide-screen-'+(props.index)}></img>
                 <img
                     src={props.mobileImage}
                     className='banner-image mobile'
-                    alt='banner-mobile'></img>
+                    alt={'banner-mobile-'+(props.index)}></img>
             </a>
         )
     }
@@ -71,7 +71,8 @@ export default function Banner(props) {
             <BannerImageContainer
                 wideScreenImage={banner.wideScreenImage}
                 mobileImage={banner.mobileImage}
-                key={'banner-'+String(index)} />
+                key={'banner-'+String(index)}
+                index={index}/>
         )
     })
     const LastBanner = <BannerImageContainer  

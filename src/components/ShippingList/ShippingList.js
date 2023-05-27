@@ -10,7 +10,8 @@ export default function ShippingList(props) {
         detailAddress={shipping.detailAddress}
         name={shipping.name}
         phone={shipping.phone}
-        id={shipping.id}/>   
+        id={shipping.id}
+        key={'shipping-list-'+index}/>   
     ))
 
     return (
