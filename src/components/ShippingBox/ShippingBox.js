@@ -43,7 +43,7 @@ export default function ShippingBox(props) {
                 </div>
                 <div className='shipping-box-text-container'>
                     <span className='shipping-box-text'>
-                        {props.address}
+                        {props.basicAddress} {props.detailAddress}
                     </span>
                     <span className='shipping-box-text'>
                         {props.name}, {props.phone}
@@ -61,8 +61,22 @@ export default function ShippingBox(props) {
                     <span className='shipping-box-button-text'>삭제하기</span>
                 </button>
             </div>
-            <ShippingEditModal/>
-            <ShippingEditMobileModal isOn={isMobileModalOn} closeEvent={closeMobileModal}/>
+            <ShippingEditModal 
+                receiver={props.name} 
+                phone={props.phone} 
+                basicAddress={props.basicAddress} 
+                detailAddress={props.detailAddress} 
+                id={props.id}
+                tag={props.tag}/>
+            <ShippingEditMobileModal 
+                isOn={isMobileModalOn} 
+                closeEvent={closeMobileModal}
+                receiver={props.name} 
+                phone={props.phone} 
+                basicAddress={props.basicAddress} 
+                detailAddress={props.detailAddress} 
+                id={props.id}
+                tag={props.tag}/>
             <DeleteCheckModal id={'shipping-box-delete-modal-' + props.id}/>
         </UnitBoxContainer>
     )
@@ -70,7 +84,8 @@ export default function ShippingBox(props) {
 
 ShippingBox.defaultProps = {
     tag: '배송지',
-    address: '주소',
+    basicAddress: '도로명 주소',
+    detailAddress: '상세 주소',
     name: '이름',
     phone: '010-0000-0000',
     id: '000'
