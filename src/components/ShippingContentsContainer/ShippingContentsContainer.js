@@ -1,5 +1,6 @@
 import UnitContentsContainer from "../UnitContentsContainer/UnitContentsContainer";
 import ShippingList from "../ShippingList/ShippingList";
+import ShippingAddButton from "../ShippingAddButton/ShippingAddButton";
 
 export default function ShippingContentsContainer(props) {
     return (
@@ -7,6 +8,7 @@ export default function ShippingContentsContainer(props) {
             title='배송지'
             shippingList={props.shippingList}>
             <ShippingList/>
+            <ShippingAddButton/>
         </UnitContentsContainer>
     )
 }
