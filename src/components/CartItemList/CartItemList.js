@@ -11,7 +11,8 @@ export default function CartItemList(props) {
             checkedImage=''
             uncheckedImage=''
             price={cartItem.price}
-            count={cartItem.count}/>
+            count={cartItem.count}
+            key={'cart-item-'+cartItem.id}/>
     ))
     return (
         <div className='cart-item-list'>

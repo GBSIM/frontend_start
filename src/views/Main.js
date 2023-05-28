@@ -5,6 +5,7 @@ import Banner from '../components/Banner/Banner';
 import Footer from '../components/Footer/Footer';
 
 import CartItemList from '../components/CartItemList/CartItemList';
+import UnderlineNavContainer from '../components/UnderlineNavContainer/UnderlineNavContainer';
 
 export default function Main() {
     return (
@@ -14,6 +15,7 @@ export default function Main() {
             <div className='contents-container'>
                 <div className='contents'>
                     <CartItemList/>
+                    <UnderlineNavContainer/>
                 </div>
             </div>
             <Footer/>
