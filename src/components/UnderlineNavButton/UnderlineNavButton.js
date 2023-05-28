@@ -2,7 +2,7 @@ import './UnderlineNavButton.css';
 
 export default function UnderlineNavButton(props) {
     let ButtonText;
-    const borderProperty = '1px solid ' + props.activatedColor;
+    const borderProperty = '2px solid ' + props.activatedColor;
     switch(props.textType) {
         case "span":
             if (props.isOn) {

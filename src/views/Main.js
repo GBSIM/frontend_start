@@ -13,9 +13,9 @@ export default function Main() {
             <Header/>
             <Banner/>
             <div className='contents-container'>
+                <UnderlineNavContainer/>
                 <div className='contents'>
                     <CartItemList/>
-                    <UnderlineNavContainer/>
                 </div>
             </div>
             <Footer/>
