@@ -7,6 +7,9 @@ import Footer from '../components/Footer/Footer';
 import CartItemList from '../components/CartItemList/CartItemList';
 import UnderlineNavContainer from '../components/UnderlineNavContainer/UnderlineNavContainer';
 import UserClass from '../components/UserClass/UserClass';
+import LikeMenuContentsContainer from '../components/LikeMenuContentsContainer/LikeMenuContentsContainer';
+import ShippingContentsContainer from '../components/ShippingContentsContainer/ShippingContentsContainer';
+import ItemContentsContainer from '../components/ItemContentsContainer/ItemContentsContainer';
 
 export default function Main() {
     return (
@@ -18,6 +21,9 @@ export default function Main() {
                 <div className='contents'>
                     <CartItemList/>
                     <UserClass/>
+                    <LikeMenuContentsContainer/>
+                    <ShippingContentsContainer/>
+                    <ItemContentsContainer/>
                 </div>
             </div>
             <Footer/>
