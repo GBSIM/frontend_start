@@ -1,7 +1,6 @@
 import './ItemContentsContainer.css';
 
 import ItemList from "../ItemList/ItemList";
-import UnitContentsContainer from '../UnitContentsContainer/UnitContentsContainer';
 
 export default function ItemContentsContainer(props) {
     return (

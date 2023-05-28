@@ -8,7 +8,7 @@ export default function UnderlineNavContainer(props) {
     const [nav, setNav] = useState(props.initialNav)
 
     let navButtonEvent;
-    const UnderlineNavButtons = props.navTextList.map((navText) => {
+    const UnderlineNavButtons = props.navTextList.map((navText,index) => {
         navButtonEvent = () => {
             console.log(navText);
             setNav(navText);
@@ -17,7 +17,8 @@ export default function UnderlineNavContainer(props) {
             <UnderlineNavButton
                 text={navText}
                 isOn={navText === nav}
-                clickEvent={navButtonEvent}/>
+                clickEvent={navButtonEvent}
+                key={'underline-nav-'+index}/>
         )
     })
 
