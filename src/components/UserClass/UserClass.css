@@ -1,0 +1,32 @@
+.user-class {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 5px;
+}
+
+.user-class-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.user-class-box {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 6px;
+}
+
+.user-class-name {
+    color: #141414;
+}
+
+.user-class-detail-button-text {
+    color: #ccc;
+}

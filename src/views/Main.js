@@ -6,6 +6,7 @@ import Footer from '../components/Footer/Footer';
 
 import CartItemList from '../components/CartItemList/CartItemList';
 import UnderlineNavContainer from '../components/UnderlineNavContainer/UnderlineNavContainer';
+import UserClass from '../components/UserClass/UserClass';
 
 export default function Main() {
     return (
@@ -16,6 +17,7 @@ export default function Main() {
                 <UnderlineNavContainer/>
                 <div className='contents'>
                     <CartItemList/>
+                    <UserClass/>
                 </div>
             </div>
             <Footer/>
