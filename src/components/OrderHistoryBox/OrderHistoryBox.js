@@ -11,6 +11,13 @@ export default function OrderHistoryBox(props) {
                 <span className='order-history-box-info-value'>{props.pickupDate} {props.pickupTime}</span>
             </div>
     }
+    let itemSummary;
+    if (props.items.length > 1) {
+        itemSummary = props.items[0].name + '외 ' + String(props.items.length - 1) + '건';
+    } else {
+        itemSummary = props.items[0].name;
+    }
+    
     return (
         <UnitBoxContainer>
             <div className='order-history-box'>
@@ -24,7 +31,7 @@ export default function OrderHistoryBox(props) {
                     </div>
                     <div className='order-history-box-info'>
                         <span className='order-history-box-info-title'>주문한 상품</span>
-                        <span className='order-history-box-info-value'>{props.items}</span>
+                        <span className='order-history-box-info-value'>{itemSummary}</span>
                     </div>
                     <div className='order-history-box-info'>
                         <span className='order-history-box-info-title'>결제 금액</span>
@@ -47,7 +54,7 @@ export default function OrderHistoryBox(props) {
 OrderHistoryBox.defaultProps = {
     orderType: 'pickup',
     orderDate: '2023.12.31',
-    items: '바스크치즈케이크',
+    items: [{name:'바스크치즈케이크',price:42000},{name:'골드키위요거트생크림케이크',price:45000}],
     payedMoney: 42000,
     pickupDate: '2023.12.31',
     pickupTime: '15:00',
