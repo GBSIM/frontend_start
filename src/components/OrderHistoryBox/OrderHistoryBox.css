@@ -1,0 +1,47 @@
+.order-history-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.order-history-box-image {
+    width: 120px;
+    height: 120px;
+}
+
+.order-history-box-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 5px;
+}
+
+.order-history-box-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.order-history-box-info-title {
+    min-width: 100px;
+    color: #aaa;
+}
+
+.order-history-box-info-value {
+    color: #141414;
+}
+
+.order-history-box-detail-button {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+
+.order-history-box-detail-button-text {
+    color: #aaa;
+    font-size: 12px;
+}

@@ -10,6 +10,7 @@ import UserClass from '../components/UserClass/UserClass';
 import LikeMenuContentsContainer from '../components/LikeMenuContentsContainer/LikeMenuContentsContainer';
 import ShippingContentsContainer from '../components/ShippingContentsContainer/ShippingContentsContainer';
 import ItemContentsContainer from '../components/ItemContentsContainer/ItemContentsContainer';
+import OrderHistoryBox from '../components/OrderHistoryBox/OrderHistoryBox';
 
 export default function Main() {
     return (
@@ -24,6 +25,7 @@ export default function Main() {
                     <LikeMenuContentsContainer/>
                     <ShippingContentsContainer/>
                     <ItemContentsContainer/>
+                    <OrderHistoryBox/>
                 </div>
             </div>
             <Footer/>
