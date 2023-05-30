@@ -8,6 +8,7 @@ export default function ShippingContentsContainer(props) {
             title='배송지'
             shippingList={props.shippingList}>
             <ShippingList/>
+            <div style={{'minHeight':'15px'}}></div>
             <ShippingAddButton/>
         </UnitContentsContainer>
     )
