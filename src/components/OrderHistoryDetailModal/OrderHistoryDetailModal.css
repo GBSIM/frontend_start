@@ -1,0 +1,47 @@
+.order-history-detail-modal-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.order-history-detail-modal-row {
+    width: 100%;
+    min-width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.order-history-detail-modal-image {
+    width: 100px;
+    height: 100px;
+}
+
+.order-history-detail-modal-text {
+    font-weight: 500;
+}
+
+.order-history-detail-modal-text.name {
+    color: #141414;
+}
+
+.order-history-detail-modal-text.price {
+    color: #aaa;
+}
+
+.order-history-detail-modal-text-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}

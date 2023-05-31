@@ -1,8 +1,13 @@
 import './OrderHistoryBox.css';
 
+import { useState } from 'react';
+
 import UnitBoxContainer from '../UnitBoxContainer/UnitBoxContainer';
+import OrderHistoryDetailModal from '../OrderHistoryDetailModal/OrderHistoryDetailModal';
 
 export default function OrderHistoryBox(props) {
+    const [isMobileModalOn, setMobileModalOn] = useState(false);
+
     let PickupDate;
     if (props.orderType === 'pickup') {
         PickupDate = 
@@ -16,6 +21,23 @@ export default function OrderHistoryBox(props) {
         itemSummary = props.items[0].name + '외 ' + String(props.items.length - 1) + '건';
     } else {
         itemSummary = props.items[0].name;
+    }
+
+    const openMobileModal = () => {
+        setMobileModalOn(true);
+    }
+
+    const closeMobileModal = () => {
+        setMobileModalOn(false);
+    }
+
+    const showOrderHistoryDetailModal = () => {
+        if (window.innerWidth > 700) {
+            const OrderHistoryDetailModal = document.getElementById('order-history-detail-modal-' + props.id);
+            OrderHistoryDetailModal.showModal();
+        } else {
+            openMobileModal();
+        }
     }
     
     return (
@@ -44,14 +66,16 @@ export default function OrderHistoryBox(props) {
                     </div>
                 </div>
             </div>
-            <button className='order-history-box-detail-button'>
+            <button className='order-history-box-detail-button' onClick={() => showOrderHistoryDetailModal()}>
                 <span className='order-history-box-detail-button-text'>상세보기</span>
             </button>
+            <OrderHistoryDetailModal />
         </UnitBoxContainer>
     )
 }
 
 OrderHistoryBox.defaultProps = {
+    id: '000',
     orderType: 'pickup',
     orderDate: '2023.12.31',
     items: [{name:'바스크치즈케이크',price:42000},{name:'골드키위요거트생크림케이크',price:45000}],
