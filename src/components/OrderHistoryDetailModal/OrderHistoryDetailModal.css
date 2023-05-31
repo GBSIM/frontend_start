@@ -1,21 +1,20 @@
 .order-history-detail-modal-contents {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     row-gap: 15px;
-    max-height: 50vh;
     overflow-y: auto;
-    overflow-x: hidden;
-    padding-top: 20px;
-    padding-bottom: 20px;    
-    padding-left: 10px;
+    max-height: 60vh;
+    height: 100%;
+    padding-bottom: 20px;
+    min-width: 400px;
     padding-right: 10px;
 }
 
 .order-history-detail-modal-row {
     width: 100%;
-    min-width: 400px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -44,4 +43,18 @@
     display: flex;
     flex-direction: column;
     row-gap: 5px;
+}
+
+.order-history-detail-modal-title-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-history-detail-modal-title {
+    color: #bbb;
 }

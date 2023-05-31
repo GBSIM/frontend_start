@@ -1,0 +1,59 @@
+.order-history-detail-mobile-modal-contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 15px;
+    overflow-y: auto;
+    max-height: 80vh;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.order-history-detail-mobile-modal-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.order-history-detail-mobile-modal-image {
+    width: 80px;
+    height: 80px;
+}
+
+.order-history-detail-mobile-modal-text-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.order-history-detail-mobile-modal-text {
+    font-weight: 500;
+}
+
+.order-history-detail-mobile-modal-text.name {
+    color: #141414;
+}
+
+.order-history-detail-mobile-modal-text.price {
+    color: #aaa
+}
+
+.order-history-detail-mobile-modal-title-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.order-history-detail-mobiel-modal-title {
+    color: #bbb;
+}
