@@ -3,6 +3,7 @@ import './ItemDetail.css';
 import { useState } from 'react';
 
 import Counter from '../Counter/Counter';
+import CartAddButton from '../CartAddButton/CartAddButton';
 
 export default function ItemDetail(props) {
     const [quantity, setQuantity] = useState(1);
@@ -86,6 +87,11 @@ export default function ItemDetail(props) {
                 </div>
                 <div className='item-detail-contents-row total-price'>
                     <h2 className='item-detail-contents-header price'>{totalPrice.toLocaleString()}원</h2>
+                </div>
+                <div className='item-detail-contents-row cart-add-button'>
+                    <CartAddButton 
+                        paddingTop={10}
+                        paddingBottom={10}/>
                 </div>
             </div>
         </div>
