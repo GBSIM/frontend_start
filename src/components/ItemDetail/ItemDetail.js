@@ -36,7 +36,7 @@ export default function ItemDetail(props) {
             itemType = '선물배송 상품';
             typeTitle = '선물';
             typeDetail = '퀵 배송';
-            typeDescription= '선택하신 날짜에 퀵 배송을 보내드려요. 최대 한달 후까지 주문 가능해요.';
+            typeDescription= '선택하신 날짜에 퀵 배송을 보내드려요. 최대 한달 후 날짜까지 주문 가능해요.';
             break;
         default:
             itemType = '배송주문 상품';
