@@ -15,9 +15,5 @@
 }
 
 .order-sheet-item-text {
-    color: #666;
-}
-
-.order-sheet-item-text.name {
     color: #111;
 }
