@@ -15,5 +15,5 @@ export default function CustomerInfoContentsContainer(props) {
 CustomerInfoContentsContainer.defaultProps = {
     name: '이름',
     phone: '010-0000-0000',
-    email: 'aaa@gmail.com',
+    email: 'abcd@gmail.com',
 }

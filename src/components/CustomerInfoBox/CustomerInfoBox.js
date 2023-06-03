@@ -1,13 +1,36 @@
 import './CustomerInfoBox.css';
 
+import { useState } from 'react';
+
 import UnitBoxContainer from '../UnitBoxContainer/UnitBoxContainer';
+import CustomerEditModal from '../CustomerEditModal/CustomerEditModal';
+import CustomerEditMobileModal from '../CustomerEditMobileModal/CustomerEditMobileModal';
 
 export default function CustomerInfoBox(props) {
+    const [isMobileModalOn, setMobileModalOn] = useState(false);
+
+    const openMobileModal = () => {
+        setMobileModalOn(true);
+    }
+
+    const closeMobileModal = () => {
+        setMobileModalOn(false);
+    }
+
+    const showCustomerEditModal = () => {
+        if (window.innerWidth > 700) {
+            const ShippingEditModal = document.getElementById('customer-edit-modal');
+            ShippingEditModal.showModal();
+        } else {
+            openMobileModal();
+        }
+    }
+
     let CustomerEditButton;
     let CustomerInfoBoxSpacer;
     if (props.editable) {
         CustomerEditButton =
-            <div className='customer-info-box-row edit-button'>
+            <div className='customer-info-box-row edit-button' onClick={() => showCustomerEditModal()}>
                 <button className='customer-info-box-edit-button'>
                     <span className='customer-info-box-edit-button-text'>수정하기</span>
                 </button>
@@ -33,6 +56,16 @@ export default function CustomerInfoBox(props) {
                 {CustomerEditButton}
                 {CustomerInfoBoxSpacer}
             </div>
+            <CustomerEditModal
+                name={props.name}
+                phone={props.phone}
+                email={props.email} />
+            <CustomerEditMobileModal
+                name={props.name}
+                phone={props.phone}
+                email={props.email}
+                isOn={isMobileModalOn}
+                closeEvent={closeMobileModal}/>
         </UnitBoxContainer>
     )
 }
