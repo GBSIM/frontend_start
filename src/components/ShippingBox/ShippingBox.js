@@ -55,7 +55,7 @@ export default function ShippingBox(props) {
             </div>
             <div className='shipping-box-button-container'>
                 <button className='shipping-box-button' onClick={() => showShippingEditModal()}>
-                    <span className='shipping-box-button-text'>편집하기</span>
+                    <span className='shipping-box-button-text'>수정하기</span>
                 </button>
                 <button className='shipping-box-button' onClick={() => openDeleteCheckModal()}>
                     <span className='shipping-box-button-text'>삭제하기</span>

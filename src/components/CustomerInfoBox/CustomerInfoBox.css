@@ -1,0 +1,31 @@
+.customer-info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    row-gap: 10px;
+}
+
+.customer-info-box-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: end;
+}
+
+.customer-info-box-row.edit-button {
+    position: absolute;
+    bottom: 5px;
+    justify-content: flex-end;
+}
+
+.customer-info-box-edit-button-text {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.customer-info-box-text {
+    color: #111;
+}
