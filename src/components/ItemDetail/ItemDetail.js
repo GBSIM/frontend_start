@@ -25,7 +25,7 @@ export default function ItemDetail(props) {
             itemType = '배송주문 상품';
             typeTitle = '배송';
             typeDetail = '택배 배송';
-            typeDescription= "14시 이전 주문은 당일에 배송 시작됩니다. 배송은 하루 ~ 이틀 걸려요."
+            typeDescription= "14시 이전 주문은 당일에 배송이 시작됩니다. 배송은 하루 ~ 이틀 걸려요."
             break;
         case "pickup":
             itemType = '픽업주문 상품';
