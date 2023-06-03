@@ -1,6 +1,38 @@
 import './ItemDescription.css';
 
 export default function ItemDescription(props) {
+    const Graddients = props.gradientList.map((gradient, index) => {
+        return (
+            <div className='item-description-gradients-container' key={'gradient_'+index}>
+                <span className='item-description-text name'>
+                    {gradient.name}
+                </span>
+                <span className='item-description-text'>
+                    식품유형: {gradient.type}
+                </span>
+                <span className='item-description-text'>
+                    소재지: {gradient.place}
+                </span>
+                <span className='item-description-text'>
+                    제조 년월일: {gradient.productionDate}
+                </span>
+                <span className='item-description-text'>
+                    유통기한: {gradient.expirationDate}
+                </span>
+                <span className='item-description-text'>
+                    내용량: {gradient.weight}
+                </span>
+                <span className='item-description-text'>
+                    포장재: {gradient.package}
+                </span>
+                <span className='item-description-text'>
+                    원재료명 및 함량: {gradient.gradients}
+                </span>
+            </div>
+        )
+    })
+
+
     return (
         <div className='item-description'>
             <img className='item-description-image'
@@ -40,9 +72,7 @@ export default function ItemDescription(props) {
                     <h2 className='item-description-title'>재료 및 성분</h2>
                 </div>
                 <div className='item-description-text-container'>
-                    <span className='item-description-text'>
-                        재료
-                    </span>
+                    {Graddients}
                 </div>
             </div>
             <div className='item-description-container'>
@@ -82,4 +112,22 @@ ItemDescription.defaultProps = {
     name: '상품명',
     description: '상품의 소개를 작성해주세요.',
     image1: '',
+    gradientList: [
+        {name: '상품명을 적어주세요.',
+         type: '상품 종류를 적어주세요.',
+         place: '생산지를 적어주세요.',
+         productionDate: '생신연월일을 적어주세요.',
+         expirationDate: '유통기한을 적어주세요.',
+         weight: '무게를 적어주세요.',
+         package: '포장재를 적어주세요.',
+         gradients: '밀가루(미국산),버터(프랑스산),계란(국내산)'},
+        {name: '상품명을 적어주세요.',
+         type: '상품 종류를 적어주세요.',
+         place: '생산지를 적어주세요.',
+         productionDate: '생신연월일을 적어주세요.',
+         expirationDate: '유통기한을 적어주세요.',
+         weight: '무게를 적어주세요.',
+         package: '포장재를 적어주세요.',
+         gradients: '밀가루(미국산),버터(프랑스산),계란(국내산)'}
+    ]
 }

@@ -15,6 +15,7 @@ export default function Main() {
             <div className='contents-container'>
                 <div className='contents'>
                     <ItemDetail/>
+                    <div style={{'minHeight':'30px'}}></div>
                     <ItemDescription/>
                 </div>
             </div>

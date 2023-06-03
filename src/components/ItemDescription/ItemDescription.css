@@ -65,4 +65,15 @@
     color: #999;
 }
 
+.item-description-gradients-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 7px;
+    margin-bottom: 10px;
+}
 
+.item-description-text.name {
+    color: #666;
+    font-weight: 500;
+}
