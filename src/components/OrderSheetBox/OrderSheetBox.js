@@ -6,7 +6,7 @@ export default function OrderSheetBox(props) {
     const Items = props.items.map((item,index) => {
         return (
             <div className='order-sheet-item-container'>
-                <span className='order-sheet-item-text'>{item.name} x {item.quantity}</span>
+                <span className='order-sheet-item-text name'>{item.name} x {item.quantity}</span>
                 <span className='order-sheet-item-text'>{(item.price*item.quantity).toLocaleString()}원</span>
             </div>
         )

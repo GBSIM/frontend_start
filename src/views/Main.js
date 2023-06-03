@@ -4,7 +4,7 @@ import Header from "../components/Header/Header"
 import Banner from '../components/Banner/Banner';
 import Footer from '../components/Footer/Footer';
 
-import OrderSheetBox from '../components/OrderSheetBox/OrderSheetBox';
+import OrderSheetContentsContainer from '../components/OrderSheetContentsContainer/OrderSheetContentsContainer';
 
 export default function Main() {
     return (
@@ -13,7 +13,7 @@ export default function Main() {
             <Banner/>
             <div className='contents-container'>
                 <div className='contents'>
-                    <OrderSheetBox/>
+                    <OrderSheetContentsContainer/>
                 </div>
             </div>
             <Footer/>
