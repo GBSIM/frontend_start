@@ -1,0 +1,19 @@
+.order-sheet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    row-gap: 7px;
+}
+.order-sheet-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.order-sheet-item-text {
+    color: #666;
+}
