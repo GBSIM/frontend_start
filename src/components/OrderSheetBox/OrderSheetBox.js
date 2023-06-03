@@ -1,8 +1,8 @@
-import './OrderSheet.css';
+import './OrderSheetBox.css';
 
 import UnitBoxContainer from '../UnitBoxContainer/UnitBoxContainer';
 
-export default function OrderSheet(props) {
+export default function OrderSheetBox(props) {
     const Items = props.items.map((item,index) => {
         return (
             <div className='order-sheet-item-container'>
@@ -21,7 +21,7 @@ export default function OrderSheet(props) {
     )
 }
 
-OrderSheet.defaultProps = {
+OrderSheetBox.defaultProps = {
     items: [
         {name: '상품명1', price: 5500, quantity: 1},
         {name: '상품명2', price: 2500, quantity: 3},
