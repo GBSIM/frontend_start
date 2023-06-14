@@ -13,7 +13,7 @@ export default function QuadrangleIconTextButton(props) {
                     'minWidth':props.minWidth}}>
             <img className='quadrangle-icon-text-button-icon' src={props.image} 
                 style={{'width':props.iconWidth,'height':props.iconHeight,'left':props.iconLeft,'top':props.iconTop}} alt='O'></img>
-            <span className='quadrangle-icon-text-button-text' style={{'color':props.color}}>{props.text}</span>
+            <span className='quadrangle-icon-text-button-text' style={{'color':props.color,'fontWeight':props.fontWeight}}>{props.text}</span>
         </button>
     )
 }
@@ -32,4 +32,5 @@ QuadrangleIconTextButton.defaultProps = {
     iconWidth: 10,
     iconHeight: 10,
     iconLeft: 10,
+    fontWeight: 500,
 }
