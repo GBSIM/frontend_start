@@ -27,7 +27,8 @@ export default function ShippingAddButton(props) {
     return (
         <div>
             <IconTextButton
-                iconSize={40}
+                image={require('../../icons/round_plus_grey.png')}
+                iconSize={24}
                 color='#ccc'
                 text='새로운 배송지 추가하기'
                 textType='h3'
