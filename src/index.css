@@ -37,6 +37,12 @@ button {
   cursor: pointer;
 }
 
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 h1 {
   font-size: 28px;
   font-weight: 500;

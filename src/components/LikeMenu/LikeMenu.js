@@ -14,14 +14,16 @@ export default function LikeMenu(props) {
                                 name={props.name}
                                 price={props.price}
                                 minimumQuantity={props.minimumQuantity}
+                                options={props.options}
                                 id={'like-'+props.id}/>
     } else {
         LikeMenuCartButton = <CartMobileButton 
-                                width={50}
-                                height={50}
+                                width={42}
+                                height={42}
                                 name={props.name}
                                 price={props.price}
                                 minimumQuantity={props.minimumQuantity}
+                                options={props.options}
                                 id={'like-'+props.id}/>
     }
 
@@ -50,5 +52,6 @@ LikeMenu.defaultProps = {
     image: '',
     name: '상품명',
     price: 2500,
+    options: [],
     id: '000',
 }

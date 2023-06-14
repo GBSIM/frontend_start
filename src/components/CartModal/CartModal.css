@@ -47,6 +47,16 @@
     cursor: pointer;
 }
 
+.cart-modal-option-container:focus {
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.cart-modal-option-container:hover {
+    border: 1px solid #ddd;
+    outline: none;
+}
+
 .cart-modal-option {
     background: #fff;
 }

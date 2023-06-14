@@ -42,6 +42,20 @@
     cursor: pointer;
 }
 
+.mobile-cart-modal-option-container:focus {
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.mobile-cart-modal-option-container:hover {
+    border: 1px solid #ddd;
+    outline: none;
+}
+
 .mobile-cart-modal-option {
     background: #fff;
+}
+
+.mobile-cart-modal-option:hover {
+    background: #aaa;
 }
