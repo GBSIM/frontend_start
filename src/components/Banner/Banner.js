@@ -160,8 +160,12 @@ export default function Banner(props) {
 
     return (
         <div className='banner' onTouchMove={touchBanner} onTouchStart={startBannerTouch} onTouchEnd={endBannerTouch}>
-            <button className='banner-button left' onClick={() => moveLeft()}></button>
-            <button className='banner-button right' onClick={() => moveRight()}></button>
+            <button className='banner-button left' onClick={() => moveLeft()}>
+                <img className='banner-button-icon' src={require('../../icons/inequity_left_white.png')}></img>
+            </button>
+            <button className='banner-button right' onClick={() => moveRight()}>
+                <img className='banner-button-icon' src={require('../../icons/inequity_right_white.png')}></img>
+            </button>
             <div className='banner-counter'>
                 <span className='banner-counter-number'>
                     {bannerIndex} / {bannerNumber}

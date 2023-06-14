@@ -59,7 +59,10 @@
 }
 
 .banner:hover .banner-button {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner-counter {
@@ -74,6 +77,11 @@
 .banner-counter-number {
     font-weight: 500;
     color: #fff;
+}
+
+.bannner-button-icon {
+    width: 34px;
+    height: 34px;
 }
 
 @media (max-width: 700px) {
