@@ -21,7 +21,10 @@ export default function CartMobileButton(props) {
             <IconButton
                 width={props.width}
                 height={props.height}
-                clickEvent={showMobileCartModal} />
+                clickEvent={showMobileCartModal}
+                image={require('../../icons/cart_white.png')}
+                iconWidth='60%'
+                iconHeight='60%'/>
             <CartMobileModal 
                 isOn={isMobileCartModalOn}
                 closeEvent={hideMobileCartModal}

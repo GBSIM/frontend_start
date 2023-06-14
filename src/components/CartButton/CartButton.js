@@ -15,7 +15,10 @@ export default function CartButton(props) {
             <IconButton
                 width={props.width}
                 height={props.height}
-                clickEvent={showCartModal} />
+                clickEvent={showCartModal}
+                image={require('../../icons/cart_white.png')}
+                iconWidth='60%'
+                iconHeight='60%'/>
             <CartModal
                 name={props.name}
                 price={props.price}

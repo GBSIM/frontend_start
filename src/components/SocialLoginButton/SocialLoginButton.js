@@ -5,8 +5,8 @@ export default function SocialLoginButton(props) {
         <QuadrangleIconTextButton
             image={props.image}
             width='100%'
-            paddingTop={8}
-            paddingBottom={8}
+            paddingTop={props.paddingTop}
+            paddingBottom={props.paddingBottom}
             text={props.text}
             backgroundColor={props.backgroundColor}
             color={props.color}
@@ -25,4 +25,6 @@ SocialLoginButton.defaultProps = {
     iconWidth: 24,
     iconHeight: 24,
     iconLeft: 10,
+    paddingTop: 8,
+    paddingBottom: 8,
 }
