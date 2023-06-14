@@ -10,6 +10,9 @@ export default function SocialLoginButton(props) {
             text={props.text}
             backgroundColor={props.backgroundColor}
             color={props.color}
+            iconWidth={props.iconWidth}
+            iconHeight={props.iconHeight}
+            iconLeft={props.iconLeft}
             fontWeight={400}></QuadrangleIconTextButton>
     )
 }
@@ -19,4 +22,7 @@ SocialLoginButton.defaultProps = {
     text: '소셜 로그인',
     backgroundColor: '#EB5C2E',
     color: '#fff',
+    iconWidth: 24,
+    iconHeight: 24,
+    iconLeft: 10,
 }
