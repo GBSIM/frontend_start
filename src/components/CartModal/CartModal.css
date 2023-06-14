@@ -29,3 +29,24 @@
 .cart-modal-item-price {
     color: #aaa;
 }
+
+.cart-modal-option {
+    width: 100%;
+}
+
+.cart-modal-option-container {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #666;
+    background: #fff;
+    cursor: pointer;
+}
+
+.cart-modal-option {
+    background: #fff;
+}

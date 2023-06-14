@@ -31,6 +31,7 @@ export default function CartMobileButton(props) {
                 name={props.name}
                 price={props.price}
                 minimumQuantity={props.minimumQuantity}
+                options={props.options}
                 id={props.id}/>
         </div>
     )
@@ -42,5 +43,6 @@ CartMobileButton.defaultProps = {
     name: "상품명",
     price: 2500,
     minimumQuantity: 1,
+    options: [],
     id: '000',
 }

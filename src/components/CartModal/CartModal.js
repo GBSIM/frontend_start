@@ -8,6 +8,8 @@ import CartAddButton from '../CartAddButton/CartAddButton';
 
 export default function CartModal(props) {
     const [count, setCount] = useState(props.minimumQuantity);
+    const [option, setOption] = useState({"name":"option","price":0});
+    const [price, setPrice] = useState(props.price);
 
     const increaseCount = () => {
         console.log("+")
@@ -21,7 +23,7 @@ export default function CartModal(props) {
         }
     }
 
-    const totalPrice = count * props.price;
+    const totalPrice = count * price;
 
     const initializeCount = () => {
         setCount(props.minimumQuantity);
@@ -30,12 +32,37 @@ export default function CartModal(props) {
     const AddItemToCart = () => {
         initializeCount();
     }
+
+    const selectOption = (e) => {
+        setOption(
+            {"name":props.options[e.target.selectedIndex]["name"],
+             "price":props.options[e.target.selectedIndex]["price"]});
+        setPrice(props.options[e.target.selectedIndex]["price"]);
+    }
+
+    const isOptionItem = Array.isArray(props.options) && (props.options.length > 0);
+    let optionsContainer;
+    if (isOptionItem) {
+        const Options = props.options.map((option) => (
+            <option 
+                className='cart-modal-option'
+                value={option["name"]} 
+                key={option["name"]}>
+                {option["name"]} - - -  {option["price"].toLocaleString()}원
+            </option>
+        ))
+        optionsContainer =
+            <select name='option' className='cart-modal-option-container' onChange={selectOption}>
+                {Options}
+            </select>
+    }
     
     return (
         <Modal id={'cart-modal'+(props.id)} closeEvent={initializeCount}>
+            {optionsContainer}
             <div className='cart-modal-row top'>
-                <span className='cart-modal-item-name'>{props.name}</span>
-                <span className='cart-modal-item-price'>{props.price.toLocaleString()}</span>
+                <h3 className='cart-modal-item-name'>{props.name}</h3>
+                <h3 className='cart-modal-item-price'>{price.toLocaleString()}</h3>
             </div>
             <div className='cart-modal-row middle'>
                 <Counter 
@@ -59,5 +86,6 @@ CartModal.defaultProps = {
     name: "상품명",
     price: 2500,
     minimumQuantity: 1,
+    options: [],
     id: '000'
 }

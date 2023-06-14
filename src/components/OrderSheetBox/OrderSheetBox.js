@@ -5,7 +5,7 @@ import UnitBoxContainer from '../UnitBoxContainer/UnitBoxContainer';
 export default function OrderSheetBox(props) {
     const Items = props.items.map((item,index) => {
         return (
-            <div className='order-sheet-item-container'>
+            <div className='order-sheet-item-container' key={'order-sheet-item-'+index}>
                 <span className='order-sheet-item-text'>{item.name} x {item.quantity}</span>
                 <span className='order-sheet-item-text'>{(item.price*item.quantity).toLocaleString()}원</span>
             </div>

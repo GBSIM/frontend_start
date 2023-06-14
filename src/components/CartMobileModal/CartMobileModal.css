@@ -28,3 +28,20 @@
 .mobile-cart-modal-item-price {
     color: #aaa;
 }
+
+.mobile-cart-modal-option-container {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #666;
+    background: #fff;
+    cursor: pointer;
+}
+
+.mobile-cart-modal-option {
+    background: #fff;
+}

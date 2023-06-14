@@ -14,7 +14,7 @@ export default function LikeMenu(props) {
                                 name={props.name}
                                 price={props.price}
                                 minimumQuantity={props.minimumQuantity}
-                                id={props.id}/>
+                                id={'like-'+props.id}/>
     } else {
         LikeMenuCartButton = <CartMobileButton 
                                 width={50}
@@ -22,7 +22,7 @@ export default function LikeMenu(props) {
                                 name={props.name}
                                 price={props.price}
                                 minimumQuantity={props.minimumQuantity}
-                                id={props.id}/>
+                                id={'like-'+props.id}/>
     }
 
     const openDeleteCheckModal = () => {
