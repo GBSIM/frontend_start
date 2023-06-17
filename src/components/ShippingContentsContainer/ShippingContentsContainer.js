@@ -4,10 +4,8 @@ import ShippingAddButton from "../ShippingAddButton/ShippingAddButton";
 
 export default function ShippingContentsContainer(props) {
     return (
-        <UnitContentsContainer
-            title='배송지'
-            shippingList={props.shippingList}>
-            <ShippingList/>
+        <UnitContentsContainer title='배송지'>
+            <ShippingList shippingList={props.shippingList}/>
             <div style={{'minHeight':'15px'}}></div>
             <ShippingAddButton/>
         </UnitContentsContainer>

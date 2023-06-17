@@ -33,6 +33,27 @@ export default function ShippingBox(props) {
         }
     }
 
+    let EditButtons;
+    if (props.editable) {
+        EditButtons =
+            <div className='shipping-box-button-container'>
+                <button className='shipping-box-button' onClick={() => showShippingEditModal()}>
+                    <span className='shipping-box-button-text'>수정하기</span>
+                </button>
+                <button className='shipping-box-button' onClick={() => openDeleteCheckModal()}>
+                    <span className='shipping-box-button-text'>삭제하기</span>
+                </button>
+            </div>
+    }
+
+    let CheckBox;
+    if (props.checkable) {
+        CheckBox =
+            <div className='shipping-box-check-button-container'>
+                <CheckButton size={30}></CheckButton>
+            </div>
+    }
+
     return (
         <UnitBoxContainer>
             <div className='shipping-box'>
@@ -50,17 +71,8 @@ export default function ShippingBox(props) {
                     </span>
                 </div>
             </div>
-            <div className='shipping-box-check-button-container'>
-                <CheckButton size={30}></CheckButton>
-            </div>
-            <div className='shipping-box-button-container'>
-                <button className='shipping-box-button' onClick={() => showShippingEditModal()}>
-                    <span className='shipping-box-button-text'>수정하기</span>
-                </button>
-                <button className='shipping-box-button' onClick={() => openDeleteCheckModal()}>
-                    <span className='shipping-box-button-text'>삭제하기</span>
-                </button>
-            </div>
+            {CheckBox}
+            {EditButtons}
             <ShippingEditModal 
                 receiver={props.name} 
                 phone={props.phone} 
@@ -88,5 +100,7 @@ ShippingBox.defaultProps = {
     detailAddress: '상세 주소',
     name: '이름',
     phone: '010-0000-0000',
-    id: '000'
+    id: '000',
+    editable: true,
+    checkable: true,
 }

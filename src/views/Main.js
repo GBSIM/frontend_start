@@ -10,6 +10,7 @@ import ItemContentsContainer from '../components/ItemContentsContainer/ItemConte
 import OrderHistoryContentsContainer from '../components/OrderHistoryContentsContainer/OrderHistoryContentsContainer';
 import OrderSheetContentsContainer from '../components/OrderSheetContentsContainer/OrderSheetContentsContainer';
 import ShippingContentsContainer from '../components/ShippingContentsContainer/ShippingContentsContainer';
+import OrderShippingContentsContainer from '../components/OrderShippingContentsContainer/OrderShippingContentsContainer';
 
 export default function Main() {
     return (
@@ -24,6 +25,7 @@ export default function Main() {
                     <OrderHistoryContentsContainer/>
                     <OrderSheetContentsContainer/>
                     <ShippingContentsContainer/>
+                    <OrderShippingContentsContainer/>
                 </div>
             </div>
             <Footer/>
