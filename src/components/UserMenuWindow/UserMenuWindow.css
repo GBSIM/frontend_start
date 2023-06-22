@@ -1,0 +1,21 @@
+.user-menu-window {
+    z-index: 999;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 100px;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px 20px 20px 20px;
+    row-gap: 6px;
+}
+
+.user-menu-button-text {
+    color: #aaa;
+    font-weight: 500;
+}

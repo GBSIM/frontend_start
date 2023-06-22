@@ -6,6 +6,13 @@ import LoginButton from '../LoginButton/LoginButton';
 import UserButton from '../UserButton/UserButton';
 
 export default function WideScreenHeader(props) {
+    let AccountButton;
+    if (props.isLogined) {
+        AccountButton = <UserButton name={props.name}/>
+    } else {
+        AccountButton = <LoginButton/>
+    }
+
     return (
         <div 
             className="wide-screen-header" 
@@ -21,13 +28,14 @@ export default function WideScreenHeader(props) {
                 <div style={{'minWidth':'20px'}}></div>
                 <TextNavContainer></TextNavContainer>
                 <div style={{'flex':1}}></div>
-                <LoginButton />
-                <UserButton />
+                {AccountButton}
             </div>
         </div>
     )
 }
 
 WideScreenHeader.defaultProps = {
-    height: 60
+    height: 60,
+    name: '장원영',
+    isLogined: true,
 }
