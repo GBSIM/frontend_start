@@ -25,10 +25,10 @@ export default function UserMenuWindow(props) {
 UserMenuWindow.defaultProps = {
     isOn: true,
     userMenuList:[
-        {text:'주문내역',link:'/'},
-        {text:'배송지 관리',link:'/'},
-        {text:'쿠폰',link:'/'},
-        {text:'로그아웃',link:'/'},
+        {text:'주문내역',link:'/user/orderhistory'},
+        {text:'배송지 관리',link:'/user/shippings'},
+        {text:'쿠폰',link:'/user/coupons'},
+        {text:'로그아웃',link:'/user/logout'},
     ]
 }
 

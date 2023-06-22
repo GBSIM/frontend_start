@@ -17,6 +17,13 @@
     align-items: center;
 }
 
+.wide-screen-header-account-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 700px) {
     .wide-screen-header {
         display: none;

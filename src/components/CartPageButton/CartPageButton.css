@@ -1,0 +1,23 @@
+.cart-page-button {
+    position: relative;
+    display: block;
+}
+
+.cart-page-button-item-number {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+
+}
+
+.cart-page-button-item-number-text {
+    font-size: 10px;
+    color: #fff;
+}

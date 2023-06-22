@@ -4,11 +4,21 @@ import LogoButton from '../LogoButton/LogoButton';
 import TextNavContainer from '../TextNavContainer/TextNavContainer';
 import LoginButton from '../LoginButton/LoginButton';
 import UserButton from '../UserButton/UserButton';
+import LikesPageButton from '../LikesPageButton/LikesPageButton';
+import CartPageButton from '../CartPageButton/CartPageButton';
 
 export default function WideScreenHeader(props) {
     let AccountButton;
     if (props.isLogined) {
-        AccountButton = <UserButton name={props.name}/>
+        AccountButton = 
+            <div className='wide-screen-header-account-buttons'>
+                <LikesPageButton/>
+                <div style={{'minWidth':'2px'}}></div>
+                <CartPageButton/>
+                <div style={{'minWidth':'25px'}}></div>
+                <UserButton name={props.name}/>        
+            </div>
+        
     } else {
         AccountButton = <LoginButton/>
     }
