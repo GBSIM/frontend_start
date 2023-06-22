@@ -21,7 +21,9 @@ export default function Banner(props) {
 
     window.onresize = function () {
         let leftInitializationPosition = -window.innerWidth * (bannerIndex - 1);
-        document.getElementById('banner-contents').style.left = String(leftInitializationPosition) + 'px';
+        if (document.getElementById('banner-contents')) {
+            document.getElementById('banner-contents').style.left = String(leftInitializationPosition) + 'px';
+        }
     }
 
     function useInterval(callback, delay) {

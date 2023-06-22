@@ -5,18 +5,16 @@ import { useState } from 'react';
 import UnderlineNavButton from '../UnderlineNavButton/UnderlineNavButton';
 
 export default function UnderlineNavContainer(props) {
-    const [nav, setNav] = useState(props.initialNav)
 
     let navButtonEvent;
     const UnderlineNavButtons = props.navTextList.map((navText,index) => {
         navButtonEvent = () => {
-            console.log(navText);
-            setNav(navText);
+            window.location.href = props.linkList[index];
         }
         return (
             <UnderlineNavButton
                 text={navText}
-                isOn={navText === nav}
+                isOn={navText === props.status}
                 clickEvent={navButtonEvent}
                 key={'underline-nav-'+index}/>
         )
@@ -30,7 +28,8 @@ export default function UnderlineNavContainer(props) {
 }
 
 UnderlineNavContainer.defaultProps = {
-    initialNav: 'nav1',
+    status: 'nav1',
     navTextList: ['nav1','nav2','nav3'],
+    linkList: ['nav1','nav2','nav3']
 }
 
