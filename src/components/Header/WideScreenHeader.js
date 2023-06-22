@@ -3,6 +3,7 @@ import './WideScreenHeader.css';
 import LogoButton from '../LogoButton/LogoButton';
 import TextNavContainer from '../TextNavContainer/TextNavContainer';
 import LoginButton from '../LoginButton/LoginButton';
+import UserButton from '../UserButton/UserButton';
 
 export default function WideScreenHeader(props) {
     return (
@@ -21,6 +22,7 @@ export default function WideScreenHeader(props) {
                 <TextNavContainer></TextNavContainer>
                 <div style={{'flex':1}}></div>
                 <LoginButton />
+                <UserButton />
             </div>
         </div>
     )
