@@ -26,6 +26,9 @@
 
 @media (max-width: 700px) {
     .contents-spacer {
-        min-height: 0px;
+        min-height: 10px;
+    }
+    .contents-spacer.cart {
+        min-height: 20px;
     }
 }
