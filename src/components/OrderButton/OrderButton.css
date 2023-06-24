@@ -9,7 +9,7 @@
 
 @media (max-width: 700px) {
     .order-button {
-        width: 100%;
+        width: 95%;
         position: fixed;
         bottom: 0px;
         padding: 10px;

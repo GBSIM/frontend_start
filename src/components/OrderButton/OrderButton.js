@@ -9,8 +9,7 @@ export default function OrderButton(props) {
                 textType='h3'
                 text='주문하러 가기'
                 paddingTop='8px'
-                paddingBottom='8px'
-                width='95%'/>
+                paddingBottom='8px'/>
         </div>
     )    
 }
