@@ -5,17 +5,21 @@ import Footer from '../components/Footer/Footer';
 
 import UnderlineNavContainer from '../components/UnderlineNavContainer/UnderlineNavContainer';
 
-export default function CartView() {
+export default function CartView(props) {
     return (
         <div className="page">
             <Header/>
             <div className='contents-container'>
                 <div className='contents'>
                     <div className='contents-spacer'/>
-                    <UnderlineNavContainer navTextList={['배송주문','선물주문','픽업주문']} linkList={['/cart/delivery','/cart/present','/cart/pickup']}/>
+                    <UnderlineNavContainer navTextList={['배송주문','선물주문','픽업주문']} linkList={['/cart/delivery','/cart/present','/cart/pickup']} status={props.status}/>
                 </div>
             </div>
             <Footer/>
         </div>
     )
+}
+
+CartView.defaultProps = {
+    status: '배송주문',
 }

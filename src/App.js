@@ -14,6 +14,9 @@ function App() {
           <Route exact path="/" element={<MainView/>}/>
           <Route exact path="/likes" element={<LikesView/>}/>
           <Route exact path="/cart" element={<CartView/>}/>
+          <Route exact path="/cart/delivery" element={<CartView status='배송주문'/>}/>
+          <Route exact path="/cart/present" element={<CartView status='선물주문'/>}/>
+          <Route exact path="/cart/pickup" element={<CartView status='픽업주문'/>}/>
         </Routes>
       </div>
     </Router>

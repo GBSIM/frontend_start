@@ -67,7 +67,7 @@ UnderlineNavButton.defaultProps = {
     isOn: true,
     activatedColor: '#eb5c2e',
     deactivatedColor: '#CCC',
-    textType: 'h3',
+    textType: 'span',
     text: '텍스트',
     clickEvent: defaultClickEvent,
 }
