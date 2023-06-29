@@ -9,7 +9,8 @@ export default function CouponContentsContainer(props) {
                 description={coupon.description}
                 minimumOrderPrice={coupon.minimumOrderPrice}
                 startDate={coupon.startDate}
-                endDate={coupon.endDate}/>
+                endDate={coupon.endDate}
+                key={['coupon-box-'+index]}/>
         )
     })
 

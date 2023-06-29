@@ -51,7 +51,6 @@ export default function ShippingAddMobileModal(props) {
         if (!isNaN(e.nativeEvent.data)) {
             const phoneNumberInput = e.target.value.replace(/-/g,'');
             if (phoneNumberInput.length < 12) {
-                console.log(phoneNumberInput);
                 if (phoneNumberInput.length < 3) {
                     setPhone(e.target.value);
                 } else {

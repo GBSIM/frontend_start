@@ -133,21 +133,17 @@ export default function Banner(props) {
     let startPosition = 0;
 
     const touchBanner = (e) => {
-        console.log(e);
         document.getElementById('banner-contents').style.left = (startPosition + (e.targetTouches[0].screenX - touchStartPoint)) + 'px';
     }
 
     
     const startBannerTouch = (e) => {
-        console.log(e);
         disableScroll();
         touchStartPoint = e.targetTouches[0].screenX;
         startPosition = Number(document.getElementById('banner-contents').style.left.replace('px',''));
-        console.log(touchStartPoint);
     }
 
     const endBannerTouch = (e) => {
-        console.log(e);
         let touchDistance = e.changedTouches[0].screenX - touchStartPoint;
         if (touchDistance > window.innerWidth*0.1) {
             moveLeft();
