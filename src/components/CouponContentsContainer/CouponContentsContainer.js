@@ -1,3 +1,5 @@
+import './CouponContentsContainer.css';
+
 import UnitContentsContainer from "../UnitContentsContainer/UnitContentsContainer";
 import CouponBox from "../CouponBox/CouponBox";
 
@@ -14,11 +16,23 @@ export default function CouponContentsContainer(props) {
         )
     })
 
-    return (
-        <UnitContentsContainer title='쿠폰'>
-            {CouponList}
-        </UnitContentsContainer>
-    )
+    if (props.couponList && Array.isArray(props.couponList) && (props.couponList.length > 0)) {
+        return (
+            <UnitContentsContainer title='쿠폰'>
+                {CouponList}
+            </UnitContentsContainer>
+        )
+    } else {
+        return (
+            <UnitContentsContainer title='쿠폰'>
+                <div className="coupon-none-guide-container">
+                    <span className="coupon-none-guide">
+                        보유하신 쿠폰이 없습니다.
+                    </span>
+                </div>
+            </UnitContentsContainer>
+        )
+    }
 }
 
 CouponContentsContainer.defaultProps = {

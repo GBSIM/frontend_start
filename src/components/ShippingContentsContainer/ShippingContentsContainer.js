@@ -1,15 +1,31 @@
+import './ShippingContentsContainer.css';
+
 import UnitContentsContainer from "../UnitContentsContainer/UnitContentsContainer";
 import ShippingList from "../ShippingList/ShippingList";
 import ShippingAddButton from "../ShippingAddButton/ShippingAddButton";
 
 export default function ShippingContentsContainer(props) {
-    return (
-        <UnitContentsContainer title='배송지'>
-            <ShippingList shippingList={props.shippingList}/>
-            <div style={{'minHeight':'30px'}}></div>
-            <ShippingAddButton/>
-        </UnitContentsContainer>
-    )
+    if (props.shippingList && Array.isArray(props.shippingList) && (props.shippingList.length > 0)) {
+        return (
+            <UnitContentsContainer title='배송지'>
+                <ShippingList shippingList={props.shippingList}/>
+                <div style={{'minHeight':'30px'}}></div>
+                <ShippingAddButton/>
+            </UnitContentsContainer>
+        )
+    } else {
+        return (
+            <UnitContentsContainer title='배송지'>
+                <div className="shipping-none-guide-container">
+                    <span className="shipping-none-guide">
+                        아직 등록된 배송지가 없어요.
+                    </span>
+                </div>
+                <div style={{'minHeight':'30px'}}></div>
+                <ShippingAddButton/>
+            </UnitContentsContainer>
+        )
+    }
 }
 
 ShippingContentsContainer.defaultProps = {

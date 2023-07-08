@@ -1,0 +1,13 @@
+.coupon-none-guide-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.coupon-none-guide {
+    color: #aaa;
+}

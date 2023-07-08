@@ -1,13 +1,27 @@
+import './OrderHistoryContentsContainer.css';
+
 import UnitContentsContainer from "../UnitContentsContainer/UnitContentsContainer";
 import OrderHistoryList from "../OrderHistoryList/OrderHistoryList";
 
 export default function OrderHistoryContentsContainer(props) {
-    return (
-        <UnitContentsContainer title='주문 내역'>
-            <OrderHistoryList
-                orderList={props.orderList}/>
-        </UnitContentsContainer>
-    )
+    if (props.orderList && Array.isArray(props.orderList) && (props.orderList.length > 0)) {
+        return (
+            <UnitContentsContainer title='주문 내역'>
+                <OrderHistoryList
+                    orderList={props.orderList}/>
+            </UnitContentsContainer>
+        )
+    } else {
+        return (
+            <UnitContentsContainer title='주문 내역'>
+                <div className="order-history-none-guide-container">
+                    <span className="order-history-none-guide">
+                        아직 주문 내역이 없어요.
+                    </span>
+                </div>
+            </UnitContentsContainer>
+        )
+    }
 }
 
 OrderHistoryContentsContainer.defaultProps = {
