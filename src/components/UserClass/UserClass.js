@@ -1,12 +1,24 @@
+import { isCompositeComponent } from 'react-dom/test-utils';
 import './UserClass.css';
 
 export default function UserClass(props) {
     let UserClassDetailButton;
+    const moverToOrderManagement = () => {
+        window.location.href = '/manage/delivery';
+    }
+    
     if (props.class === 'Manager' || props.class === 'manager') {
-        UserClassDetailButton =
-            <button className='user-class-detail-button' onClick={() => props.moveToOrderManagement}>
-                <span className='user-class-detail-button-text'>주문 관리하러 가기</span>
-            </button>
+        if (window.location.pathname.split('/')[1] === 'manage') {
+            UserClassDetailButton =
+                <button className='user-class-detail-button'>
+                    <span className='user-class-detail-button-text'>매니저님, 오늘도 좋은 하루 되세요.</span>
+                </button>
+        } else {
+            UserClassDetailButton =
+                <button className='user-class-detail-button' onClick={() => moverToOrderManagement()}>
+                    <span className='user-class-detail-button-text'>주문 관리하러 가기</span>
+                </button>
+        }        
     } else {
         UserClassDetailButton =
             <button className='user-class-detail-button'>
@@ -34,7 +46,7 @@ const defaultClickEvent = () => {
 }
 
 UserClass.defaultProps = {
-    class: "Orange",
+    class: "Manager",
     boxColor: '#eb5c2e',
     textColor: '#fff',
     name: '김제니',

@@ -6,6 +6,7 @@ import MainView from './views/MainView';
 import LikesView from './views/LikesView';
 import CartView from './views/CartView';
 import UserView from './views/UserView';
+import ManageView from './views/ManageView';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Route exact path="/user/orderhistory" element={<UserView status='주문내역'/>}/>
           <Route exact path="/user/shippings" element={<UserView status='배송지관리'/>}/>
           <Route exact path="/user/coupons" element={<UserView status='쿠폰'/>}/>
+          <Route exact path="/manage/delivery" element={<ManageView status='배송주문'/>}/>
+          <Route exact path="/manage/present" element={<ManageView status='선물주문'/>}/>
+          <Route exact path="/manage/pickup" element={<ManageView status='픽업주문'/>}/>
         </Routes>
       </div>
     </Router>
