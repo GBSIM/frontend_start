@@ -1,7 +1,27 @@
 import './UserMenuWindow.css';
 
 export default function UserMenuWindow(props) {
-    const UserMenuButtons = props.userMenuList.map((userMenu,index) => {
+    let userMenuList;
+    if ((props.userClass === 'manager') || (props.userClass === 'Manager')) {
+        userMenuList =
+            [
+                {text:'주문내역',link:'/user/orderhistory'},
+                {text:'배송지관리',link:'/user/shippings'},
+                {text:'쿠폰',link:'/user/coupons'},
+                {text:'주문관리',link:'/manage/delivery'},
+                {text:'로그아웃',link:'/user/logout'},
+            ];
+    } else {
+        userMenuList =
+            [
+                {text:'주문내역',link:'/user/orderhistory'},
+                {text:'배송지관리',link:'/user/shippings'},
+                {text:'쿠폰',link:'/user/coupons'},
+                {text:'로그아웃',link:'/user/logout'},
+            ];
+    }
+
+    const UserMenuButtons = userMenuList.map((userMenu,index) => {
         const clickEvent = () => {
             window.location.href = userMenu.link;
         }
@@ -24,11 +44,6 @@ export default function UserMenuWindow(props) {
 
 UserMenuWindow.defaultProps = {
     isOn: true,
-    userMenuList:[
-        {text:'주문내역',link:'/user/orderhistory'},
-        {text:'배송지 관리',link:'/user/shippings'},
-        {text:'쿠폰',link:'/user/coupons'},
-        {text:'로그아웃',link:'/user/logout'},
-    ]
+    userClass: 'orange',
 }
 
