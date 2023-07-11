@@ -1,4 +1,3 @@
-import { isCompositeComponent } from 'react-dom/test-utils';
 import './UserClass.css';
 
 export default function UserClass(props) {
@@ -32,7 +31,7 @@ export default function UserClass(props) {
                 <div className='user-class-box' style={{'background':props.boxColor}}>
                     <h3 className='user-class-box-text' style={{'color':props.textColor}}>{props.class}</h3>
                 </div>
-                <h2 className='user-class-name'>{props.name}</h2>
+                <h2 className='user-class-name'>{props.name}님</h2>
             </div>
             <div className='user-class-row'>
                 {UserClassDetailButton}
