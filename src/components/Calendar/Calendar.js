@@ -23,12 +23,16 @@ export default function Calendar(props) {
     }
 
     const CalendarDays = dateList.map((date,index) => {
+        let startDate = new Date(props.startDate.split('-')[0],props.startDate.split('-')[1],props.startDate.split('-')[2]);
+        let endDate = new Date(props.endDate.split('-')[0],props.endDate.split('-')[1],props.endDate.split('-')[2]);
+        let standardDate = new Date(selectedYear,selectedMonth,date);
         return (
             <CalendarDay 
                 date={date} 
                 isOn={date===selectedDate}
                 clickEvent={ChangeDate}
-                key={'calendar-day-'+index}/>
+                key={'calendar-day-'+index}
+                isSelectable={(startDate <= standardDate) && (standardDate <= endDate)}/>
         )
     })
 
@@ -52,6 +56,12 @@ export default function Calendar(props) {
 
     return (
         <div className='calendar'>
+            <div className='calendar-row'>
+                <h3 className='calendar-year'>
+                    {selectedYear}
+                </h3>
+            </div>
+            <div style={{'minHeight':'4px'}}></div>
             <div className='calendar-row'>
                 <button className='calendar-month-arrow-button' onClick={() => moveToPreviousMonth()}>
                     <img className='calendar-month-arrow-button-image' 
@@ -77,27 +87,40 @@ export default function Calendar(props) {
 
 function CalendarDay(props) {
     if (props.date > 0) {
-        if (props.isOn) {
-            return (
-                <div className='calendar-day'>
-                    <button className='calendar-day-button on'>
-                        <span className='calendar-day-text on'>
-                            {props.date}
-                        </span>
-                    </button>
-                </div>
+        if (props.isSelectable) {
+            if (props.isOn) {
+                return (
+                    <div className='calendar-day'>
+                        <button className='calendar-day-button on'>
+                            <span className='calendar-day-text on'>
+                                {props.date}
+                            </span>
+                        </button>
+                    </div>
+                    )
+            } else {
+                return (
+                    <div className='calendar-day'>
+                        <button className='calendar-day-button' onClick={() => props.clickEvent(props.date)}>
+                            <span className='calendar-day-text'>
+                                {props.date}
+                            </span>
+                        </button>
+                    </div>
                 )
+            }
         } else {
             return (
                 <div className='calendar-day'>
-                    <button className='calendar-day-button' onClick={() => props.clickEvent(props.date)}>
-                        <span className='calendar-day-text'>
+                    <button className='calendar-day-button' disabled>
+                        <span className='calendar-day-text deactivated'>
                             {props.date}
                         </span>
                     </button>
                 </div>
-                )
+            )
         }
+        
     } else {
         return (
             <div className='calendar-day'>
@@ -107,7 +130,13 @@ function CalendarDay(props) {
     }    
 }
 
+Calendar.defaultProps = {
+    startDate: String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate()),
+    endDate: String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate() + 7),
+}
+
 CalendarDay.defaultProps = {
     date: 1,
     isOn: false,
+    isSelectable: true,
 }

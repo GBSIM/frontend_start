@@ -34,6 +34,7 @@
     align-items: center;
     padding-top: 20%;
     padding-bottom: 40%;
+    height: 28px;
 }
 
 .calendar-day-button {
@@ -67,9 +68,17 @@
 }
 
 .calendar-day-text {
-    color: #aaa;
+    color: #888;
+}
+
+.calendar-day-text.deactivated {
+    color: #ccc;
 }
 
 .calendar-day-text.on {
     color: #fff;
+}
+
+.calendar-year {
+    color: #666;
 }
