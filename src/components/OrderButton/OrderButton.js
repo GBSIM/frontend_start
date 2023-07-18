@@ -9,7 +9,16 @@ export default function OrderButton(props) {
                 textType='h3'
                 text='주문하러 가기'
                 paddingTop='8px'
-                paddingBottom='8px'/>
+                paddingBottom='8px'
+                clickEvent={props.clickEvent}/>
         </div>
     )    
+}
+
+const defaultClickEvent = () => {
+    
+}
+
+OrderButton.defaultProps = {
+    clickEvent: defaultClickEvent
 }

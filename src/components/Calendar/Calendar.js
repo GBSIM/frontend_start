@@ -68,9 +68,9 @@ export default function Calendar(props) {
     return (
         <div className='calendar'>
             <div className='calendar-row'>
-                <h3 className='calendar-year'>
+                <span className='calendar-year'>
                     {selectedYear}
-                </h3>
+                </span>
             </div>
             <div style={{'minHeight':'4px'}}></div>
             <div className='calendar-row'>
@@ -79,9 +79,9 @@ export default function Calendar(props) {
                          alt='left-arrow'
                          src={require('../../icons/inequity_left_white.png')}/>
                 </button>
-                <h2 className='calendar-month'>
+                <h3 className='calendar-month'>
                     {selectedMonth}월
-                </h2>
+                </h3>
                 <button className='calendar-month-arrow-button' onClick={() => moveToNextMonth()}>
                     <img className='calendar-month-arrow-button-image' 
                          alt='right-arrow'

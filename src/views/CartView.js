@@ -6,6 +6,24 @@ import CartItemContentsContainer from '../components/CartItemContentsContainer/C
 import OrderButton from '../components/OrderButton/OrderButton';
 
 export default function CartView(props) {
+    const moveToOrderPage = () => {
+        let orderPage;
+        switch (props.status) {
+            case "배송주문":
+                orderPage = '/order/delivery';
+                break;
+            case "선물주문":
+                orderPage = '/order/present';
+                break;
+            case "픽업주문":
+                orderPage = '/order/pickup';
+                break;
+            default:
+                orderPage = '/order/delivery';
+        }
+        window.location.href = orderPage;
+    }
+
     return (
         <div className="page">
             <Header/>
@@ -16,7 +34,7 @@ export default function CartView(props) {
                     <div style={{'minHeight':'20px'}}></div>
                     <CartItemContentsContainer/>
                     <div className='contents-spacer'/>
-                    <OrderButton/>
+                    <OrderButton clickEvent={moveToOrderPage}/>
                 </div>
             </div>
         </div>

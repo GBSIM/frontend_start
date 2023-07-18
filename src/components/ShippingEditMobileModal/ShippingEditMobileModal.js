@@ -47,11 +47,13 @@ export default function ShippingEditMobileModal(props) {
         props.closeEvent();
     }
 
+    const isEditable = (receiver && phone && tag);
+
     return (
         <MobileModal isOn={props.isOn} 
                      closeEvent={closeEvent} 
                      height='95vh'
-                     isCompleteButtonNeeded={true}
+                     isCompleteButtonNeeded={isEditable}
                      completeEvent={updateShipping}
                      completeText='수정하기'>
             <div className='shipping-edit-mobile-modal'>
