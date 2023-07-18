@@ -10,6 +10,7 @@ export default function Calendar(props) {
 
     const ChangeDate = (date) => {
         setDate(date);
+        props.clickEvent(selectedYear,selectedMonth,date);
     }
 
     const currentDate = new Date(selectedYear,selectedMonth-1,selectedDate);
@@ -26,13 +27,14 @@ export default function Calendar(props) {
         let startDate = new Date(props.startDate.split('-')[0],props.startDate.split('-')[1],props.startDate.split('-')[2]);
         let endDate = new Date(props.endDate.split('-')[0],props.endDate.split('-')[1],props.endDate.split('-')[2]);
         let standardDate = new Date(selectedYear,selectedMonth,date);
+        let dayOfStandardDate = standardDate.getDay();
         return (
             <CalendarDay 
                 date={date} 
                 isOn={date===selectedDate}
                 clickEvent={ChangeDate}
                 key={'calendar-day-'+index}
-                isSelectable={(startDate <= standardDate) && (standardDate <= endDate)}/>
+                isSelectable={(startDate <= standardDate) && (standardDate <= endDate) && (!props.unselectableDayList.includes(dayOfStandardDate))}/>
         )
     })
 
@@ -53,6 +55,15 @@ export default function Calendar(props) {
             setMonth(selectedMonth + 1);
         }
     }
+
+    const dayOfWeekList = ['일','월','화','수','목','금','토'];
+    const DayOfWeeks = dayOfWeekList.map((dayName) => {
+        return (
+            <DayOfWeek
+                dayName={dayName}
+                key={'caledar-day-'+dayName}/>
+        )
+    })
 
     return (
         <div className='calendar'>
@@ -79,8 +90,19 @@ export default function Calendar(props) {
             </div>
             <div style={{'minHeight':'20px'}}></div>
             <div className='calendar-days-container'>
+                {DayOfWeeks}
                 {CalendarDays}
             </div>
+        </div>
+    )
+}
+
+function DayOfWeek(props) {
+    return (
+        <div className='calendar-day-of-week'>
+            <span className='calendar-day-of-week-text'>
+                {props.dayName}
+            </span>
         </div>
     )
 }
@@ -130,9 +152,15 @@ function CalendarDay(props) {
     }    
 }
 
+const defaultClickEvent = () => {
+    
+}
+
 Calendar.defaultProps = {
     startDate: String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate()),
     endDate: String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate() + 7),
+    unselectableDayList: [1,4],
+    clickEvent: defaultClickEvent,
 }
 
 CalendarDay.defaultProps = {
