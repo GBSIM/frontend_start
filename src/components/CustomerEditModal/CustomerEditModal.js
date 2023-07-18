@@ -41,6 +41,20 @@ export default function CustomerEditModal(props) {
         if (e.nativeEvent.data === null) setPhone(e.target.value);
     }
 
+    let isEditable = (name && phone && email);
+
+    let EditButton;
+    if (isEditable) {
+        EditButton =
+            <form method="dialog" className='customer-edit-modal-close-button-container'>
+                <QuadrangleButton
+                    paddingTop={7}
+                    paddingBottom={7}
+                    text='수정하기'
+                    clickEvent={initializeInput}/>
+            </form>
+    }
+
     return (
         <Modal id={componentId} closeEvent={initializeInput}>
             <div className='customer-edit-modal'>
@@ -55,13 +69,7 @@ export default function CustomerEditModal(props) {
 
                 <div style={{'minHeight':'50px'}}></div>
 
-                <form method="dialog" className='customer-edit-modal-close-button-container'>
-                    <QuadrangleButton
-                        paddingTop={7}
-                        paddingBottom={7}
-                        text='수정하기'
-                        clickEvent={initializeInput}/>
-                </form>
+                {EditButton}
             </div>
         </Modal>
     )
