@@ -42,6 +42,20 @@ export default function ShippingEditModal(props) {
         if (e.nativeEvent.data === null) setPhone(e.target.value);
     }
 
+    const isEditable = (receiver && phone && tag);
+
+    let EditButton;
+    if (isEditable) {
+        EditButton =
+            <form method="dialog" className='shipping-edit-modal-close-button-container'>
+                <QuadrangleButton
+                    paddingTop={7}
+                    paddingBottom={7}
+                    text='수정하기'
+                    clickEvent={initializeInput}/>
+            </form>
+    }
+
     return (
         <Modal id={componentsId} closeEvent={initializeInput}>
             <div className='shipping-edit-modal'>
@@ -61,13 +75,7 @@ export default function ShippingEditModal(props) {
                 <span className='shipping-edit-modal-title'>요청 사항</span>
                 <input className='shipping-edit-modal-input' value={request} onChange={(e) => setRequest(e.target.value)}></input>
 
-                <form method="dialog" className='shipping-edit-modal-close-button-container'>
-                    <QuadrangleButton
-                        paddingTop={7}
-                        paddingBottom={7}
-                        text='수정하기'
-                        clickEvent={initializeInput}/>
-                </form>
+                {EditButton}
             </div>
         </Modal>
     )
