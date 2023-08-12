@@ -4,6 +4,7 @@ import Header from "../components/Header/Header";
 import OrderSheetContentsContainer from '../components/OrderSheetContentsContainer/OrderSheetContentsContainer';
 import CustomerInfoContentsContainer from '../components/CustomerInfoContentsContainer/CustomerInfoContentsContainer';
 import Calendar from '../components/Calendar/Calendar';
+import ShippingContentsContainer from '../components/ShippingContentsContainer/ShippingContentsContainer';
 
 export default function OrderView(props) {
     let CalendarBox;
@@ -41,6 +42,8 @@ export default function OrderView(props) {
                     <OrderSheetContentsContainer/>
                     <div style={{'minHeight':'30px'}}></div>
                     <CustomerInfoContentsContainer/>
+                    <div style={{'minHeight':'30px'}}></div>
+                    <ShippingContentsContainer/>
                     <div style={{'minHeight':'30px'}}></div>
                     {CalendarBox}
                 </div>
