@@ -50,7 +50,7 @@ export default function ShippingBox(props) {
     if (props.checkable) {
         CheckBox =
             <div className='shipping-box-check-button-container'>
-                <CheckButton size={30}></CheckButton>
+                <CheckButton size={30} isOn={props.isOn}></CheckButton>
             </div>
     }
 
@@ -103,4 +103,5 @@ ShippingBox.defaultProps = {
     id: '000',
     editable: true,
     checkable: true,
+    isOn: false,
 }
