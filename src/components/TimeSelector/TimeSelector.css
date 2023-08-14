@@ -1,0 +1,32 @@
+.time-selector {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.time-selector-title {
+    color: #aaa;
+    font-weight: 400;
+}
+
+.time-selector-options {
+    flex: 1;
+    max-width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
+    background-color: #fff;
+    color: #aaa;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

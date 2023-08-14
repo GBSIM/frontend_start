@@ -13,12 +13,20 @@ export default function OrderView(props) {
         CalendarBox =
             <OrderCalendarContetnsContainer
                 title='픽업날짜'
-                isTimeNeeded={true}/>
+                isTimeNeeded={true}
+                isStoreVisitNeeded={true}
+                startDate={String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate() + 2)}
+                endDate={String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate() + 21)}
+                unselectableDayList={[1,4]}/>
     } else if (props.status === '선물주문') {
         CalendarBox =
             <OrderCalendarContetnsContainer
                 title='퀵 배송 날짜'
-                isTimeNeeded={false}/>
+                isTimeNeeded={true}
+                isStoreVisitNeeded={false}
+                startDate={String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate() + 7)}
+                endDate={String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate() + 21)}
+                unselectableDayList={[]}/>
     }
 
     return (
