@@ -17,7 +17,7 @@ const initialState = {
     orders: [],
 }
 
-const nav = (state = initialState, action) => {
+const user = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_USER_INFO:
             return {
@@ -43,4 +43,4 @@ const nav = (state = initialState, action) => {
     }
 };
 
-export default nav;
+export default user;
