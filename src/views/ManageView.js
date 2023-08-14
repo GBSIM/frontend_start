@@ -3,7 +3,7 @@ import '../default.css';
 import Header from "../components/Header/Header"
 import UnderlineNavContainer from '../components/UnderlineNavContainer/UnderlineNavContainer';
 import UserClass from '../components/UserClass/UserClass';
-import Calendar from '../components/Calendar/Calendar';
+import ManagerCalendar from '../components/ManagerCalendar/ManagerCalendar';
 import Footer from '../components/Footer/Footer';
 
 export default function ManageView(props) {
@@ -19,7 +19,7 @@ export default function ManageView(props) {
                 <UnderlineNavContainer navTextList={['배송주문','선물주문','픽업주문']} linkList={['/manage/delivery','/manage/present','/manage/pickup']} status={props.status}/>
                 <div className='contents'>
                     <div style={{'minHeight':'20px'}}></div>
-                    <Calendar/>
+                    <ManagerCalendar/>
                 </div>
             </div>
             <Footer/>
