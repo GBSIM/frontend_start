@@ -8,6 +8,7 @@ import CartView from './views/CartView';
 import UserView from './views/UserView';
 import ManageView from './views/ManageView';
 import OrderView from './views/OrderView';
+import ItemDetailView from './views/ItemDetailView';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/order/delivery" element={<OrderView status='배송주문'/>}/>
           <Route exact path="/order/present" element={<OrderView status='선물주문'/>}/>
           <Route exact path="/order/pickup" element={<OrderView status='픽업주문'/>}/>
+          <Route exact path="/item/:id" element={<ItemDetailView/>}/>
         </Routes>
       </div>
     </Router>

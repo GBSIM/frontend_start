@@ -21,7 +21,7 @@ export default function Item(props) {
 
     return (
         <div className='item'>
-            <a className='item-image-link' href='/'>
+            <a className='item-image-link' href={'/item/'+props.id}>
                 <img className='item-image' src={props.image} alt='thumbnail'></img>
             </a>
             <div className='item-cart-button-container widescreen'>
