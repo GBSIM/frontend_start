@@ -8,7 +8,7 @@ export default function LikesPageButton(props) {
     return (
         <IconButton
             image={require('../../icons/heart_grey.png')}
-            backgroundColor='#fff'
+            backgroundColor='rgba(0,0,0,0)'
             clickEvent={clickEvent}/>
     )
 }

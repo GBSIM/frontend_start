@@ -20,7 +20,7 @@ export default function CartPageButton(props) {
         <div className="cart-page-button">
             <IconButton
                 image={require('../../icons/cart_grey.png')}
-                backgroundColor='#fff'
+                backgroundColor='rgba(0,0,0,0)'
                 clickEvent={clickEvent}/>
             {ItemNumber}
         </div>

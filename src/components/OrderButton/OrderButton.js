@@ -7,7 +7,7 @@ export default function OrderButton(props) {
         <div className='order-button'>
             <QuadrangleButton
                 textType='h3'
-                text='주문하러 가기'
+                text={props.text}
                 paddingTop='8px'
                 paddingBottom='8px'
                 clickEvent={props.clickEvent}/>
@@ -20,5 +20,6 @@ const defaultClickEvent = () => {
 }
 
 OrderButton.defaultProps = {
-    clickEvent: defaultClickEvent
+    clickEvent: defaultClickEvent,
+    text: '주문하러 가기'
 }

@@ -23,6 +23,6 @@ IconButton.defaultProps = {
     iconWidth: '80%',
     iconHeight: '80%',
     clickEvent: defaultClickEvent,
-    backgroundColor: '#EB5C2E',
+    backgroundColor: 'rgba(0,0,0,0)',
     altText: 'icon',
 }

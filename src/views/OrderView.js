@@ -29,6 +29,9 @@ export default function OrderView(props) {
                 unselectableDayList={[]}/>
     }
 
+    const totalPrice = 20000
+    const orderButtonText = totalPrice.toLocaleString() + '원 결제하기'
+
     return (
         <div className="page">
             <Header/>
@@ -43,7 +46,7 @@ export default function OrderView(props) {
                     <div style={{'minHeight':'30px'}}></div>
                     {CalendarBox}
                     <div style={{'minHeight':'30px'}}></div>
-                    <OrderButton/>
+                    <OrderButton text={orderButtonText}/>
                 </div>
             </div>
         </div>
