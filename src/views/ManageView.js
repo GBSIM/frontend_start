@@ -4,6 +4,7 @@ import Header from "../components/Header/Header"
 import UnderlineNavContainer from '../components/UnderlineNavContainer/UnderlineNavContainer';
 import UserClass from '../components/UserClass/UserClass';
 import ManagerCalendar from '../components/ManagerCalendar/ManagerCalendar';
+import Order from '../components/Order/Order';
 import Footer from '../components/Footer/Footer';
 
 export default function ManageView(props) {
@@ -20,6 +21,8 @@ export default function ManageView(props) {
                 <div className='contents'>
                     <div style={{'minHeight':'20px'}}></div>
                     <ManagerCalendar/>
+                    <div style={{'minHeight':'20px'}}></div>
+                    <Order/>
                 </div>
             </div>
             <Footer/>

@@ -1,0 +1,46 @@
+.order {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    row-gap: 16px;
+}
+
+.order-id-container {
+    padding: 6px 12px 6px 12px;
+    background: rgb(235, 92, 46);
+    border-radius: 8px;
+}
+
+.order-id {
+    color : #fff;
+}
+
+.order-contents-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-contents {
+    color: #333;
+}
+
+.order-items {
+    color: #666;
+}
+
+.order-items-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+    row-gap: 6px;   
+}
