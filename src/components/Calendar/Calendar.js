@@ -32,7 +32,7 @@ export default function Calendar(props) {
         return (
             <CalendarDay 
                 date={date} 
-                isOn={date===selectedDate}
+                isOn={(displayedYear === selectedYear) && (displayedMonth === selectedMonth) && (date=== selectedDate)}
                 clickEvent={ChangeDate}
                 key={'calendar-day-'+index}
                 isSelectable={(!props.isDayLimited) || 

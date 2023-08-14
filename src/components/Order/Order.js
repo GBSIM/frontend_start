@@ -3,12 +3,20 @@ import './Order.css';
 export default function Order(props) {
     const Items = props.items.map((item,index) => {
         return (
-            <div className='order-contents-container'>
+            <div className='order-contents-container' key={'order-item-'+index}>
                 <span className='order-items'>{item.name} x {item.quantity}</span>
                 <span className='order-items'>{(item.price * item.quantity).toLocaleString()}원</span>
             </div>
         )
     })
+
+    const StatusButtons =
+        <div className='order-status-buttons'>
+            <StatusButton text='결제완료' status={props.status}/>
+            <StatusButton text='상품준비중' status={props.status}/>
+            <StatusButton text='배송중' status={props.status}/>
+            <StatusButton text='배송완료' status={props.status}/>
+        </div>
 
     return (
         <div className='order'>
@@ -55,8 +63,25 @@ export default function Order(props) {
                     <span className='order-items'>[전화번호] {props.phone}</span>
                 </div>
             </div>
+            {StatusButtons}
         </div>
     )
+}
+
+function StatusButton(props) {
+    if (props.text === props.status) {
+        return (
+            <button className='order-status-button on'>
+                <span className='order-status-button-text on'>{props.text}</span>
+            </button>
+        )
+    } else {
+        return (
+            <button className='order-status-button off'>
+                <span className='order-status-button-text off'>{props.text}</span>
+            </button>
+        )
+    }
 }
 
 Order.defaultProps = {
@@ -69,4 +94,5 @@ Order.defaultProps = {
     address: '경기도 화성시 시청로 102번길11 205동 1604호 (00406)',
     reciever: '장원영',
     phone: '010-0201-1102',
+    status: '결제완료',
 }

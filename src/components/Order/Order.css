@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: flex-start;
     border-bottom: 1px solid #eee;
+    padding-top: 20px;
     padding-bottom: 20px;
     row-gap: 16px;
 }
@@ -43,4 +44,38 @@
     justify-content: space-between;
     align-items: center; 
     row-gap: 6px;   
+}
+
+.order-status-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.order-status-button {
+    flex: 1;
+    border-radius: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.order-status-button.on {
+    border: 1px solid rgb(235, 92, 46);
+    background:rgb(235, 92, 46);
+}
+
+.order-status-button.off {
+    border: 1px solid rgb(235, 92, 46);
+    background-color: rgba(0,0,0,0);
+}
+
+.order-status-button-text.on {
+    color: #fff;
+}
+
+.order-status-button-text.off {
+    color: rgb(235, 92, 46);
 }
