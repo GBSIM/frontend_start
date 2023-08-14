@@ -3,17 +3,18 @@ import './Calendar.css';
 import { useState } from 'react';
 
 export default function Calendar(props) {
-    const today = new Date();
-    const [selectedYear, setYear] = useState(today.getFullYear());
-    const [selectedMonth, setMonth] = useState(today.getMonth() + 1);
-    const [selectedDate, setDate] = useState(today.getDate());
+    const [selectedYear, setYear] = useState(Number(props.startDate.split('-')[0]));
+    const [selectedMonth, setMonth] = useState(Number(props.startDate.split('-')[1]));
+    const [selectedDate, setDate] = useState(Number(props.startDate.split('-')[2]));
+    const [displayedYear, setDisplayedYear] = useState(Number(props.startDate.split('-')[0]));
+    const [displayedMonth, setDisplayedMonth] = useState(Number(props.startDate.split('-')[1]));
 
     const ChangeDate = (date) => {
         setDate(date);
         props.clickEvent(selectedYear,selectedMonth,date);
     }
 
-    const currentDate = new Date(selectedYear,selectedMonth-1,selectedDate);
+    const currentDate = new Date(displayedYear,displayedMonth-1,1);
     let dateList = Array.from({length: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay()}, () => 0);
     for (var dateStep = 1; dateStep <= new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate(); dateStep++) {
         dateList.push(dateStep);
@@ -26,7 +27,7 @@ export default function Calendar(props) {
     const CalendarDays = dateList.map((date,index) => {
         let startDate = new Date(props.startDate.split('-')[0],props.startDate.split('-')[1],props.startDate.split('-')[2]);
         let endDate = new Date(props.endDate.split('-')[0],props.endDate.split('-')[1],props.endDate.split('-')[2]);
-        let standardDate = new Date(selectedYear,selectedMonth,date);
+        let standardDate = new Date(displayedYear,displayedMonth,date);
         let dayOfStandardDate = standardDate.getDay();
         return (
             <CalendarDay 
@@ -40,20 +41,20 @@ export default function Calendar(props) {
     })
 
     const moveToPreviousMonth = () => {
-        if (selectedMonth === 1) {
-            setMonth(12);
-            setYear(selectedYear-1);
+        if (displayedMonth === 1) {
+            setDisplayedMonth(12);
+            setDisplayedYear(displayedYear - 1);
         } else {
-            setMonth(selectedMonth - 1);
-        }
+            setDisplayedMonth(displayedMonth - 1);
+        }        
     }
 
     const moveToNextMonth = () => {
-        if (selectedMonth === 12) {
-            setMonth(1);
-            setYear(selectedYear + 1);
+        if (displayedMonth === 12) {
+            setDisplayedMonth(1);
+            setDisplayedYear(displayedYear + 1);
         } else {
-            setMonth(selectedMonth + 1);
+            setDisplayedMonth(displayedMonth + 1);
         }
     }
 
@@ -70,7 +71,7 @@ export default function Calendar(props) {
         <div className='calendar'>
             <div className='calendar-row'>
                 <span className='calendar-year'>
-                    {selectedYear}
+                    {displayedYear}
                 </span>
             </div>
             <div style={{'minHeight':'4px'}}></div>
@@ -81,7 +82,7 @@ export default function Calendar(props) {
                          src={require('../../icons/inequity_left_white.png')}/>
                 </button>
                 <h3 className='calendar-month'>
-                    {selectedMonth}월
+                    {displayedMonth}월
                 </h3>
                 <button className='calendar-month-arrow-button' onClick={() => moveToNextMonth()}>
                     <img className='calendar-month-arrow-button-image' 
@@ -169,4 +170,5 @@ CalendarDay.defaultProps = {
     date: 1,
     isOn: false,
     isSelectable: true,
+    clickEvent: defaultClickEvent,
 }
