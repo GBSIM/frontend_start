@@ -1,9 +1,10 @@
+import './OrderCalendarContentsContainer.css';
+
 import UnitContentsContainer from "../UnitContentsContainer/UnitContentsContainer";
-import './CalendarContentsContainer.css';
 
 import Calendar from "../Calendar/Calendar";
 
-export default function CalendarContetnsContainer(props) {
+export default function OrderCalendarContetnsContainer(props) {
     const DateGuide = 
         <div className="calendar-contents-container-date-guide">
             <h3 className="calendar-contents-container-date">
@@ -29,7 +30,6 @@ export default function CalendarContetnsContainer(props) {
                 </div>
         }   
     }
-    
 
     return (
         <UnitContentsContainer title={props.title}>
@@ -45,7 +45,7 @@ export default function CalendarContetnsContainer(props) {
     )
 }
 
-CalendarContetnsContainer.defaultProps = {
+OrderCalendarContetnsContainer.defaultProps = {
     title: '픽업날짜',
     year: 2023,
     month: 8,

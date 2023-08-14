@@ -18,7 +18,7 @@ export default function Calendar(props) {
     for (var dateStep = 1; dateStep <= new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate(); dateStep++) {
         dateList.push(dateStep);
     }
-    console.log((new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDay()));
+    
     for (var dayStep = (new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDay());dayStep < 6;dayStep++) {
         dateList.push(0);
     }
@@ -34,7 +34,8 @@ export default function Calendar(props) {
                 isOn={date===selectedDate}
                 clickEvent={ChangeDate}
                 key={'calendar-day-'+index}
-                isSelectable={(startDate <= standardDate) && (standardDate <= endDate) && (!props.unselectableDayList.includes(dayOfStandardDate))}/>
+                isSelectable={(!props.isDayLimited) || 
+                              ((startDate <= standardDate) && (standardDate <= endDate) && (!props.unselectableDayList.includes(dayOfStandardDate)))}/>
         )
     })
 
@@ -161,6 +162,7 @@ Calendar.defaultProps = {
     endDate: String(new Date().getFullYear())+'-'+String(new Date().getMonth()+1)+'-'+String(new Date().getDate() + 7),
     unselectableDayList: [1,4],
     clickEvent: defaultClickEvent,
+    isDayLimited: true,
 }
 
 CalendarDay.defaultProps = {

@@ -44,6 +44,6 @@ export default function UserMenuWindow(props) {
 
 UserMenuWindow.defaultProps = {
     isOn: true,
-    userClass: 'orange',
+    userClass: 'manager',
 }
 
