@@ -19,15 +19,11 @@ export default function Modal(props) {
             onFocus={() => disableScroll()}>
             <div className='modal-contents' style={{'minWidth':props.minWidth}}>
                 {props.children}
-                <div className='modal-spacer'></div>
+                {/* <div className='modal-spacer'></div> */}
                 <form method="dialog" className='modal-close-button-container'>
-                    <BorderBoxButton
-                        text={props.closeText}
-                        width='100%'
-                        minWidth={300}
-                        paddingTop={7}
-                        paddingBottom={7}
-                        clickEvent={props.closeEvent}/>
+                    <button className='modal-close-button'>
+                        <span className='modal-close-button-text'>{props.closeText}</span>
+                    </button>
                 </form>
             </div>
         </dialog>

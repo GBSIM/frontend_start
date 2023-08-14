@@ -28,14 +28,9 @@ export default function MobileModal(props) {
 
     const CloseButton =
         <div className='mobile-modal-close-button-container'>
-            <BorderBoxButton
-                textType='h3'
-                paddingTop={7}
-                paddingBottom={7}
-                text={props.closeText}
-                width='100%'
-                minWidth={300} 
-                clickEvent={props.closeEvent} />
+            <button className='mobile-modal-close-button' onClick={() => props.closeEvent()}>
+                <span className='mobile-modal-close-button-text'>{props.closeText}</span>
+            </button>
         </div>
 
     if (props.isOn) {
