@@ -47,5 +47,5 @@ export default function WideScreenHeader(props) {
 WideScreenHeader.defaultProps = {
     height: 60,
     name: '장원영',
-    isLogined: true,
+    isLogined: false,
 }

@@ -6,3 +6,7 @@
     align-items: center;
     row-gap: 10px;
 }
+
+.social-login-modal-guide {
+    color: #666;
+}
