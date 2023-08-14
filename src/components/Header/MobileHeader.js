@@ -17,5 +17,5 @@ export default function MobileHeader(props) {
 
 MobileHeader.defaultProps = {
     height: 50,
-    isLogined: true,
+    isLogined: false,
 }

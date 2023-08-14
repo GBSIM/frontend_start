@@ -7,6 +7,11 @@ import SocialLoginButton from "../SocialLoginButton/SocialLoginButton"
 export default function SocialLoginMobileModal() {
     return (
         <Modal id='social-login-mobile-modal' minWidth='75vw'>
+            <div style={{'minHeight':'20px'}}></div>
+            <span className='social-login-mobile-modal-guide'>
+                소셜 로그인으로 간편하게 로그인하세요.
+            </span>
+            <div style={{'minHeight':'20px'}}></div>
             <div className="social-login-mobile-modal-buttons">
                 <SocialLoginButton 
                     text='카카오 로그인' 

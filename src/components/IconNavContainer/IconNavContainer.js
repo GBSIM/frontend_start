@@ -34,5 +34,5 @@ export default function IconNavContainer(props) {
 }
 
 IconNavContainer.defaultProps = {
-    isLogined: true,
+    isLogined: false,
 }
