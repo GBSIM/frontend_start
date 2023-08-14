@@ -1,3 +1,5 @@
 .user-button {
+    padding: 3px;
     position: relative;
+    display: block;
 }

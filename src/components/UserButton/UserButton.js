@@ -8,22 +8,21 @@ import UserMenuWindow from '../UserMenuWindow/UserMenuWindow';
 export default function UserButton(props) {
     const [isUserMenuWindowOn,setUserMenuWindowOn] = useState(false);
 
-    const changeUserMenuWindwowOnStatus = () => {
-        if (isUserMenuWindowOn) {
-            setUserMenuWindowOn(false);
-        } else {
-            setUserMenuWindowOn(true);
-        }
+    const showUserMenuWindow = () => {
+        setUserMenuWindowOn(true);
+    }
+
+    const hideUserMenuWindow = () => {
+        setUserMenuWindowOn(false);
     }
 
     return (
-        <div className='user-button'>
+        <div className='user-button' onMouseOver={() => showUserMenuWindow()} onMouseLeave={() => hideUserMenuWindow()}>
             <TextIconButton
                 text={(props.name)+'님'}
                 color='#666'
                 image={require('../../icons/inequity_down_grey.png')}
-                iconSize={16}
-                clickEvent={changeUserMenuWindwowOnStatus}/>
+                iconSize={16}/>
             <UserMenuWindow isOn={isUserMenuWindowOn}/>
         </div>
         
@@ -32,5 +31,4 @@ export default function UserButton(props) {
 
 UserButton.defaultProps = {
     name: '장원영',
-
 }
