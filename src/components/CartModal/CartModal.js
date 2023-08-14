@@ -12,13 +12,11 @@ export default function CartModal(props) {
     const [price, setPrice] = useState(props.price);
 
     const increaseCount = () => {
-        console.log("+")
         setCount(count + 1);
     }
 
     const decreaseCount = () => {
         if (count > props.minimumQuantity) {
-            console.log("-")
             setCount(count - 1);
         }
     }
@@ -31,6 +29,7 @@ export default function CartModal(props) {
 
     const AddItemToCart = () => {
         initializeCount();
+        props.popupEvent();
     }
 
     const selectOption = (e) => {
@@ -75,11 +74,15 @@ export default function CartModal(props) {
                 <h2 className='cart-modal-total-price'>{totalPrice.toLocaleString()}원</h2>
             </div>
             <form method="dialog" className='modal-close-button-container'>
-                <CartAddButton clickEvent={AddItemToCart}/>
+                <CartAddButton cartAddAction={AddItemToCart}/>
             </form>
             <div className='cart-modal-row-spacer'></div>
         </Modal>
     )
+}
+
+const defaultClickEvent = () => {
+    
 }
 
 CartModal.defaultProps = {
@@ -87,5 +90,6 @@ CartModal.defaultProps = {
     price: 2500,
     minimumQuantity: 1,
     options: [],
-    id: '000'
+    id: '000',
+    popupEvent: defaultClickEvent,
 }
