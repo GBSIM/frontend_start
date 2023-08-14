@@ -22,3 +22,10 @@
         right: 30px;
     }
 }
+
+@media (max-width: 700px) {
+    .notification {
+        right: 0px;
+        transform: translateX(-50%);
+    }
+}

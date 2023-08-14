@@ -13,6 +13,8 @@ export default function CartMobileModal(props) {
 
     const addItemToCart = () => {
         props.closeEvent();
+        setCount(props.minimumQuantity);
+        props.popupEvent();
     }
 
     const increaseCount = () => {

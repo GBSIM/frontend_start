@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import CartMobileModal from '../CartMobileModal/CartMobileModal';
 import IconButton from '../IconButton/IconButton';
+import Notification from '../Notification/Notification';
 
 export default function CartMobileButton(props) {
     const [isMobileCartModalOn,setMobileCartModalOn] = useState(false);
@@ -14,6 +15,14 @@ export default function CartMobileButton(props) {
 
     const hideMobileCartModal = () => {
         setMobileCartModalOn(false);
+    }
+
+    const notiText = props.name + " " + 1 +"개를 담았어요.";
+
+    const showPopupNotification = () => {
+        const notification = document.getElementById("notification-mobile-"+props.id);
+        notification.style.display = "flex";
+        setTimeout(() => notification.style.display = "none", 2000);
     }
 
     return (
@@ -32,9 +41,17 @@ export default function CartMobileButton(props) {
                 price={props.price}
                 minimumQuantity={props.minimumQuantity}
                 options={props.options}
-                id={props.id}/>
+                id={props.id}
+                popupEvent={showPopupNotification}/>
+            <Notification 
+                text={notiText} 
+                id={"mobile-"+props.id}/>
         </div>
     )
+}
+
+const defaultClickEvent = () => {
+    
 }
 
 CartMobileButton.defaultProps = {
@@ -45,4 +62,5 @@ CartMobileButton.defaultProps = {
     minimumQuantity: 1,
     options: [],
     id: '000',
+    popupEvent: defaultClickEvent,
 }
