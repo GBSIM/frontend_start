@@ -4,7 +4,7 @@ export const saveItemInfo = (info) => ({type:SAVE_ITEM_INFO, info:info});
 
 const initialState = {
     name: '제품명',
-    price: 3000,
+    price: 30000,
     tag: '인기',
     menuClass: '',
     stock: 100,
@@ -15,7 +15,10 @@ const initialState = {
     imageUrl: '',
     detailImageUrl: [],
     intro: '',
-    options: [],
+    options: [
+        {name: '1호', price: 30000},
+        {name: '2호', price: 40000},
+    ],
     minimumOrderQuantity: 1,
     gradients: [],
     detail: '',

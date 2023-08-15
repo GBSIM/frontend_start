@@ -8,6 +8,9 @@ import Notification from '../Notification/Notification';
 
 export default function ItemDetail(props) {
     const [quantity, setQuantity] = useState(props.minimumOrderQuantity);
+    const [option, setOption] = useState({"name":"option","price":0});
+    const [price, setPrice] = useState(props.price);
+
     const addQuantity = () => {
         setQuantity(quantity + 1);
     }
@@ -15,6 +18,30 @@ export default function ItemDetail(props) {
         if (quantity > 1) {
             setQuantity(quantity - 1);
         }
+    }
+
+    const selectOption = (e) => {
+        setOption(
+            {"name":props.options[e.target.selectedIndex]["name"],
+             "price":props.options[e.target.selectedIndex]["price"]});
+        setPrice(props.options[e.target.selectedIndex]["price"]);
+    }
+
+    const isOptionItem = Array.isArray(props.options) && (props.options.length > 0);
+    let optionsContainer;
+    if (isOptionItem) {
+        const Options = props.options.map((option) => (
+            <option 
+                className='cart-modal-option'
+                value={option["name"]} 
+                key={option["name"]}>
+                {option["name"]} - - -  {option["price"].toLocaleString()}원
+            </option>
+        ))
+        optionsContainer =
+            <select name='option' className='cart-modal-option-container' onChange={selectOption}>
+                {Options}
+            </select>
     }
 
     let itemType;
@@ -47,7 +74,7 @@ export default function ItemDetail(props) {
             typeDescription= "14시 이전 주문은 당일에 배송 시작됩니다. 배송은 하루 ~ 이틀 걸려요."
     }
 
-    const totalPrice = props.price * quantity;
+    const totalPrice = price * quantity;
 
     let LikeButton;
     if (props.isLiked) {
@@ -86,7 +113,7 @@ export default function ItemDetail(props) {
                     <span className='item-detail-contents-text introduction'>{props.introduction}</span>
                 </div>
                 <div className='item-detail-contents-row price'>
-                    <h2 className='item-detail-contents-header price'>{(props.price).toLocaleString()}원</h2>
+                    <h2 className='item-detail-contents-header price'>{(price).toLocaleString()}원</h2>
                 </div>
                 <div className='item-detail-contents-row type'>
                     <span className='item-detail-contents-title'>{typeTitle}</span>
@@ -95,6 +122,7 @@ export default function ItemDetail(props) {
                         <span className='item-detail-contents-text type-description'>{typeDescription}</span>
                     </div>
                 </div>
+                {optionsContainer}
                 <div className='item-detail-contents-row cart'>
                     <span className='item-detail-contents-title'>상품 담기</span>
                     <Counter 
@@ -128,5 +156,6 @@ ItemDetail.defaultProps = {
     introduction: '상품 소개',
     price: 12345,
     isLiked: false,
-    id: '000'
+    id: '000',
+    options: [],
 }

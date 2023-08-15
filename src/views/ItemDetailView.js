@@ -22,7 +22,8 @@ export default function ItemDetailView() {
                         introduction={item.intro}
                         price={item.price}
                         minimumOrderQuantity={item.minimumOrderQuantity}
-                        isLiked={user.likes.includes(item._id)}/>
+                        isLiked={user.likes.includes(item._id)}
+                        options={item.options}/>
                     <ItemDescription
                         name={item.name}
                         description={item.detail}

@@ -2,8 +2,7 @@ import '../default.css';
 
 import { useSelector } from 'react-redux';
 
-import Header from "../components/Header/Header"
-import Footer from '../components/Footer/Footer';
+import Header from "../components/Header/Header";
 import LikeMenuContentsContainer from '../components/LikeMenuContentsContainer/LikeMenuContentsContainer';
 
 export default function LikesView() {
@@ -18,7 +17,6 @@ export default function LikesView() {
                     <LikeMenuContentsContainer likeMenuList={user.likes}/>
                 </div>
             </div>
-            <Footer/>
         </div>
     )
 }
