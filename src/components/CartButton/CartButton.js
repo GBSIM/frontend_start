@@ -11,7 +11,7 @@ export default function CartButton(props) {
         CartModal.showModal();
     }
 
-    const notiText = props.name + " " + 1 +"개를 담았어요."
+    const notiText = props.name + "를 담았어요."
 
     const showPopupNotification = () => {
         const notification = document.getElementById("notification-"+props.id);

@@ -114,6 +114,11 @@
     }
 
     .item-detail-contents-row.cart-add-button {
-        display: none;
+        width: 95%;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        padding: 10px;
+        background: #fff;
     }
 }

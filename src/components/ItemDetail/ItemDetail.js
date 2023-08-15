@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import Counter from '../Counter/Counter';
 import CartAddButton from '../CartAddButton/CartAddButton';
+import Notification from '../Notification/Notification';
 
 export default function ItemDetail(props) {
     const [quantity, setQuantity] = useState(props.minimumOrderQuantity);
@@ -61,6 +62,13 @@ export default function ItemDetail(props) {
             </button>
     }
 
+    const notiText = props.name + "를 담았어요.";
+    const showPopupNotification = () => {
+        const notification = document.getElementById("notification-item-detail-popup-"+props.id);        
+        notification.style.display = "flex";
+        setTimeout(() => notification.style.display = "none", 2000);
+    }
+
     return (
         <div className='item-detail'>
             <img className='item-detail-thumbnail-image' src={props.image} alt='thumbnail'></img>
@@ -102,9 +110,13 @@ export default function ItemDetail(props) {
                 <div className='item-detail-contents-row cart-add-button'>
                     <CartAddButton 
                         paddingTop={10}
-                        paddingBottom={10}/>
+                        paddingBottom={10}
+                        cartAddAction={showPopupNotification}/>
                 </div>
             </div>
+            <Notification 
+                text={notiText} 
+                id={"item-detail-popup-"+props.id}/>
         </div>
     )
 }
@@ -116,4 +128,5 @@ ItemDetail.defaultProps = {
     introduction: '상품 소개',
     price: 12345,
     isLiked: false,
+    id: '000'
 }
