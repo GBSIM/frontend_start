@@ -7,14 +7,41 @@ export const login = () => ({type:LOGIN});
 export const logout = () => ({type:LOGOUT});
 
 const initialState = {
-    isLogined: false,
+    isLogined: true,
     name: "이름",
     email: "abcd@mgail.com",
     phone: "010-0000-0000",
     class: 0,
     socialId: "abcdabcd",
-    shippings: [],
+    shippings: [
+        {
+            name: '장원영',
+            phone: '010-0001-0002',
+            basicAddress: '경기도 화성시 시청로 102번길 11',
+            detailAddress: '205동 1604호',
+            request: '문 앞에 놔주세요.',
+            tag: '배송지',
+            userId: '000',
+            postalCode: '00406',
+        },
+        {
+            name: '김진아',
+            phone: '010-0001-0003',
+            basicAddress: '경기도 화성시 시청로 102번길 11',
+            detailAddress: '205동 1104호',
+            request: '문 앞에 놔주세요.',
+            tag: '배송지',
+            userId: '000',
+            postalCode: '00406',
+        },
+    ],
     orders: [],
+    deliveryCart: [
+        
+            
+    ],
+    pickupCart: [],
+    presentCart: [],
     likes: [],
 }
 
@@ -31,6 +58,9 @@ const user = (state = initialState, action) => {
                 shippings: action.info.shippings,
                 orders: action.info.orders,
                 likes: action.info.likes,
+                deliveryCart: action.info.deliveryCart,
+                pickupCart: action.info.pickupCart,
+                presentCart: action.info.presentCart,
             }
         case LOGIN:
             return {

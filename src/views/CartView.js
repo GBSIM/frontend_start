@@ -36,7 +36,7 @@ export default function CartView(props) {
                 <UnderlineNavContainer navTextList={['배송주문','선물주문','픽업주문']} linkList={['/cart/delivery','/cart/present','/cart/pickup']} status={props.status}/>
                 <div className='contents'>
                     <div style={{'minHeight':'20px'}}></div>
-                    <CartItemContentsContainer/>
+                    <CartItemContentsContainer cartItemList={user.deliveryCart}/>
                     <div className='contents-spacer'/>
                     <OrderButton clickEvent={moveToOrderPage}/>
                 </div>
