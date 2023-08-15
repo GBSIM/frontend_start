@@ -139,7 +139,8 @@ export default function ItemDetail(props) {
                     <CartAddButton 
                         paddingTop={10}
                         paddingBottom={10}
-                        cartAddAction={showPopupNotification}/>
+                        cartAddAction={showPopupNotification}
+                        isPurchaseable={props.isPurchaseable}/>
                 </div>
             </div>
             <Notification 
@@ -158,4 +159,5 @@ ItemDetail.defaultProps = {
     isLiked: false,
     id: '000',
     options: [],
+    isPurchaseable: false,
 }

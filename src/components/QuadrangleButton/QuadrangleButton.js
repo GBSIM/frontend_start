@@ -46,6 +46,8 @@ export default function QuadrangleButton(props) {
                 "paddingLeft": props.paddingLeft,
                 "borderRadius": props.borderRadius,
                 "width": props.width,
+                "backgroundColor": props.backgroundColor,
+                "borderColor": props.borderColor
             }}>
             {Text}
         </button>
@@ -66,4 +68,6 @@ QuadrangleButton.defaultProps = {
     borderRadius: 6,
     text: "텍스트를 입력해주세요.",
     width: '100%',
+    backgroundColor: 'rgba(235,92,46,1)',
+    borderColor: 'rgba(235,92,46,1)',
 }
