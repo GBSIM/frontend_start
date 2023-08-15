@@ -6,13 +6,13 @@ export default function OrderHistoryList(props) {
     const OrderHistorys = props.orderList.map((order,index) => {
         return (
             <OrderHistoryBox
-                orderType={order.orderType}
-                orderDate={order.orderDate}
-                items={order.items}
+                orderType={order.type}
+                createdAt={order.createdAt}
+                menus={order.menus}
                 payedMoney={order.payedMoney}
                 pickupDate={order.pickupDate}
                 pickupTime={order.pickupTime}
-                orderStatus={order.orderStatus}
+                orderStatus={order.status}
                 id={order.id}
                 key={'order_history_'+index}/>
         )

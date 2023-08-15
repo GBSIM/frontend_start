@@ -17,11 +17,30 @@ export default function OrderHistoryBox(props) {
                 <span className='order-history-box-info-value'>{props.pickupDate} {props.pickupTime}</span>
             </div>
     }
+
     let itemSummary;
-    if (props.items.length > 1) {
-        itemSummary = props.items[0].name + '외 ' + String(props.items.length - 1) + '건';
+    if (props.menus) {
+        if (props.menus.length) {
+            let representativeName;
+            if (props.menus.option) {
+                if (props.menus.option.name) {
+                    representativeName = props.menus[0].name + ' ' + props.menus[0].option.name;
+                } else {
+                    representativeName = props.menus[0].name
+                }
+            } else {
+                representativeName = props.menus[0].name
+            }
+        }
+    }    
+
+    const [orderTime, ] = props.createdAt.split('T');
+    const [orderYear, orderMonth, orderDate] = orderTime.split('-');
+
+    if (props.menus.length > 1) {
+        itemSummary = props.menus[0].name + ' 외 ' + String(props.menus.length - 1) + '건';
     } else {
-        itemSummary = props.items[0].name;
+        itemSummary = props.menus[0].name;
     }
 
     const openMobileModal = () => {
@@ -50,7 +69,7 @@ export default function OrderHistoryBox(props) {
                 <div className='order-history-box-infos'>
                     <div className='order-history-box-info'>
                         <span className='order-history-box-info-title'>주문한 날짜</span>
-                        <span className='order-history-box-info-value'>{props.orderDate}</span>
+                        <span className='order-history-box-info-value'>{orderYear}.{orderMonth}.{orderDate}</span>
                     </div>
                     <div className='order-history-box-info'>
                         <span className='order-history-box-info-title'>주문한 상품</span>
@@ -84,10 +103,10 @@ export default function OrderHistoryBox(props) {
 OrderHistoryBox.defaultProps = {
     id: '000',
     orderType: 'pickup',
-    orderDate: '2023.12.31',
-    items: [{name:'바스크치즈케이크',price:42000,quantity:1},{name:'골드키위요거트생크림케이크',price:45000,quantity:2}],
+    menus: [{name:'바스크치즈케이크',price:42000,quantity:1},{name:'골드키위요거트생크림케이크',price:45000,quantity:2}],
     payedMoney: 42000,
     pickupDate: '2023.12.31',
     pickupTime: '15:00',
     orderStatus: '결제완료',
+    createdAt: '2023-08-15T15:00:33'
 }

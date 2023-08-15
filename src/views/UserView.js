@@ -16,16 +16,16 @@ export default function UserView(props) {
     let Contents;
     switch (props.status) {
         case '주문내역':
-            Contents = <OrderHistoryContentsContainer/>
+            Contents = <OrderHistoryContentsContainer orderList={user.orders}/>
             break;
         case '배송지관리':
             Contents = <ShippingContentsContainer shippingList={user.shippings} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart}/>
             break;
         case '쿠폰':
-            Contents = <CouponContentsContainer/>
+            Contents = <CouponContentsContainer couponList={user.coupons}/>
             break;
         default:
-            Contents = <OrderHistoryContentsContainer/>
+            Contents = <OrderHistoryContentsContainer orderList={user.orders}/>
             break;
     }
 
