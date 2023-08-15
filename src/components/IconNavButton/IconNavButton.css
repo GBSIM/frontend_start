@@ -1,0 +1,18 @@
+.icon-nav-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-nav-button-text {
+    font-size: 10px;
+}
+
+.icon-nav-button-text.on {
+    color: #eb5c2e;
+}
+
+.icon-nav-button-text.off {
+    color: #aaa;
+}

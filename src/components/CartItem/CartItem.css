@@ -44,7 +44,7 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    row-gap: 3px;
+    row-gap: 6px;
 }
 
 .cart-item-delete-button {
