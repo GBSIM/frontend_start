@@ -112,6 +112,8 @@ ItemDescription.defaultProps = {
     name: '상품명',
     description: '상품의 소개를 작성해주세요.',
     image1: '',
+    image2: '',
+    image3: '',
     gradientList: [
         {name: '상품명을 적어주세요.',
          type: '상품 종류를 적어주세요.',

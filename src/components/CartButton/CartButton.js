@@ -31,7 +31,7 @@ export default function CartButton(props) {
             <CartModal
                 name={props.name}
                 price={props.price}
-                minimumQuantity={props.minimumQuantity}
+                minimumOrderQuantity={props.minimumOrderQuantity}
                 options={props.options}
                 id={props.id}
                 popupEvent={showPopupNotification}/>
@@ -47,7 +47,7 @@ CartButton.defaultProps = {
     height: 34,
     name: "상품명",
     price: 2500,
-    minimumQuantity: 1,
+    minimumOrderQuantity: 1,
     options: [],
     id: '000'
 }

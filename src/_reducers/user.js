@@ -15,6 +15,7 @@ const initialState = {
     socialId: "abcdabcd",
     shippings: [],
     orders: [],
+    likes: [],
 }
 
 const user = (state = initialState, action) => {
@@ -29,6 +30,7 @@ const user = (state = initialState, action) => {
                 socialId: action.info.socialId,
                 shippings: action.info.shippings,
                 orders: action.info.orders,
+                likes: action.info.likes,
             }
         case LOGIN:
             return {

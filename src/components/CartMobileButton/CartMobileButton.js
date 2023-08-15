@@ -39,7 +39,7 @@ export default function CartMobileButton(props) {
                 closeEvent={hideMobileCartModal}
                 name={props.name}
                 price={props.price}
-                minimumQuantity={props.minimumQuantity}
+                minimumOrderQuantity={props.minimumOrderQuantity}
                 options={props.options}
                 id={props.id}
                 popupEvent={showPopupNotification}/>
@@ -59,7 +59,7 @@ CartMobileButton.defaultProps = {
     height: 34,
     name: "상품명",
     price: 2500,
-    minimumQuantity: 1,
+    minimumOrderQuantity: 1,
     options: [],
     id: '000',
     popupEvent: defaultClickEvent,

@@ -28,7 +28,7 @@ export default function Item(props) {
                 <CartButton
                     name={props.name}
                     price={props.price}
-                    minimumQuantity={props.minimumQuantity}
+                    minimumOrderQuantity={props.minimumOrderQuantity}
                     options={props.options}
                     id={props.id}
                     />
@@ -37,7 +37,7 @@ export default function Item(props) {
                 <CartMobileButton
                     name={props.name}
                     price={props.price}
-                    minimumQuantity={props.minimumQuantity}
+                    minimumOrderQuantity={props.minimumOrderQuantity}
                     options={props.options}
                     id={props.id}
                     />
@@ -52,7 +52,7 @@ Item.defaultProps = {
     image: "",
     name: "상품명",
     price: 10000,
-    minimumQuantity: 1,
+    minimumOrderQuantity: 1,
     id: '000',
     options: [],
 }

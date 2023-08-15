@@ -6,7 +6,7 @@ import Counter from '../Counter/Counter';
 import CartAddButton from '../CartAddButton/CartAddButton';
 
 export default function ItemDetail(props) {
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(props.minimumOrderQuantity);
     const addQuantity = () => {
         setQuantity(quantity + 1);
     }
@@ -48,6 +48,19 @@ export default function ItemDetail(props) {
 
     const totalPrice = props.price * quantity;
 
+    let LikeButton;
+    if (props.isLiked) {
+        LikeButton =
+            <button className='item-detail-contents-like-button'>
+                <img className='item-detail-contents-like-button-image' src={require('../../icons/heart_red.png')} alt='like'></img>
+            </button>
+    } else {
+        LikeButton =
+            <button className='item-detail-contents-like-button'>
+                <img className='item-detail-contents-like-button-image' src={require('../../icons/heart_grey.png')} alt='like'></img>
+            </button>
+    }
+
     return (
         <div className='item-detail'>
             <img className='item-detail-thumbnail-image' src={props.image} alt='thumbnail'></img>
@@ -58,9 +71,7 @@ export default function ItemDetail(props) {
                     </div>
                     <div className='item-detail-contents-row name'>
                         <h2 className='item-detail-contents-header name'>{props.name}</h2>
-                        <button className='item-detail-contents-like-button'>
-                            <img className='item-detail-contents-like-button-image' src={''} alt='like'></img>
-                        </button>
+                        {LikeButton}
                     </div>
                 </div>
                 <div className='item-detail-contents-row'>
@@ -80,7 +91,7 @@ export default function ItemDetail(props) {
                     <span className='item-detail-contents-title'>상품 담기</span>
                     <Counter 
                         count={quantity} 
-                        minimumQuantity={1}
+                        minimumQuantity={props.minimumOrderQuantity}
                         increaseEvent={addQuantity}
                         decreaseEvent={subtractQuantity}
                         />
@@ -99,8 +110,10 @@ export default function ItemDetail(props) {
 }
 
 ItemDetail.defaultProps = {
+    minimumOrderQuantity: 1,
     type: 'delivery',
     name: '상품명',
     introduction: '상품 소개',
     price: 12345,
+    isLiked: false,
 }

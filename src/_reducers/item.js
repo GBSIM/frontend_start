@@ -20,6 +20,7 @@ const initialState = {
     gradients: [],
     detail: '',
     purchaseable: true,
+    id: '000',
 }
 
 const item = (state = initialState, action) => {
@@ -44,6 +45,7 @@ const item = (state = initialState, action) => {
                 gradients: action.info.gradients,
                 detail: action.info.detail,
                 purchaseable: action.info.purchaseable,
+                id: action.info._id,
             }
         default:
             return state;

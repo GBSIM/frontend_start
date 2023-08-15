@@ -7,7 +7,7 @@ import Counter from '../Counter/Counter';
 import CartAddButton from '../CartAddButton/CartAddButton';
 
 export default function CartModal(props) {
-    const [count, setCount] = useState(props.minimumQuantity);
+    const [count, setCount] = useState(props.minimumOrderQuantity);
     const [option, setOption] = useState({"name":"option","price":0});
     const [price, setPrice] = useState(props.price);
 
@@ -16,7 +16,7 @@ export default function CartModal(props) {
     }
 
     const decreaseCount = () => {
-        if (count > props.minimumQuantity) {
+        if (count > props.minimumOrderQuantity) {
             setCount(count - 1);
         }
     }
@@ -24,7 +24,7 @@ export default function CartModal(props) {
     const totalPrice = count * price;
 
     const initializeCount = () => {
-        setCount(props.minimumQuantity);
+        setCount(props.minimumOrderQuantity);
     }
 
     const AddItemToCart = () => {
@@ -65,7 +65,7 @@ export default function CartModal(props) {
             </div>
             <div className='cart-modal-row middle'>
                 <Counter 
-                    minimumCount={props.minimumQuantity}
+                    minimumCount={props.minimumOrderQuantity}
                     count={count}
                     increaseEvent={increaseCount}
                     decreaseEvent={decreaseCount}/>

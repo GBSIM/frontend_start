@@ -9,6 +9,22 @@ import ItemContentsContainer from '../components/ItemContentsContainer/ItemConte
 
 export default function MainView() {
     const user = useSelector(state => state.user);
+    const items = useSelector(state => state.items);
+    
+    let ItemClassList;
+    if (items.itemList) {
+        if (items.itemList.length > 0) {
+            ItemClassList = items.itemList.map((itemClass,index) => {
+                return (
+                    <ItemContentsContainer
+                        groupName={itemClass.name}
+                        intro={itemClass.intro}
+                        items={itemClass.menus}
+                        key={'item-group'+index}/>
+                )
+            })
+        }
+    }
 
     return (
         <div className="page">
@@ -16,7 +32,7 @@ export default function MainView() {
             <Banner/>
             <div className='contents-container'>
                 <div className='contents'>
-                    <ItemContentsContainer/>
+                    {ItemClassList}
                 </div>
             </div>
             <Footer/>
