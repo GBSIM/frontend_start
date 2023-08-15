@@ -285,7 +285,7 @@ const initialState = {
     likes: [
         {
             name: '제품명4',
-            price: 50000,
+            price: 45000,
             tag: '인기',
             menuClass: '',
             stock: 100,
