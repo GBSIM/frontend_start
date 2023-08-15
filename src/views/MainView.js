@@ -7,7 +7,7 @@ import Banner from '../components/Banner/Banner';
 import Footer from '../components/Footer/Footer';
 import ItemContentsContainer from '../components/ItemContentsContainer/ItemContentsContainer';
 
-export default function MainView() {
+export default function MainView(props) {
     const user = useSelector(state => state.user);
     const items = useSelector(state => state.items);
     
@@ -15,14 +15,16 @@ export default function MainView() {
     if (items.itemList) {
         if (items.itemList.length > 0) {
             ItemClassList = items.itemList.map((itemClass,index) => {
-                return (
-                    <ItemContentsContainer
-                        groupName={itemClass.name}
-                        intro={itemClass.intro}
-                        items={itemClass.menus}
-                        key={'item-group'+index}
-                        isLogined={user.isLogined}/>
-                )
+                if (itemClass.orderType === props.status) {
+                    return (
+                        <ItemContentsContainer
+                            groupName={itemClass.name}
+                            intro={itemClass.intro}
+                            items={itemClass.menus}
+                            key={'item-group'+index}
+                            isLogined={user.isLogined}/>
+                    )
+                }
             })
         }
     }
@@ -39,4 +41,8 @@ export default function MainView() {
             <Footer isLogined={user.isLogined}/>
         </div>
     )
+}
+
+MainView.defaultProps = {
+    status: 'delivery',
 }
