@@ -1,5 +1,7 @@
 import '../default.css';
 
+import { useSelector } from 'react-redux';
+
 import Header from "../components/Header/Header";
 import OrderSheetContentsContainer from '../components/OrderSheetContentsContainer/OrderSheetContentsContainer';
 import CustomerInfoContentsContainer from '../components/CustomerInfoContentsContainer/CustomerInfoContentsContainer';
@@ -8,6 +10,8 @@ import OrderCalendarContetnsContainer from '../components/OrderCalendarContentsC
 import OrderButton from '../components/OrderButton/OrderButton';
 
 export default function OrderView(props) {
+    const user = useSelector(state => state.user);
+
     let CalendarBox;
     if (props.status === '픽업주문') {
         CalendarBox =
@@ -34,7 +38,7 @@ export default function OrderView(props) {
 
     return (
         <div className="page">
-            <Header/>
+            <Header isLogined={user.isLogined} name={user.name}/>
             <div className='contents-container'>
                 <div className='contents'>
                     <div style={{'minHeight':'30px'}}></div>

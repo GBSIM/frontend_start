@@ -1,5 +1,7 @@
 import '../default.css';
 
+import { useSelector } from 'react-redux';
+
 import Header from "../components/Header/Header"
 import UnderlineNavContainer from '../components/UnderlineNavContainer/UnderlineNavContainer';
 import UserClass from '../components/UserClass/UserClass';
@@ -8,9 +10,11 @@ import Orders from '../components/Orders/Orders';
 import Footer from '../components/Footer/Footer';
 
 export default function ManageView(props) {
+    const user = useSelector(state => state.user);
+    
     return (
         <div className="page">
-            <Header/>
+            <Header isLogined={user.isLogined} name={user.name}/>
             <div className='contents-container'>
                 <div className='contents'>
                     <div style={{'minHeight':'30px'}}></div>

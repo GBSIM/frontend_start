@@ -11,7 +11,7 @@ import UserClass from '../components/UserClass/UserClass';
 import Footer from '../components/Footer/Footer';
 
 export default function UserView(props) {
-    const { isLogined, name } = useSelector(state => state.user);
+    const user = useSelector(state => state.user);
 
     let Contents;
     switch (props.status) {
@@ -31,7 +31,7 @@ export default function UserView(props) {
 
     return (
         <div className="page">
-            <Header isLogined={isLogined} name={name}/>
+            <Header isLogined={user.isLogined} name={user.name}/>
             <div className='contents-container'>
                 <div className='contents'>
                     <div style={{'minHeight':'30px'}}></div>

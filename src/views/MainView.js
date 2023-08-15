@@ -8,11 +8,11 @@ import Footer from '../components/Footer/Footer';
 import ItemContentsContainer from '../components/ItemContentsContainer/ItemContentsContainer';
 
 export default function MainView() {
-    const { isLogined, name } = useSelector(state => state.user);
+    const user = useSelector(state => state.user);
 
     return (
         <div className="page">
-            <Header isLogined={isLogined} name={name}/>
+            <Header isLogined={user.isLogined} name={user.name}/>
             <Banner/>
             <div className='contents-container'>
                 <div className='contents'>
