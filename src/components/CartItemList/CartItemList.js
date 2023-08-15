@@ -17,6 +17,7 @@ export default function CartItemList(props) {
                     uncheckedImage=''
                     price={cartItem.price}
                     count={cartItem.count}
+                    option={cartItem.option}
                     key={'cart-item-'+cartItem.id}/>
             ))
         } else {

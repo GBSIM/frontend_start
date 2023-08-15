@@ -11,16 +11,31 @@ export default function CartItem(props) {
         CartDeleteCheckModal.showModal();
     }
 
+    let itemName;
+    let itemPrice;
+    if (props.option) {
+        if (props.option.name && props.option.price) {
+            itemName = props.name + ' ' + props.option.name;
+            itemPrice = props.option.price;
+        } else {
+            itemName = props.name;
+            itemPrice = props.price;
+        }
+    } else {
+        itemName = props.name;
+        itemPrice = props.price;
+    }
+
     return (
         <UnitBoxContainer>
             <div className="cart-item">
                 <CheckButton size={24} isOn={props.isChecked}/>
                 <img src={props.itemImage} className='cart-item-image' alt='item'></img>
-                <h3 className='cart-item-name'>{props.name}</h3>
+                <h3 className='cart-item-name'>{itemName}</h3>
                 <div className='cart-item-spacer'></div>
                 <div className='cart-item-right-contents'>
                     <Counter count={props.count} increaseEvent={props.addQuantity} decreaseEvent={props.subtractQuantity}/>
-                    <h2 className='cart-item-price'>{props.price.toLocaleString()}원</h2>
+                    <h2 className='cart-item-price'>{itemPrice.toLocaleString()}원</h2>
                 </div>
                 <button className='cart-item-delete-button' onClick={() => openDeleteCheckModal()}>
                     <span className='cart-item-delete-button-text'>삭제하기</span>
@@ -47,5 +62,6 @@ CartItem.defaultProps = {
     count: 1,
     addQuantity: defaultClickEvent,
     subtractQuantity: defaultClickEvent,
-    deleteEvent: defaultClickEvent
+    deleteEvent: defaultClickEvent,
+    option: {},
 }

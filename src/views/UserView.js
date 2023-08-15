@@ -19,7 +19,7 @@ export default function UserView(props) {
             Contents = <OrderHistoryContentsContainer/>
             break;
         case '배송지관리':
-            Contents = <ShippingContentsContainer/>
+            Contents = <ShippingContentsContainer shippingList={user.shippings}/>
             break;
         case '쿠폰':
             Contents = <CouponContentsContainer/>
