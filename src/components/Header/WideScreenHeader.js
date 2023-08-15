@@ -14,7 +14,7 @@ export default function WideScreenHeader(props) {
             <div className='wide-screen-header-account-buttons'>
                 <LikesPageButton/>
                 <div style={{'minWidth':'2px'}}></div>
-                <CartPageButton/>
+                <CartPageButton itemNumber={props.cartItemNumber}/>
                 <div style={{'minWidth':'25px'}}></div>
                 <UserButton name={props.name}/>        
             </div>
@@ -48,4 +48,5 @@ WideScreenHeader.defaultProps = {
     height: 60,
     name: '장원영',
     isLogined: false,
+    cartItemNumber: 0,
 }

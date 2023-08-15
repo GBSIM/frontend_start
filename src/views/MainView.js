@@ -28,7 +28,7 @@ export default function MainView() {
 
     return (
         <div className="page">
-            <Header isLogined={user.isLogined} name={user.name}/>
+            <Header isLogined={user.isLogined} name={user.name} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart}/>
             <Banner/>
             <div className='contents-container'>
                 <div className='contents'>

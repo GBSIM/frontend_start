@@ -38,7 +38,7 @@ export default function OrderView(props) {
 
     return (
         <div className="page">
-            <Header isLogined={user.isLogined} name={user.name}/>
+            <Header isLogined={user.isLogined} name={user.name} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart}/>
             <div className='contents-container'>
                 <div className='contents'>
                     <div style={{'minHeight':'30px'}}></div>

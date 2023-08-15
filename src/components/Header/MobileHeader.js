@@ -9,7 +9,7 @@ export default function MobileHeader(props) {
     let CartButton;
     if (props.isLogined) {
         LikeButton = <LikesPageButton/>
-        CartButton= <CartPageButton/>
+        CartButton= <CartPageButton itemNumber={props.cartItemNumber}/>
     }
 
     return (
@@ -25,4 +25,5 @@ export default function MobileHeader(props) {
 MobileHeader.defaultProps = {
     height: 50,
     isLogined: false,
+    cartItemNumber: 0,
 }
