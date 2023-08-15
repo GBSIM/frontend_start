@@ -32,6 +32,7 @@ export default function Item(props) {
                     options={props.options}
                     id={props.id}
                     isPurchaseable={props.isPurchaseable}
+                    isLogined={props.isLogined}
                     />
             </div>
             <div className='item-cart-button-container mobile'>
@@ -42,6 +43,7 @@ export default function Item(props) {
                     options={props.options}
                     id={props.id}
                     isPurchaseable={props.isPurchaseable}
+                    isLogined={props.isLogined}
                     />
             </div>
             <span className='item-text name'>{props.name}</span>
@@ -58,4 +60,5 @@ Item.defaultProps = {
     id: '000',
     options: [],
     isPurchaseable: true,
+    isLogined: false,
 }

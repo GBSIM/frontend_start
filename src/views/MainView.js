@@ -20,7 +20,8 @@ export default function MainView() {
                         groupName={itemClass.name}
                         intro={itemClass.intro}
                         items={itemClass.menus}
-                        key={'item-group'+index}/>
+                        key={'item-group'+index}
+                        isLogined={user.isLogined}/>
                 )
             })
         }

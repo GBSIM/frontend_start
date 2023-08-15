@@ -12,7 +12,8 @@ export default function ItemList(props) {
             options={item.options}
             id={item.id}
             key={'item-'+item.id}
-            isPurchaseable={item.purchaseable}/>
+            isPurchaseable={item.purchaseable}
+            isLogined={props.isLogined}/>
     ))
     return (
         <div className='item-list'>
@@ -28,5 +29,6 @@ ItemList.defaultProps = {
         {image: '', name: '상품명3', price: 2500, minimumOrderQuantity: 3, id: '002', options: [],},
         {image: '', name: '상품명4', price: 2900, minimumOrderQuantity: 4, id: '003', options: [],},
         {image: '', name: '상품명5', price: 3000, minimumOrderQuantity: 10, id: '004', options: [],},
-    ]
+    ],
+    isLogined: false,
 }

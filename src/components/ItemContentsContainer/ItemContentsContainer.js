@@ -7,7 +7,7 @@ export default function ItemContentsContainer(props) {
         <div className="item-contents-container">
             <h2 className="item-contents-container-title">{props.groupName}</h2>
             <h3 className="item-contents-container-intro">{props.intro}</h3>
-            <ItemList items={props.items}/>
+            <ItemList items={props.items} isLogined={props.isLogined}/>
         </div>
     )
 }
@@ -21,5 +21,6 @@ ItemContentsContainer.defaultProps = {
         {image: '', name: '상품명3', price: 2500, minimumOrderQuantity: 3, id: '002', options: [],},
         {image: '', name: '상품명4', price: 2900, minimumOrderQuantity: 4, id: '003', options: [],},
         {image: '', name: '상품명5', price: 3000, minimumOrderQuantity: 10, id: '004', options: [],},
-    ]
+    ],
+    isLogined: false,
 }
