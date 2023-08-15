@@ -112,12 +112,13 @@ const initialState = {
             receipt: '',    
             paymentKey: '',
             deliveryId: '',
-            createdAt: '2023-08-11T3910'
+            createdAt: '2023-08-11T3910',
+            _id: '000'
         },
         {
             menus: [
                 {
-                    name: '제품명1',
+                    name: '제품명3',
                     price: 3000,
                     tag: '인기',
                     menuClass: '',
@@ -137,14 +138,14 @@ const initialState = {
                     id: '000',
                 },
                 {
-                    name: '제품명2',
+                    name: '제품명4',
                     price: 5000,
                     tag: '인기',
                     menuClass: '',
                     stock: 100,
                     orderType: 'delivery',
                     quantity: 1,
-                    option: {},
+                    option: {name:'1호', price: 24000},
                     isChecked: true,
                     imageUrl: '',
                     detailImageUrl: [],
@@ -188,7 +189,8 @@ const initialState = {
             receipt: '',    
             paymentKey: '',
             deliveryId: '',
-            createdAt: '2023-08-15T3910'
+            createdAt: '2023-08-15T3910',
+            _id: '001'
         }
     ],
     deliveryCart: [

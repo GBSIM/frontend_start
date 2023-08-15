@@ -35,7 +35,7 @@ export default function MainView() {
                     {ItemClassList}
                 </div>
             </div>
-            <Footer/>
+            <Footer isLogined={user.isLogined}/>
         </div>
     )
 }

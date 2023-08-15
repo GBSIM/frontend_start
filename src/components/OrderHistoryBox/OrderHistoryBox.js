@@ -91,11 +91,11 @@ export default function OrderHistoryBox(props) {
             </button>
             <OrderHistoryDetailModal
                 id={props.id}
-                items={props.items}/>
+                menus={props.menus}/>
             <OrderHistoryDetailMobileModal
                 isOn={isMobileModalOn}
                 closeEvent={closeMobileModal}
-                items={props.items}/>
+                menus={props.menus}/>
         </UnitBoxContainer>
     )
 }

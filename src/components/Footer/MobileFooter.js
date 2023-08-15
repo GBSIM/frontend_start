@@ -9,7 +9,7 @@ export default function MobileFooter(props) {
         case 'nav':
             MobileFooterContents =
                 <div className='mobile-footer-nav-container'>
-                    <IconNavContainer/>
+                    <IconNavContainer isLogined={props.isLogined}/>
                 </div>
             break;
         case 'cart':
@@ -21,7 +21,7 @@ export default function MobileFooter(props) {
         default:
             MobileFooterContents = 
                 <div className='mobile-footer-nav-container'>
-                    <IconNavContainer/>
+                    <IconNavContainer isLogined={props.isLogined}/>
                 </div>
             break;
     }
@@ -31,4 +31,8 @@ export default function MobileFooter(props) {
             {MobileFooterContents}
         </div>
     )
+}
+
+MobileFooter.defaultProps = {
+    isLogined: false,
 }

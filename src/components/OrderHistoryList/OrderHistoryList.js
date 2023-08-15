@@ -13,7 +13,7 @@ export default function OrderHistoryList(props) {
                 pickupDate={order.pickupDate}
                 pickupTime={order.pickupTime}
                 orderStatus={order.status}
-                id={order.id}
+                id={order._id}
                 key={'order_history_'+index}/>
         )
     })
