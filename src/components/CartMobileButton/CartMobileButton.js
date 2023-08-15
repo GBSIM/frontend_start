@@ -5,12 +5,22 @@ import { useState } from 'react';
 import CartMobileModal from '../CartMobileModal/CartMobileModal';
 import IconButton from '../IconButton/IconButton';
 import Notification from '../Notification/Notification';
+import SocialLoginMobileModal from '../SocialLoginMobileModal/SocialLoginMobileModal';
 
 export default function CartMobileButton(props) {
     const [isMobileCartModalOn,setMobileCartModalOn] = useState(false);
 
+    const showSocialLoginModal = () => {
+        const SocialLoginModal = document.getElementById("social-login-mobile-modal");
+        SocialLoginModal.showModal();
+    }
+
     const showMobileCartModal = () => {
-        setMobileCartModalOn(true);
+        if (props.isLogined) {
+            setMobileCartModalOn(true);
+        } else {
+            showSocialLoginModal();
+        }
     }
 
     const hideMobileCartModal = () => {
@@ -47,6 +57,7 @@ export default function CartMobileButton(props) {
                 <Notification 
                     text={notiText} 
                     id={"mobile-"+props.id}/>
+                <SocialLoginMobileModal/>
             </div>
         )
     } else {

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Counter from '../Counter/Counter';
 import CartAddButton from '../CartAddButton/CartAddButton';
 import Notification from '../Notification/Notification';
+import SocialLoginModal from '../SocialLoginModal/SocialLoginModal';
 
 export default function ItemDetail(props) {
     const [quantity, setQuantity] = useState(props.minimumOrderQuantity);
@@ -96,6 +97,19 @@ export default function ItemDetail(props) {
         setTimeout(() => notification.style.display = "none", 2000);
     }
 
+    const showSocialLoginModal = () => {
+        const SocialLoginModal = document.getElementById("social-login-modal");
+        SocialLoginModal.showModal();
+    }
+
+    const cartAddAction = () => {
+        if (props.isLogined) {
+            showPopupNotification()
+        } else {
+            showSocialLoginModal();
+        }
+    }
+
     return (
         <div className='item-detail'>
             <img className='item-detail-thumbnail-image' src={props.image} alt='thumbnail'></img>
@@ -139,13 +153,14 @@ export default function ItemDetail(props) {
                     <CartAddButton 
                         paddingTop={10}
                         paddingBottom={10}
-                        cartAddAction={showPopupNotification}
+                        cartAddAction={cartAddAction}
                         isPurchaseable={props.isPurchaseable}/>
                 </div>
             </div>
             <Notification 
                 text={notiText} 
                 id={"item-detail-popup-"+props.id}/>
+            <SocialLoginModal/>
         </div>
     )
 }
@@ -160,4 +175,5 @@ ItemDetail.defaultProps = {
     id: '000',
     options: [],
     isPurchaseable: false,
+    isLogined: false,
 }

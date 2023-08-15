@@ -4,11 +4,21 @@ import CartModal from '../CartModal/CartModal';
 
 import IconButton from '../IconButton/IconButton';
 import Notification from '../Notification/Notification';
+import SocialLoginModal from '../SocialLoginModal/SocialLoginModal';
 
 export default function CartButton(props) {
-    const showCartModal = () => {
-        const CartModal = document.getElementById("cart-modal"+props.id);
-        CartModal.showModal();
+    const showSocialLoginModal = () => {
+        const SocialLoginModal = document.getElementById("social-login-modal");
+        SocialLoginModal.showModal();
+    }
+
+    const showCartModal = () => {        
+        if (props.isLogined) {
+            const CartModal = document.getElementById("cart-modal"+props.id);
+            CartModal.showModal();
+        } else {
+            showSocialLoginModal();
+        }
     }
 
     const notiText = props.name + "를 담았어요."
@@ -18,7 +28,7 @@ export default function CartButton(props) {
         notification.style.display = "flex";
         setTimeout(() => notification.style.display = "none", 2000);
     }
-    
+
     if (props.isPurchaseable) {
         return (
             <div>
@@ -39,6 +49,7 @@ export default function CartButton(props) {
                 <Notification 
                     text={notiText} 
                     id={props.id}/>
+                <SocialLoginModal/>
             </div>        
         )
     } else {
@@ -65,5 +76,6 @@ CartButton.defaultProps = {
     options: [],
     id: '000',
     isPurchaseable: true,
+    isLogined: false,
 }
 
