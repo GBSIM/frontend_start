@@ -22,13 +22,13 @@ export default function CartItemList(props) {
         } else {
             CartAddGuide =
                 <div className='cart-item-list-add-guide'>
-                    <h3 className='cart-item-list-add-guide-text'>장바구니에 상품을 추가해주세요.</h3>
+                    <span className='cart-item-list-add-guide-text'>장바구니에 상품을 추가해주세요.</span>
                 </div>
         }
     } else {
         CartAddGuide =
             <div className='cart-item-list-add-guide'>
-                <h3 className='cart-item-list-add-guide-text'>장바구니에 상품을 추가해주세요.</h3>
+                <span className='cart-item-list-add-guide-text'>장바구니에 상품을 추가해주세요.</span>
             </div>
     }
 
