@@ -25,7 +25,7 @@ const initialState = {
                     minimumOrderQuantity: 1,
                     gradients: [],
                     detail: '',
-                    purchaseable: true,
+                    purchaseable: false,
                     id: '000',
                 },
                 {

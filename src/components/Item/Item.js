@@ -31,6 +31,7 @@ export default function Item(props) {
                     minimumOrderQuantity={props.minimumOrderQuantity}
                     options={props.options}
                     id={props.id}
+                    isPurchaseable={props.isPurchaseable}
                     />
             </div>
             <div className='item-cart-button-container mobile'>
@@ -40,6 +41,7 @@ export default function Item(props) {
                     minimumOrderQuantity={props.minimumOrderQuantity}
                     options={props.options}
                     id={props.id}
+                    isPurchaseable={props.isPurchaseable}
                     />
             </div>
             <span className='item-text name'>{props.name}</span>
@@ -55,4 +57,5 @@ Item.defaultProps = {
     minimumOrderQuantity: 1,
     id: '000',
     options: [],
+    isPurchaseable: true,
 }

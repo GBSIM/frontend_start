@@ -11,7 +11,8 @@ export default function ItemList(props) {
             minimumOrderQuantity={item.minimumOrderQuantity}
             options={item.options}
             id={item.id}
-            key={'item-'+item.id}/>
+            key={'item-'+item.id}
+            isPurchaseable={item.purchaseable}/>
     ))
     return (
         <div className='item-list'>

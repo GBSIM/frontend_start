@@ -25,29 +25,43 @@ export default function CartMobileButton(props) {
         setTimeout(() => notification.style.display = "none", 2000);
     }
 
-    return (
-        <div>
-            <IconButton
-                width={props.width}
-                height={props.height}
-                clickEvent={showMobileCartModal}
-                image={require('../../icons/cart_white.png')}
-                iconWidth='60%'
-                iconHeight='60%'/>
-            <CartMobileModal 
-                isOn={isMobileCartModalOn}
-                closeEvent={hideMobileCartModal}
-                name={props.name}
-                price={props.price}
-                minimumOrderQuantity={props.minimumOrderQuantity}
-                options={props.options}
-                id={props.id}
-                popupEvent={showPopupNotification}/>
-            <Notification 
-                text={notiText} 
-                id={"mobile-"+props.id}/>
-        </div>
-    )
+    if (props.isPurchaseable) {
+        return (
+            <div>
+                <IconButton
+                    width={props.width}
+                    height={props.height}
+                    clickEvent={showMobileCartModal}
+                    image={require('../../icons/cart_white.png')}
+                    iconWidth='60%'
+                    iconHeight='60%'/>
+                <CartMobileModal 
+                    isOn={isMobileCartModalOn}
+                    closeEvent={hideMobileCartModal}
+                    name={props.name}
+                    price={props.price}
+                    minimumOrderQuantity={props.minimumOrderQuantity}
+                    options={props.options}
+                    id={props.id}
+                    popupEvent={showPopupNotification}/>
+                <Notification 
+                    text={notiText} 
+                    id={"mobile-"+props.id}/>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <IconButton
+                    width={props.width}
+                    height={props.height}
+                    image={require('../../icons/cart_white.png')}
+                    iconWidth='60%'
+                    iconHeight='60%'
+                    backgroundColor='#aaa'/>
+            </div> 
+        )
+    }
 }
 
 const defaultClickEvent = () => {
@@ -63,4 +77,5 @@ CartMobileButton.defaultProps = {
     options: [],
     id: '000',
     popupEvent: defaultClickEvent,
+    isPurchaseable: true,
 }

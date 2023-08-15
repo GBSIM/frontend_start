@@ -18,28 +18,42 @@ export default function CartButton(props) {
         notification.style.display = "flex";
         setTimeout(() => notification.style.display = "none", 2000);
     }
-
-    return (
-        <div>
-            <IconButton
-                width={props.width}
-                height={props.height}
-                clickEvent={showCartModal}
-                image={require('../../icons/cart_white.png')}
-                iconWidth='60%'
-                iconHeight='60%'/>
-            <CartModal
-                name={props.name}
-                price={props.price}
-                minimumOrderQuantity={props.minimumOrderQuantity}
-                options={props.options}
-                id={props.id}
-                popupEvent={showPopupNotification}/>
-            <Notification 
-                text={notiText} 
-                id={props.id}/>
-        </div>        
-    )
+    
+    if (props.isPurchaseable) {
+        return (
+            <div>
+                <IconButton
+                    width={props.width}
+                    height={props.height}
+                    clickEvent={showCartModal}
+                    image={require('../../icons/cart_white.png')}
+                    iconWidth='60%'
+                    iconHeight='60%'/>
+                <CartModal
+                    name={props.name}
+                    price={props.price}
+                    minimumOrderQuantity={props.minimumOrderQuantity}
+                    options={props.options}
+                    id={props.id}
+                    popupEvent={showPopupNotification}/>
+                <Notification 
+                    text={notiText} 
+                    id={props.id}/>
+            </div>        
+        )
+    } else {
+        return (
+            <div>
+                <IconButton
+                    width={props.width}
+                    height={props.height}
+                    image={require('../../icons/cart_white.png')}
+                    backgroundColor='#aaa'
+                    iconWidth='60%'
+                    iconHeight='60%'/>
+            </div>   
+        )
+    }
 }
 
 CartButton.defaultProps = {
@@ -49,6 +63,7 @@ CartButton.defaultProps = {
     price: 2500,
     minimumOrderQuantity: 1,
     options: [],
-    id: '000'
+    id: '000',
+    isPurchaseable: true,
 }
 
