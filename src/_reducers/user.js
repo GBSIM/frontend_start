@@ -126,7 +126,31 @@ const initialState = {
         },      
     ],
     presentCart: [],
-    likes: [],
+    likes: [
+        {
+            name: '제품명4',
+            price: 50000,
+            tag: '인기',
+            menuClass: '',
+            stock: 100,
+            orderType: 'pickup',
+            quantity: 1,
+            option: {name: '옵션1', price: 45000},
+            isChecked: true,
+            imageUrl: '',
+            detailImageUrl: [],
+            intro: '',
+            options: [
+                {name: '옵션1', price: 45000},
+                {name: '옵션2', price: 52000},
+            ],
+            minimumOrderQuantity: 5,
+            gradients: [],
+            detail: '',
+            purchaseable: true,
+            id: '001',
+        },
+    ],
 }
 
 const user = (state = initialState, action) => {
