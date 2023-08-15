@@ -4,7 +4,7 @@ import Header from "../components/Header/Header"
 import ItemDetail from '../components/ItemDetail/ItemDetail';
 import ItemDescription from '../components/ItemDescription/ItemDescription';
 
-export default function ItemDetailView(props) {
+export default function ItemDetailView() {
     return (
         <div className="page">
             <Header/>

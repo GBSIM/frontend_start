@@ -1,5 +1,7 @@
 import '../default.css';
 
+import { useSelector } from 'react-redux';
+
 import Header from "../components/Header/Header"
 import UnderlineNavContainer from '../components/UnderlineNavContainer/UnderlineNavContainer';
 import OrderHistoryContentsContainer from '../components/OrderHistoryContentsContainer/OrderHistoryContentsContainer';
@@ -9,6 +11,8 @@ import UserClass from '../components/UserClass/UserClass';
 import Footer from '../components/Footer/Footer';
 
 export default function UserView(props) {
+    const { isLogined, name } = useSelector(state => state.user);
+
     let Contents;
     switch (props.status) {
         case '주문내역':
@@ -27,7 +31,7 @@ export default function UserView(props) {
 
     return (
         <div className="page">
-            <Header/>
+            <Header isLogined={isLogined} name={name}/>
             <div className='contents-container'>
                 <div className='contents'>
                     <div style={{'minHeight':'30px'}}></div>
