@@ -12,7 +12,8 @@ export default function Header(props) {
                 paddingRight={30}
                 isLogined={props.isLogined}
                 name={props.name}
-                cartItemNumber={props.cartItemNumber}/>
+                cartItemNumber={props.cartItemNumber}
+                userClass={props.userClass}/>
             <MobileHeader 
                 height={props.mobileHeaderHeight}
                 isLogined={props.isLogined}
@@ -25,4 +26,5 @@ Header.defaultProps = {
     isLogined: false,
     name: '이름',
     cartItemNumber: 0,
+    userClass: 0,
 }

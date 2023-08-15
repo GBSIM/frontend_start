@@ -14,11 +14,11 @@ export default function ManageView(props) {
     
     return (
         <div className="page">
-            <Header isLogined={user.isLogined} name={user.name} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart}/>
+            <Header isLogined={user.isLogined} name={user.name} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart} userClass={user.class}/>
             <div className='contents-container'>
                 <div className='contents'>
                     <div style={{'minHeight':'30px'}}></div>
-                    <UserClass/>
+                    <UserClass class={user.class} name={user.name}/>
                 </div>
                 <div className='contents-spacer cart'/>
                 <UnderlineNavContainer navTextList={['배송주문','선물주문','픽업주문']} linkList={['/manage/delivery','/manage/present','/manage/pickup']} status={props.status}/>

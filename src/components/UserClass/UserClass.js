@@ -6,7 +6,7 @@ export default function UserClass(props) {
         window.location.href = '/manage/delivery';
     }
     
-    if (props.class === 'Manager' || props.class === 'manager') {
+    if (props.class === 99) {
         if (window.location.pathname.split('/')[1] === 'manage') {
             UserClassDetailButton =
                 <button className='user-class-detail-button'>
@@ -25,12 +25,33 @@ export default function UserClass(props) {
             </button>
     }
 
+    let ClassBox;
+    if (props.class === 0) {
+        ClassBox = 
+            <div className='user-class-box' style={{'background':'#12C642'}}>
+                <h3 className='user-class-box-text' style={{'color':'#fff'}}>Green</h3>
+            </div>
+    } else if(props.class === 1) {
+        ClassBox = 
+            <div className='user-class-box' style={{'background':'#EB5C2E'}}>
+                <h3 className='user-class-box-text' style={{'color':'#fff'}}>Orange</h3>
+            </div>
+    } else if (props.class === 99) {
+        ClassBox = 
+            <div className='user-class-box' style={{'background':'#EB5C2E'}}>
+                <h3 className='user-class-box-text' style={{'color':'#fff'}}>Manager</h3>
+            </div>
+    } else {
+        ClassBox = 
+            <div className='user-class-box' style={{'background':'#12C642'}}>
+                <h3 className='user-class-box-text' style={{'color':'#fff'}}>Green</h3>
+            </div>
+    }
+
     return (
         <div className='user-class'>
             <div className='user-class-row'>
-                <div className='user-class-box' style={{'background':props.boxColor}}>
-                    <h3 className='user-class-box-text' style={{'color':props.textColor}}>{props.class}</h3>
-                </div>
+                {ClassBox}
                 <h2 className='user-class-name'>{props.name}님</h2>
             </div>
             <div className='user-class-row'>

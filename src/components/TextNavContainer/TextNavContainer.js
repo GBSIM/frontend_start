@@ -17,5 +17,5 @@ export default function TextNavContainer(props) {
 }
 
 TextNavContainer.defaultProps = {
-    navTextList: ['page1','page2','page3']
+    navTextList: ['배송주문','선물주문','픽업주문']
 }

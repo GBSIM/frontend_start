@@ -52,7 +52,7 @@ export default function CartView(props) {
 
     return (
         <div className="page">
-            <Header isLogined={user.isLogined} name={user.name} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart}/>
+            <Header isLogined={user.isLogined} name={user.name} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart} userClass={user.class}/>
             <div className='contents-container'>
                 <div className='contents-spacer cart'/>
                 <UnderlineNavContainer navTextList={['배송주문','선물주문','픽업주문']} linkList={['/cart/delivery','/cart/present','/cart/pickup']} status={props.status}/>

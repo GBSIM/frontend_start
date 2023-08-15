@@ -16,7 +16,7 @@ export default function WideScreenHeader(props) {
                 <div style={{'minWidth':'2px'}}></div>
                 <CartPageButton itemNumber={props.cartItemNumber}/>
                 <div style={{'minWidth':'25px'}}></div>
-                <UserButton name={props.name}/>        
+                <UserButton name={props.name} userClass={props.userClass}/>        
             </div>
         
     } else {
@@ -49,4 +49,5 @@ WideScreenHeader.defaultProps = {
     name: '장원영',
     isLogined: false,
     cartItemNumber: 0,
+    userClass: 0,
 }

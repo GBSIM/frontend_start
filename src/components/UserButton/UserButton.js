@@ -23,7 +23,7 @@ export default function UserButton(props) {
                 color='#666'
                 image={require('../../icons/inequity_down_grey.png')}
                 iconSize={16}/>
-            <UserMenuWindow isOn={isUserMenuWindowOn}/>
+            <UserMenuWindow isOn={isUserMenuWindowOn} userClass={props.class}/>
         </div>
         
     )
@@ -31,4 +31,5 @@ export default function UserButton(props) {
 
 UserButton.defaultProps = {
     name: '장원영',
+    class: 0,
 }

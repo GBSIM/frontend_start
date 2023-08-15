@@ -19,7 +19,7 @@ export default function UserView(props) {
             Contents = <OrderHistoryContentsContainer orderList={user.orders}/>
             break;
         case '배송지관리':
-            Contents = <ShippingContentsContainer shippingList={user.shippings} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart}/>
+            Contents = <ShippingContentsContainer shippingList={user.shippings} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart} userClass={user.class}/>
             break;
         case '쿠폰':
             Contents = <CouponContentsContainer couponList={user.coupons}/>

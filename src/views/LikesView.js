@@ -10,7 +10,7 @@ export default function LikesView() {
     
     return (
         <div className="page">
-            <Header isLogined={user.isLogined} name={user.name} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart}/>
+            <Header isLogined={user.isLogined} name={user.name} cartItemNumber={user.deliveryCart.length+user.pickupCart.length+user.presentCart} userClass={user.class}/>
             <div className='contents-container'>
                 <div className='contents'>
                     <div className='contents-spacer'/>

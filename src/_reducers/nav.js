@@ -3,7 +3,7 @@ export const CHANGE_PAGE = "NAV/CHANGE_PAGE";
 export const changePage = (nextPage) => ({type:CHANGE_PAGE, page:nextPage});
 
 const initialState = {
-    page: "page1"
+    page: "배송주문"
 }
 
 const nav = (state = initialState, action) => {
