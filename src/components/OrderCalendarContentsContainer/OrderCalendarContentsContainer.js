@@ -15,9 +15,9 @@ export default function OrderCalendarContetnsContainer(props) {
 
     const dateGuide = 
         <div className="order-calendar-contents-container-date-guide">
-            <h3 className="order-calendar-contents-container-date">
+            <span className="order-calendar-contents-container-date">
                 {props.year}년 {props.month}월 {props.day}일을 선택하셨어요.
-            </h3>
+            </span>
         </div>
 
     let timeGuide;
@@ -26,32 +26,32 @@ export default function OrderCalendarContetnsContainer(props) {
             if (props.isStoreVisitNeeded) {
                 timeGuide = 
                 <div className="order-calendar-contents-container-time-guide">
-                    <h3 className="order-calendar-contents-container-time">
+                    <span className="order-calendar-contents-container-time">
                         {props.hour}시에 {props.minute}분에 방문해주세요.
-                    </h3>
+                    </span>
                 </div>
             } else {
                 timeGuide = 
                 <div className="order-calendar-contents-container-time-guide">
-                    <h3 className="order-calendar-contents-container-time">
+                    <span className="order-calendar-contents-container-time">
                         {props.hour}시에 {props.minute}분에 맞춰 배송해드릴게요.
-                    </h3>
+                    </span>
                 </div>
             }
         } else {
             if (props.isStoreVisitNeeded) {
                 timeGuide = 
                 <div className="order-calendar-contents-container-time-guide">
-                    <h3 className="order-calendar-contents-container-time">
+                    <span className="order-calendar-contents-container-time">
                         {props.hour}시에 방문해주세요.
-                    </h3>
+                    </span>
                 </div>
             } else {
                 timeGuide = 
                 <div className="order-calendar-contents-container-time-guide">
-                    <h3 className="order-calendar-contents-container-time">
+                    <span className="order-calendar-contents-container-time">
                         {props.hour}시에 맞춰 배송해드릴게요.
-                    </h3>
+                    </span>
                 </div>
             }
         } 

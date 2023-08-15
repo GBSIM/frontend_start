@@ -33,7 +33,34 @@ export default function OrderView(props) {
                 unselectableDayList={[]}/>
     }
 
-    const totalPrice = 20000
+    let cart;
+    switch (props.status) {
+        case '배송주문':
+            cart = user.deliveryCart;
+            break;
+        case '선물주문':
+            cart = user.presentCart;
+            break;
+        case '픽업주문':
+            cart = user.pickupCart;
+            break;
+        default:
+            cart = user.deliveryCart;
+            break;
+    }
+
+    let totalPrice = 0;
+    cart.map((item) => {
+        if (item.isChecked) {
+            if (item.option.name) {
+                totalPrice = totalPrice + item.option.price * item.quantity;    
+            } else {
+                totalPrice = totalPrice + item.price * item.quantity;
+            }
+        }
+    })
+    if (props.status === '배송주문') totalPrice = totalPrice + 4000;
+    if (props.status === '선물주문') totalPrice = totalPrice + 70000;
     const orderButtonText = totalPrice.toLocaleString() + '원 결제하기'
 
     return (
@@ -42,11 +69,11 @@ export default function OrderView(props) {
             <div className='contents-container'>
                 <div className='contents'>
                     <div style={{'minHeight':'30px'}}></div>
-                    <OrderSheetContentsContainer/>
+                    <OrderSheetContentsContainer items={cart} status={props.status}/>
                     <div style={{'minHeight':'30px'}}></div>
-                    <CustomerInfoContentsContainer/>
+                    <CustomerInfoContentsContainer name={user.name} phone={user.phone} email={user.email}/>
                     <div style={{'minHeight':'30px'}}></div>
-                    <ShippingContentsContainer/>
+                    <ShippingContentsContainer shippingList={user.shippings} activatedIndex={user.shippingIndex}/>
                     <div style={{'minHeight':'30px'}}></div>
                     {CalendarBox}
                     <div style={{'minHeight':'30px'}}></div>

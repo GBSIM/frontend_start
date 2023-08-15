@@ -10,8 +10,10 @@ export default function Calendar(props) {
     const [displayedMonth, setDisplayedMonth] = useState(Number(props.startDate.split('-')[1]));
 
     const ChangeDate = (date) => {
+        setYear(displayedYear);
+        setMonth(displayedMonth);
         setDate(date);
-        props.clickEvent(selectedYear,selectedMonth,date);
+        props.clickEvent(displayedYear,displayedMonth,date);
     }
 
     const currentDate = new Date(displayedYear,displayedMonth-1,1);

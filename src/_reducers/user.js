@@ -8,11 +8,12 @@ export const logout = () => ({type:LOGOUT});
 
 const initialState = {
     isLogined: true,
-    name: "이름",
-    email: "abcd@mgail.com",
-    phone: "010-0000-0000",
+    name: "안유진",
+    email: "abcd@gmail.com",
+    phone: "010-0450-0378",
     class: 0,
     socialId: "abcdabcd",
+    shippingIndex: 0,
     shippings: [
         {
             name: '장원영',
