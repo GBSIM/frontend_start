@@ -15,7 +15,7 @@ export default function LikesView() {
             <div className='contents-container'>
                 <div className='contents'>
                     <div className='contents-spacer'/>
-                    <LikeMenuContentsContainer/>
+                    <LikeMenuContentsContainer likeMenuList={user.likes}/>
                 </div>
             </div>
             <Footer/>
