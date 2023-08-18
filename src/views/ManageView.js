@@ -11,6 +11,7 @@ import Footer from '../components/Footer/Footer';
 
 export default function ManageView(props) {
     const user = useSelector(state => state.user);
+    const order = useSelector(state => state.order);
     
     return (
         <div className="page">
@@ -26,7 +27,7 @@ export default function ManageView(props) {
                     <div style={{'minHeight':'20px'}}></div>
                     <ManagerCalendar/>
                     <div style={{'minHeight':'20px'}}></div>
-                    <Orders/>
+                    <Orders orders={order.orders}/>
                 </div>
             </div>
             <Footer/>

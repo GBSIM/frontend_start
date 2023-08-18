@@ -28,7 +28,7 @@ export default function Order(props) {
                     주문고객
                 </h3>
                 <h3 className='order-contents'>
-                    {props.customer}
+                    {props.customer.name}
                 </h3>
             </div>
             <div className='order-items-container'>

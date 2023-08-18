@@ -1,36 +1,8 @@
-import './Orders.css';
+export const SAVE_ORDER = "ORDER/SAVE_ORDER";
 
-import Order from "../Order/Order";
+export const saveOrder = (orders) => ({type:SAVE_ORDER, orders:orders});
 
-export default function Orders(props) {
-    let OrderList;
-    if (props.orders) {
-        if (props.orders.length) {
-            OrderList = props.orders.map((order,index) => {
-                return (
-                    <Order
-                        id={order._id}
-                        customer={order.customer}
-                        items={order.menus}
-                        totalPrice={order.payedMoney}
-                        address={order.shipping.basicAddress + ' ' + order.shipping.detailAddress + '(' + order.shipping.postalCode + ')'}
-                        reciever={order.shipping.name}
-                        phone={order.customer.phone}
-                        status={order.status}
-                        key={'order-'+index}/>
-                )
-            })
-        }        
-    }
-
-    return (
-        <div className="orders">
-            {OrderList}
-        </div>
-    )
-}
-
-Orders.defaultProps = {
+const initialState = {
     orders: [
         {
             menus: [
@@ -116,3 +88,17 @@ Orders.defaultProps = {
         }
     ],
 }
+
+const order = (state = initialState, action) => {
+    switch (action.type) {
+        case SAVE_ORDER:
+            return {
+                ...state,
+                orders: action.orders
+            }
+        default:
+            return state;
+    }
+};
+
+export default order;
