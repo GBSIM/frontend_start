@@ -2,7 +2,7 @@ import './UserMenuWindow.css';
 
 export default function UserMenuWindow(props) {
     let userMenuList;
-    if ((props.userClass === 'manager') || (props.userClass === 'Manager')) {
+    if ((props.userClass === 'manager') || (props.userClass === 'Manager') || (props.userClass === 99)) {
         userMenuList =
             [
                 {text:'주문내역',link:'/user/orderhistory'},

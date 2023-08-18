@@ -11,7 +11,7 @@ const initialState = {
     name: "안유진",
     email: "abcd@gmail.com",
     phone: "010-0450-0378",
-    class: 0,
+    class: 99,
     socialId: "abcdabcd",
     shippingIndex: 0,
     shippings: [
