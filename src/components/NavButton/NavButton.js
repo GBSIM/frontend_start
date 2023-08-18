@@ -40,7 +40,8 @@ export default function NavButton(props) {
             <TextButton
                 color='#EB5C2E'
                 hoverColor='#EB5C2E'
-                text={props.text} />
+                text={props.text}
+                clickEvent={movePage}/>
         )
     } else {
         return (
